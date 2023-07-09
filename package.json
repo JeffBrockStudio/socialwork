@@ -1,13 +1,13 @@
 {
-  "name": "uw_wp_theme_child",
-  "version": "1.0.0",
+  "name": "socialwork",
+  "version": "0.1.0",
   "main": "index.js",
   "scripts": {
     "build": "gulp",
     "watch": "gulp watch"
   },
   "keywords": [],
-  "author": "Your Department",
+  "author": "UW School of Social Work",
   "license": "ISC",
   "browserslist": [
     "last 2 versions",

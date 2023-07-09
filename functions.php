@@ -1,6 +1,6 @@
 <?php
 /**
- * UW WP Theme Child Theme.
+ * UW School of Social Work WordPress Theme.
  */
 
  // enqueue child childsheet, require the uw_wp_theme bootstrap style sheet

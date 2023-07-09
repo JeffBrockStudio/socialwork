@@ -1,6 +1,6 @@
-# UW WordPress Theme - Child Theme
+# UW School of Social Work WordPress Theme
 
-A child theme for use with the [UW WordPress Theme](https://github.com/uweb/uw_wp_theme).
+Custom WordPress theme for UW School of Social Work. Based on the UW WordPress Theme.
 
 ## Getting started
 
@@ -22,7 +22,7 @@ To get started using this theme, all you have to do is install it and the UW Wor
 
 8. Click the **Upload Theme** button.
 
-9.  Drag and drop the UW WordPress Child Theme zip file to the file upload area and click the **Install Now** button.
+9.  Drag and drop the UW School of Social Work zip file to the file upload area and click the **Install Now** button.
 
 10. Click the Activate link.
 
@@ -46,7 +46,7 @@ Included are a few tools that can get you started for advanced coding with the t
 
 ### Setting up dev tools
 
-1. Copy all the files out of the /dev/ folder and into the main uw_wp_theme_child folder. (delete the /dev/ folder when you're done.)
+1. Copy all the files out of the /dev/ folder and into the main socialwork folder. (delete the /dev/ folder when you're done.)
 
 2. Update the style.scss file with your desired theme information.
 
