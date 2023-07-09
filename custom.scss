@@ -3,6 +3,8 @@
 // Header
 // --------------------------------------------------
 header.site-header {
+
+  // Wordmark
   div.navbar .site-branding .uw-wordmark {
     background: transparent url(assets/images/SSW_UW_wordmark.png) no-repeat scroll left center;
     background-size: contain;
@@ -12,3 +14,32 @@ header.site-header {
   }
 }
 
+
+//
+// Footer
+// --------------------------------------------------
+footer.site-footer {
+  background-image:  url(assets/images/SSW_UW_footer.jpg);
+
+  // Wordmark
+  .footer-wordmark {
+    background: transparent url(assets/images/SSW_UW_wordmark_centered.png) no-repeat scroll left center;
+    background-size: contain;
+    height: 90px;
+    left: 20px;
+    transform: none;
+
+    &:hover {
+      background: transparent url(assets/images/SSW_UW_wordmark_centered.png) no-repeat scroll left center;
+      background-size: contain;
+      height: 90px;
+      left: 20px;
+      transform: none;
+    }
+  }
+
+  // Social
+  .footer-social {
+    transform: translateX(-12px);
+  }
+} 

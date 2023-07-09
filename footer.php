@@ -12,7 +12,7 @@
 ?>
 
 		<footer id="colophon" class="site-footer">
-			<a href="https://www.washington.edu/" class="footer-wordmark">University of Washington</a>
+      <a href="<?php echo get_bloginfo('url');?>" title="<?php echo get_bloginfo('name');?> Home" class="footer-wordmark" tabindex="-1" aria-hidden="true"><?php echo get_bloginfo('name');?></a>
 
 			<div class="h4" id="social_preface">Connect with us:</div>
 			<nav aria-labelledby="social_preface">
@@ -33,7 +33,7 @@
 			</nav>
 
 			<div class="site-info">
-				<p>&copy; <?php echo date( 'Y' ); ?> University of Washington  |  Seattle, WA</p>
+				<p>&copy; 2015-<?php echo date( 'Y' ); ?> School of Social Work  |  University of Washington  |  Seattle, WA</p>
 			</div><!-- .site-info -->
 		</footer><!-- #colophon -->
 	</div><!-- #page-inner -->
