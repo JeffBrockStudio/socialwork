@@ -1,4 +1,14 @@
-body {
-  background-color: #000000;
-  font-size: 1.2rem;
+
+//
+// Header
+// --------------------------------------------------
+header.site-header {
+  div.navbar .site-branding .uw-wordmark {
+    background: transparent url(assets/images/SSW_UW_wordmark.png) no-repeat scroll left center;
+    background-size: contain;
+    height: 90px;
+    left: 20px;
+    transform: none;
+  }
 }
+
