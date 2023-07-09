@@ -14,4 +14,9 @@ function uw_child_enqueue_styles() {
         array( $parenthandle ), 
         wp_get_theme()->get('Version') // this only works if you have Version in the style header
     );
+
+    wp_enqueue_style( 'socialwork-style', get_stylesheet_directory_uri() . '/custom.css',
+        array( $parenthandle ), 
+        wp_get_theme()->get('Version') // this only works if you have Version in the style header
+    );
 }

@@ -27,18 +27,17 @@ import sass from 'gulp-dart-sass';
 * You can also declare named functions and export them as tasks
 */
 export function publicStyles() {
-	return gulp.src('*.scss')
+	return gulp.src('custom.scss')
 		.pipe(print())
 		.pipe(sass({
-			outputStyle: 'compressed',
-			precision: 3,
+			outputStyle: 'expanded',
 			errLogToConsole: true
 		}).on('error', sass.logError))
 		.pipe(postcss([
 			autoprefixer,
 			cssnano
 		]))
-		.pipe(concat('style.css'))
+		.pipe(concat('custom.css'))
 		.pipe(gulp.dest('.'));
 }
 
