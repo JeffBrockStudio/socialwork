@@ -5,6 +5,27 @@
 	padding-right: 100%;
 }
 
+.uw-breadcrumbs {
+	a, 
+	span {		
+		font-size: .882rem;
+		line-height: 1.467;
+	} 
+
+	li.current span {
+		color: $purple;
+	}
+}
+
+.wp-caption {
+ 	.wp-caption-text {
+		color: $black;
+		font-size: .882rem;
+		line-height: 1.467;
+	}
+}
+	
+
 
 //
 // Pretty Dropdown
@@ -28,7 +49,7 @@
 			> li:not(.label):hover, 
 			> li.hover:not(.label), 
 			> li:first-child:hover:after {
-				background: $gold;
+				background: $gold-metallic;
 				color: #fff;
 			}
 			> li.nohover {
@@ -41,7 +62,7 @@
 			}
 			> li.hover:after, 
 			> li.nohover:before {
-				border-top-color: $gold !important;
+				border-top-color: $gold-metallic !important;
 			}
 		}
 		li {
@@ -65,30 +86,6 @@
 	.navbar.white-bar ul.navbar-nav li.nav-item a.nav-link {
 		padding: 0.5rem 10px;
 	}	
-}
-
-
-//
-// Replace logo wordmark
-// --------------------------------------------------
-header.site-header nav.navbar .site-branding .uw-wordmark {
-	background-image: url( 'img/logo-mor-white.png' );
-	background-image: image-set(
-		url('/wp-content/uploads/2022/09/logo-mor-white.webp') 1x,
-		url('/wp-content/uploads/2022/09/logo-mor-white.png')
-	);	
-	background-position: top left;
-	background-repeat: no-repeat;	
-	background-size: contain;
-	height: 57px;
-	left: 10px;
-	transform: none;
-	width: 350px;
-	@include media-breakpoint-down(sm) {
-		height: auto;
-		margin-bottom: 0;
-		width: 160px;
-	}
 }
 
 

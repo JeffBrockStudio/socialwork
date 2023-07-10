@@ -1,0 +1,72 @@
+html {
+	font-size: 17px;
+	
+  @include media-breakpoint-down(md) {
+		font-size: 16px;
+	}
+}
+
+body, p {
+  color: $black;
+  font-size: 1rem;
+}
+
+a,
+.elementor a {
+  color: $blue;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+
+  &:hover {
+    color: $gold-metallic;
+  }
+
+  &:focus {
+    outline: 1px dashed $black;
+  }
+}
+
+h1 {
+	font-size: 2.647rem;
+  line-height: 1;
+  text-transform: uppercase;
+}               
+
+h2,
+h2.elementor-heading-title {
+	font-size: 2.176rem;
+  font-weight: 900;
+  line-height: 1.3;
+}
+
+h3,
+h3.elementor-heading-title {
+  color: $purple;
+	font-size: 1.471rem;
+  line-height: 1.252;
+}
+
+h4,
+h4.elementor-heading-title {
+	font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.353;
+}
+
+small {
+  font-size: .882rem;
+  line-height: 1.467;
+}
+
+blockquote {
+  p {
+    color: $purple;
+    font-size: 1.294rem;
+    line-height: 1.409;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}

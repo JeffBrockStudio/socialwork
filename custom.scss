@@ -10,11 +10,12 @@
 //
 // Custom styles
 // --------------------------------------------------
-// @import "custom-variables";
-// @import "utilities";
-// @import "events";
-// @import "team";
-// @import "single-event";
+@import "src/sass/custom-variables";
+@import "src/sass/selectors";
+@import "src/sass/utilities";
+// @import "src/sass/events";
+// @import "src/sass/team"; 
+// @import "src/sass/single-event";
 
 
 //
