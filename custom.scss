@@ -74,3 +74,99 @@ footer.site-footer {
     transform: translateX(-12px);
   }
 } 
+
+// Accordion
+.accordion {
+  >.card {
+    &:first-of-type {
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+  }
+
+  .card {
+    border: none;
+    margin-bottom: 3px;
+
+    .card-header {
+      background-color: $gray-light;
+      border-bottom: none;
+
+      h3 button {
+        font-size: 1.471rem;
+        font-weight: 700;
+        line-height: 1.252;
+        
+        span.btn-text {
+          padding: 1.5rem;
+        }
+      }
+    }
+  } 
+
+  + p {
+    display: none;
+  }
+} 
+
+// Gallery 
+.elementor-widget-text-editor .carousel {
+
+  &:hover {
+    .carousel-control-prev,
+    .carousel-control-next {
+      background-color: transparent;
+    }
+  }
+  img {
+    border-radius: $border-radius;
+  }
+  
+  .carousel-inner {
+    padding-bottom: 5rem;
+
+    + p {
+      position: relative;
+    }
+  }
+
+  .carousel-caption {
+    border-radius: $border-radius;
+    bottom: -5rem;
+    left: 4rem;
+    width: 600px !important;
+  }
+
+  .carousel-control-next,
+  .carousel-control-prev {
+    bottom: 0.5rem;
+    height: 3rem;
+    text-decoration: none;
+    top: auto;
+    width: 3rem;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: transparent;
+    }
+  }
+
+  .carousel-control-prev {
+    left: auto;
+    right: 3rem;
+  }
+
+  .carousel-control-next {
+    .carousel-control-next-icon {
+      color: $purple;
+    }
+  }
+
+  .carousel-control-prev {
+    .carousel-control-prev-icon {
+      color: $purple;
+    }
+  }
+}
+

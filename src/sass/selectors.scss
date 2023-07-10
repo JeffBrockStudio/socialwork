@@ -11,6 +11,10 @@ body, p {
   font-size: 1rem;
 }
 
+p:empty {
+  display: none;
+}
+
 a,
 .elementor a {
   color: $blue;
