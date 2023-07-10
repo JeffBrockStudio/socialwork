@@ -1,0 +1,106 @@
+.full-bleed {
+	margin-left: -100%;
+	padding-left: 100%;
+	margin-right: -100%;
+	padding-right: 100%;
+}
+
+
+//
+// Pretty Dropdown
+// --------------------------------------------------
+.prettydropdown {
+	&.arrow>ul>li.selected {
+		&:after {
+			border-top-color: $primary;
+		}
+		&:before {
+			border-top-color: $white;
+		}		
+	}
+	> ul {
+		background: $primary;
+		border-color: $primary;
+		border-radius: 0;
+		color: $white;
+		font: normal 1rem $font-family-base;				
+		&.active {
+			> li:not(.label):hover, 
+			> li.hover:not(.label), 
+			> li:first-child:hover:after {
+				background: $gold;
+				color: #fff;
+			}
+			> li.nohover {
+				background: inherit !important;
+				color: inherit !important;
+			}
+			> li.hover:before, 
+			> li.nohover:after {
+				border-top-color: #fff !important;
+			}
+			> li.hover:after, 
+			> li.nohover:before {
+				border-top-color: $gold !important;
+			}
+		}
+		li {
+			//transition: $transition-base;
+		}
+	}	
+	> ul:focus, 
+	&:not(.disabled) > ul:hover {
+		border-color: $primary;
+	}
+	&:not(.disabled) > ul.active {
+		border-color: $primary;
+	}
+	> ul > li {
+		height: 48px;
+		line-height: 46px;
+	}			
+} 
+
+@media (max-width: 767px) {
+	.navbar.white-bar ul.navbar-nav li.nav-item a.nav-link {
+		padding: 0.5rem 10px;
+	}	
+}
+
+
+//
+// Replace logo wordmark
+// --------------------------------------------------
+header.site-header nav.navbar .site-branding .uw-wordmark {
+	background-image: url( 'img/logo-mor-white.png' );
+	background-image: image-set(
+		url('/wp-content/uploads/2022/09/logo-mor-white.webp') 1x,
+		url('/wp-content/uploads/2022/09/logo-mor-white.png')
+	);	
+	background-position: top left;
+	background-repeat: no-repeat;	
+	background-size: contain;
+	height: 57px;
+	left: 10px;
+	transform: none;
+	width: 350px;
+	@include media-breakpoint-down(sm) {
+		height: auto;
+		margin-bottom: 0;
+		width: 160px;
+	}
+}
+
+
+.jumbotron.img-background .display-3 {
+	@include media-breakpoint-down(sm) {
+		font-size: 30px;
+	}
+}
+
+.hero-height2 #hashtag span {
+	@include media-breakpoint-down(sm) {
+		font-size: 14px;
+		padding-left: 18px;
+	}
+}

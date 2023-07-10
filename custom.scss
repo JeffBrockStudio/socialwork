@@ -1,3 +1,21 @@
+//
+// Vendor styles
+// --------------------------------------------------
+@import "src/sass/bootstrap4/functions";
+@import "src/sass/bootstrap4/variables";
+@import "src/sass/bootstrap4/mixins/_breakpoints";
+@import "src/sass/prettydropdowns";
+
+
+//
+// Custom styles
+// --------------------------------------------------
+// @import "custom-variables";
+// @import "utilities";
+// @import "events";
+// @import "team";
+// @import "single-event";
+
 
 //
 // Header
@@ -11,6 +29,17 @@ header.site-header {
     height: 90px;
     left: 20px;
     transform: none;
+
+    @include media-breakpoint-down(lg) {
+      height: 40px;
+      left: 10px;
+      width: 240px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      height: 30px;  
+      width: 170px;
+    }
   }
 }
 

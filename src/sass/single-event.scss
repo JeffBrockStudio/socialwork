@@ -1,0 +1,73 @@
+body.single-event {
+	#primary {
+		padding-top: 3rem;
+		
+		.entry-title {
+			font-size: 36px;
+			font-weight: 900;
+		}
+		
+		.recurring-events {
+			margin-top: 3rem;
+			h2 {
+				margin-bottom: 1rem;
+			}
+			.recurring-event-instance {
+				border: 1px solid #e9e6f0;
+				margin-bottom: 0.5rem;
+				padding: 1.5rem;	
+				h3 {
+					margin-top: 0;
+				}
+				.col-registration {
+					text-align: right;
+				}	
+			}
+		}				
+	}
+	
+	#secondary {
+		padding-top: 3rem;
+	}
+	
+	.widget_registration {
+		background: #E6E4D4;
+		margin-bottom: 3rem;
+		padding: 1rem 2rem 2rem;
+		h4.widget-title {
+			margin-top: 10px;
+		}
+		.date {
+			font-weight: 700;
+			text-transform: uppercase;
+			.time {
+				font-weight: 400;
+				text-transform: none;
+			}
+		}
+		.btn {
+			margin-top: 1rem;
+			margin-left: 0;
+		}
+		.passed {
+			font-size: 1.15rem;
+			font-weight: bold;
+			margin-top: 1rem;
+		}
+	}
+	
+	.related {
+		.date {
+			font-weight: 700;
+			text-transform: uppercase;
+			.time {
+				font-weight: 400;
+				text-transform: none;
+			}
+		}
+		.register {
+			margin-top: 1rem;
+		}
+	}
+	
+}
