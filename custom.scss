@@ -109,6 +109,24 @@ footer.site-footer {
   }
 } 
 
+// Card
+.card {
+  .card-body {
+    h2 {
+      font-weight: 800;
+      font-size: 1.5625rem;
+      font-style: normal;
+      line-height: 1.95313;
+      margin-bottom: 0.7rem !important;
+    }
+
+    .card-content {
+      font-size: 1.0625rem;
+      line-height: 1.5625;
+    }
+  }
+}
+
 // Gallery 
 .elementor-widget-text-editor .carousel {
 
