@@ -111,19 +111,97 @@ footer.site-footer {
 
 // Card
 .card {
+  border-radius: $border-radius;
+
   .card-body {
+    padding-left: 1.7rem;
+    padding-right: 1.7rem;
+
     h2 {
       font-weight: 800;
-      font-size: 1.5625rem;
+      font-size: 1.471rem;
       font-style: normal;
-      line-height: 1.95313;
+      line-height: 1.25;
       margin-bottom: 0.7rem !important;
     }
 
-    .card-content {
-      font-size: 1.0625rem;
-      line-height: 1.5625;
+    .card-img {
+      margin-bottom: 1.5rem;
     }
+
+    .card-content {
+      font-size: 1rem;
+      line-height: 1.4706;     
+    }
+
+    .button {
+      margin-top: 0.7rem;
+
+      .btn.white {
+        &:focus {
+          outline-color: $white;
+        }
+
+        &:hover {
+          span {
+            background-color: $gold-light;
+            color: $black;
+          }
+        }
+
+        span {
+          color: $gold-metallic;
+        }
+      }
+    }
+
+    .link {
+      &.white {
+        &:hover {
+          color: $gold-light;
+        }
+
+        &:focus {
+          outline-color: $white;
+        }
+      }
+    }
+  }
+
+  // No image 
+  &.no-image {
+    .text {
+      margin-bottom: 0;
+    }
+  }
+
+  // Image Top
+  &.image-top {
+    .card-body {
+      padding-bottom: 1rem;
+
+      .card-content,
+      .card-title,
+      p.button,
+      .text {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+
+      p.button {
+        margin-bottom: 1rem;
+      }
+    }
+
+    
+  }
+
+  // White card
+  &.image-top.white, 
+  &.inset.white, 
+  &.no-image.white {
+    border-color: #CCC;
+    border-radius: $border-radius;
   }
 }
 

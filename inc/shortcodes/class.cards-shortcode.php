@@ -134,7 +134,7 @@ class SocialWork_Card {
 		// get the color option and set.
 		if ( 'purple' === strtolower( $card_atts['color'] ) ) {
 			$card_color   = 'purple';
-			$button_color = 'secondary light-gold';
+			$button_color = 'white';
 		} elseif ( 'white' === strtolower( $card_atts['color'] ) ) {
 			$card_color   = 'white';
 			$button_color = 'primary gold';
@@ -149,7 +149,7 @@ class SocialWork_Card {
 			}
 		} else {
 			$card_color   = 'lightgold';
-			$button_color = 'white';
+			$button_color = 'gold';
 		}
 
 		// set the widths for the cards.
@@ -235,7 +235,11 @@ class SocialWork_Card {
 			$output .= '<div class="udub-slant-divider"><span></span></div>';
 			$output .= '<div class="card-content">' . wp_kses_post( $content ) . '</div>';
 			if ( ! empty( $card_atts['link'] ) ) {
-				$output .= '<p class="button"><a href="' . esc_url( $card_atts['link'] ) . '" class="btn btn-lg arrow ' . esc_attr( $button_color ) . '"><span>' . esc_attr( $button_text ) . '</span><span class="arrow-box"><span class="arrow"></span></span></a></p>';
+				if ( $card_atts['link_style'] == 'text' ) {
+          $output .= '<p class="text"><a href="' . esc_url( $card_atts['link'] ) . '" class="link ' . esc_attr( $button_color ) . '"><span>' . esc_attr( $button_text ) . '</span><span class="arrow-box"><span class="arrow"></span></span></a></p>';  
+        } else {
+          $output .= '<p class="button"><a href="' . esc_url( $card_atts['link'] ) . '" class="btn btn-lg arrow ' . esc_attr( $button_color ) . '"><span>' . esc_attr( $button_text ) . '</span><span class="arrow-box"><span class="arrow"></span></span></a></p>';
+        }
 			}
 			$output .= '</div></div>';
 		} elseif ( 'no-image' === strtolower( $style ) ) {
