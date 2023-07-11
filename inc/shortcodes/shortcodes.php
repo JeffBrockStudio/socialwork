@@ -31,7 +31,7 @@ function socialwork_shortcodes() {
 	// require_once( $parent . 'class.tabs-tours-shortcode.php' );
 	// require_once( $parent . 'class.youtube-shortcode.php' );
 	// require_once( $parent . 'class.uw-iframes.php' );
-	// require_once( $parent . 'class.cards-shortcode.php' );
+	require_once( $parent . 'class.cards-shortcode.php' );
 	// require_once( $parent . 'class.blockquote-shortcode.php' );
 	// require_once( $parent . 'class.gallery-shortcode.php' );
 	// require_once( $parent . 'class.jumbotron-shortcode.php' );
@@ -51,7 +51,7 @@ function socialwork_shortcodes() {
 	// $tabsTours   = new UW_Tabs_Tours();
 	// $youtube     = new UW_Youtube();
 	// $iframes     = new UW_Iframes();
-	// $uwcard      = new UW_Card();
+	$uwcard      = new SocialWork_Card();
 	// $blockquote  = new UW_Blockquote();
 	// $gallery     = new UW_Gallery();
 	// $jumbotron   = new UW_Jumbotron();

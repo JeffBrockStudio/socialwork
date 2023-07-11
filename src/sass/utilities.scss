@@ -20,12 +20,48 @@
 	}
 }
 
-// Button
-.button {
-	.arrow-box {
-		display: none !important;
+// Text-style link
+.card-body .text {
+	.link {
+		color: $gold-metallic;
+		font-family: 'Encode Sans Compressed', sans-serif;
+		font-size: 1.0589rem; 
+		font-weight: 700;
+		line-height: 1.222;
+		text-transform: uppercase;
+
+		&:hover {
+			color: #675B3B;			
+		}
+
+		&:focus {
+			outline-offset: 3px;
+		}
 	}
 }
+
+// Button
+.button {
+	.btn {
+		&:focus {
+			border-color: transparent !important;
+			box-shadow: none !important;
+			outline-offset: 3px;
+		}
+
+		&.gold:hover {
+				span {
+					background-color: #675B3B !important;
+					border-color: #675B3B !important;
+				}
+			}
+
+		span {
+			border-radius: 4px;
+		}
+	}
+}
+
 	
 
 //
@@ -82,3 +118,20 @@
 		line-height: 46px;
 	}			
 } 
+
+
+//
+// Hide elements from parent theme
+// --------------------------------------------------
+
+// Arrow Box
+.button {
+	.arrow-box {
+		display: none !important;
+	}
+}
+
+// Slant divider
+.udub-slant-divider {
+	display: none !important;
+}
