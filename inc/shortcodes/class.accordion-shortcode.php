@@ -116,8 +116,6 @@ class SocialWork_Accordion {
 			$atts
 		);
 
-		echo 'content: ' . $content . '<br>';
-
 		$class = '';
 
 		if ( empty( $content ) ) {
@@ -133,7 +131,7 @@ class SocialWork_Accordion {
 		$output = do_shortcode( $content );
 
 		return sprintf(
-			'<div class="card"><div class="card-header" id="accordion-header"><h3 class="mb-0"><button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse" aria-expanded="%s" aria-controls="collapse"><span class="btn-text"TEST>%s</span><span class="subheading">%s</span><span class="arrow-box"><span class="arrow"></span></span></button></h3></div><div id="collapse" class="collapse %s" aria-labelledby="collapse" data-parent="#accordion">%s</div></div>',
+			'<div class="card"><div class="card-header" id="accordion-header"><h3 class="mb-0"><button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse" aria-expanded="%s" aria-controls="collapse"><span class="btn-text">TEST%s</span><span class="subheading">%s</span><span class="arrow-box"><span class="arrow"></span></span></button></h3></div><div id="collapse" class="collapse %s" aria-labelledby="collapse" data-parent="#accordion">%s</div></div>',
 			$active_tab,
 			$section_atts['title'],
 			$section_atts['subheading'],
