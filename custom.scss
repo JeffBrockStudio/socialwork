@@ -170,3 +170,60 @@ footer.site-footer {
   }
 }
 
+// Blockquote
+figure.quote-block {
+  background-color: $purple;
+  border-radius: $border-radius;  
+
+  // Simple
+  &.quote-simple {
+    div {
+      padding-left: 4rem;
+      padding-right: 4rem;
+    }
+
+    blockquote {
+      color: $white;
+      font-weight: 400;
+      position: relative;
+
+      &:before,
+      &:after {
+        font-size: 5rem;
+      }
+
+      &:before {
+        bottom: auto;
+        position: absolute;
+        top: -3rem;
+      }
+
+      &:after {
+        bottom: -6rem;
+        left: auto;
+        position: absolute;
+        right: 0;
+      }
+
+      p {
+        color: $white;
+        margin-left: 6rem;
+        margin-right: 4rem;
+      }
+    }
+
+    div figcaption {
+      color: $white;
+      margin-left: 6rem;
+      text-align: left;
+  
+      .quote-source-title {
+        font-style: normal;
+      }
+    }
+  } 
+
+
+  
+}
+

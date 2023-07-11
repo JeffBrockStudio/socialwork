@@ -65,3 +65,19 @@ function conditional_wpautop($content) {
 // remove_filter( 'the_content', 'wpautop' );
 // add_filter( 'the_content', 'wpautop' , 99 );
 // add_filter( 'the_content', 'shortcode_unautop', 100 );
+
+//remove_shortcode( 'accordion' );
+
+add_action('wp_enqueue_scripts', 'replace_parent_theme_features');
+function replace_parent_theme_features() {
+    
+  // First we remove the parent shortcode
+  //remove_shortcode('accordion');
+  // Then we add our own replacement shortcode
+  //add_shortcode('parent_shortcode_name', 'my_child_shortcode');
+}
+
+/**
+ * Theme shortcodes.
+*/
+require get_stylesheet_directory() . '/inc/shortcodes/shortcodes.php';

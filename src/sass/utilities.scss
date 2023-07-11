@@ -1,10 +1,4 @@
-.full-bleed {
-	margin-left: -100%;
-	padding-left: 100%;
-	margin-right: -100%;
-	padding-right: 100%;
-}
-
+// Breadcrumbs
 .uw-breadcrumbs {
 	a, 
 	span {		
@@ -17,6 +11,7 @@
 	}
 }
 
+// Caption	
 .wp-caption {
  	.wp-caption-text {
 		color: $black;
@@ -25,7 +20,6 @@
 	}
 }
 	
-
 
 //
 // Pretty Dropdown
@@ -81,23 +75,3 @@
 		line-height: 46px;
 	}			
 } 
-
-@media (max-width: 767px) {
-	.navbar.white-bar ul.navbar-nav li.nav-item a.nav-link {
-		padding: 0.5rem 10px;
-	}	
-}
-
-
-.jumbotron.img-background .display-3 {
-	@include media-breakpoint-down(sm) {
-		font-size: 30px;
-	}
-}
-
-.hero-height2 #hashtag span {
-	@include media-breakpoint-down(sm) {
-		font-size: 14px;
-		padding-left: 18px;
-	}
-}
