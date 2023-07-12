@@ -35,6 +35,10 @@ function remove_empty_p( $content ) {
 add_filter('the_content', 'remove_empty_p', 20, 1);
 
 
+
+remove_filter( 'the_content', 'wpautop' );
+
+
 /**
  * Theme shortcodes.
 */

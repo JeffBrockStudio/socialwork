@@ -58,6 +58,7 @@
 
 		span {
 			border-radius: 4px;
+			transition: $transition-base;
 		}
 
 		&.btn-lg {
@@ -87,11 +88,24 @@
 
 		+ .btn {
 			margin-left: .5rem;
+
+			@include media-breakpoint-down(lg) {
+				margin-left: 0;
+				margin-top: 1rem;
+			}
 		}
 	}
 }
 
-	
+//
+// Elementor
+// --------------------------------------------------
+.elementor-section {
+	&.m-0 {
+		margin-left: 8px!important;
+    margin-right: 8px!important;
+	}
+}
 
 //
 // Pretty Dropdown

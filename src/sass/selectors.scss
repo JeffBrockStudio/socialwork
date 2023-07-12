@@ -15,12 +15,13 @@ p:empty {
   display: none;
 }
 
-a,
+a:not(.nav-link),
 .elementor a {
   color: $blue;
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
+  transition: $transition-base;
 
   &:hover {
     color: $gold-metallic;
