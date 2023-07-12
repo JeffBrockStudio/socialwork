@@ -168,6 +168,57 @@ footer.site-footer {
     }
   }
 
+  // Large & Full Width
+  &.large,
+  &.full-width {
+    border-color: #ccc;
+    box-shadow: none;
+
+    &.purple {
+      border-color: $purple;
+    }
+
+    &.lightgold {
+      p {
+        color: $black;
+      }
+    }
+
+    .card-body {
+      padding-top: 4rem;
+      padding-block: 4rem;
+
+      h2 {
+        font-size: 2.176rem;
+      }
+
+      .button {
+        margin-top: 2rem;
+      }
+
+      .inner-card-body {
+        max-width: 90%;
+      }
+    }
+
+    &.img-right {
+      .card-body {
+        .inner-card-body {
+          margin-left: -1rem;
+        }
+      }
+    }
+
+    &.lightgold,
+    &.white {
+      h2,
+      h3,
+      h4 {
+        color: $purple;
+      }
+    }
+  }
+
   // No image 
   &.no-image {
     .text {
@@ -192,8 +243,6 @@ footer.site-footer {
         margin-bottom: 1rem;
       }
     }
-
-    
   }
 
   // White card
