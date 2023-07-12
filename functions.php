@@ -184,4 +184,47 @@ function custom_add_custom_taxonomies() {
 };
 add_action( 'init', 'custom_add_custom_taxonomies', 0 );
 
+/**
+ * Team shortcode
+ */
+function custom_team($atts) {
+	
+	$atts = shortcode_atts(array(
+      'team_roles' => 'faculty'
+   ), $atts);	
+   
+  ob_start();
+    require('team.php');
+    
+  // Save output and stop output buffering
+  $output = ob_get_clean();
+  
+    // Return $post to its original state
+   wp_reset_postdata();
+  
+    // Return buffered output to be output in shortcode location
+   return $output;
+  
+}
+add_shortcode('team', 'custom_team');
 
+
+/**
+ * Publications shortcode
+ */
+function custom_resources($atts) {
+  
+  ob_start();
+  require('resources.php');
+    
+  // Save output and stop output buffering
+  $output = ob_get_clean();
+  
+  // Return $post to its original state
+  wp_reset_postdata();
+  
+  // Return buffered output to be output in shortcode location
+  return $output;
+  
+}
+add_shortcode('publications', 'custom_resources');
