@@ -106,6 +106,18 @@
     margin-right: 8px!important;
 	}
 }
+.elementor-shortcode {
+	.btn {
+		&:hover {
+			span {
+				background-color: darken( $gold-metallic, 10% );
+			}	
+		}
+		span {
+			border-radius: $border-radius;
+		}
+	}
+}
 
 //
 // Pretty Dropdown

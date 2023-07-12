@@ -781,3 +781,31 @@ figure.quote-block {
     }
   }
 }
+
+.news-home {
+  .elementor-posts {
+    .elementor-post {
+      border-bottom: 1px solid #cccccc;
+      margin-bottom: 1.2rem;
+      padding-bottom: 1.2rem;
+
+      &:last-child {
+        margin-bottom: .5rem;
+      }
+    }
+    .elementor-post__title a {
+      color: $black;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 700;
+
+      &:hover {
+        color: $gold-metallic;
+      }
+    }
+
+    .elementor-post__text {
+      display: flex;
+      justify-content: center;
+    }
+  } 
+}
