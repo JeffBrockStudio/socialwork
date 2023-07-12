@@ -176,6 +176,9 @@ footer.site-footer {
 
     &.purple {
       border-color: $purple;
+      p {
+        color: $white;
+      }
     }
 
     &.lightgold {
@@ -210,6 +213,11 @@ footer.site-footer {
     }
 
     &.lightgold,
+    &.purple {
+      border: none;
+    }
+
+    &.lightgold,
     &.white {
       h2,
       h3,
@@ -217,6 +225,7 @@ footer.site-footer {
         color: $purple;
       }
     }
+   
   }
 
   // No image 
@@ -226,8 +235,92 @@ footer.site-footer {
     }
   }
 
+  // Image Left
+  &.image-left {
+    overflow: hidden;
+
+    &.lightgold {
+      background-color: $gold-light;
+    }
+
+    &.white {
+      background-color: $white;
+      border: 1px solid #cccccc;
+    }
+
+    &.purple {
+      background-color: $purple;
+
+      .card-body {
+        h2,
+        h3,
+        h4,
+        .card-content,
+        a.link.white {
+          color: $white;
+        }
+
+        a.link.white {
+          &:hover {
+            color: $gold-light;
+          }
+        }
+      }
+    }
+
+    .card-body {
+      flex-direction: row;
+      padding: 0; 
+      
+      @include media-breakpoint-down(sm) {
+        flex-direction: column;
+      }
+
+      .text {
+        margin-bottom: 1rem;
+      }
+
+      p.button {
+        margin-bottom: 1rem;
+        margin-top: 1.7rem;
+      }
+
+      .link {
+        margin-bottom: 1rem;
+      }
+
+      .card-title-content {
+        padding: 2rem 2rem 1rem;
+      }
+
+      .card-image-left {
+        flex: 0 0 37%;
+  
+        @include media-breakpoint-down(sm) {
+          flex: 0 0 100%;
+        }
+      }
+
+      .card-img {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        height: 100%;
+        margin-bottom: 0;
+        object-fit: cover;
+
+        @include media-breakpoint-down(sm) {
+          height: auto;
+          object-fit: none;
+        }
+
+      }
+    }
+  }
+
   // Image Top
   &.image-top {
+    overflow: hidden;
+
     .card-body {
       padding-bottom: 1rem;
 
@@ -237,6 +330,11 @@ footer.site-footer {
       .text {
         padding-left: 1.5rem;
         padding-right: 1.5rem;
+      }
+
+      .card-img {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
       }
 
       p.button {

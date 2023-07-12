@@ -101,7 +101,11 @@ class SocialWork_Card {
 					$card_class = 'no-image';
 					$text_class = 'text-left';
 					break;
-				case 'image-top':
+        case 'image-left':
+          $card_class = 'image-left';
+          $text_class = 'text-left';
+          break;
+        case 'image-top':
 					$card_class = 'image-top';
 					$text_class = 'text-left';
 					break;
@@ -226,6 +230,23 @@ class SocialWork_Card {
 				$output .= '<p class="button"><a href="' . esc_url( $card_atts['link'] ) . '" class="btn btn-sm ' . esc_attr( $button_color ) . '"><span>' . esc_attr( $button_text ) . '</span></a></p>';
 			}
 			$output .= '</div></div>';
+		} elseif ( 'image-left' === strtolower( $style ) ) {
+			// build out the image top style card.
+			$output  = '<div class="card ' . esc_attr( $card_classes ) . '" style="width:' . esc_attr( $card_width ) . '">';
+			$output .= '<div class="card-body">';
+			$output .= '<div class="card-image-left"><img src="' . esc_attr( $image ) . '" class="card-img card-img-top" alt="' . esc_attr( $alt ) . '"></div>';
+      $output .= '<div class="card-title-content">';
+			$output .= '<' . esc_attr( $card_atts['titletag'] ) . ' class="card-title mb-0">' . wp_kses_post( $card_title ) . '</' . esc_attr( $card_atts['titletag'] ) . '>';
+			$output .= '<div class="udub-slant-divider"><span></span></div>';
+			$output .= '<div class="card-content">' . wp_kses_post( $content ) . '</div>';
+			if ( ! empty( $card_atts['link'] ) ) {
+				if ( $card_atts['link_style'] == 'text' ) {
+          $output .= '<p class="text"><a href="' . esc_url( $card_atts['link'] ) . '" class="link ' . esc_attr( $button_color ) . '"><span>' . esc_attr( $button_text ) . '</span><span class="arrow-box"><span class="arrow"></span></span></a></p>';  
+        } else {
+          $output .= '<p class="button"><a href="' . esc_url( $card_atts['link'] ) . '" class="btn btn-lg arrow ' . esc_attr( $button_color ) . '"><span>' . esc_attr( $button_text ) . '</span><span class="arrow-box"><span class="arrow"></span></span></a></p>';
+        }
+			}
+			$output .= '</div></div></div>';      
 		} elseif ( 'image-top' === strtolower( $style ) ) {
 			// build out the image top style card.
 			$output  = '<div class="card ' . esc_attr( $card_classes ) . '" style="width:' . esc_attr( $card_width ) . '">';
