@@ -224,6 +224,7 @@ if ( array_key_exists( 'search', $_GET ) && $_GET['search'] ) {
 														}?><?php echo get_field( 'team_affinity_group', $resource_id ); ?>
 													</div>
 												<?php } ?>
+                        
 											</div>
 										</div>
 
