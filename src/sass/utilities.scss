@@ -59,6 +59,35 @@
 		span {
 			border-radius: 4px;
 		}
+
+		&.btn-lg {
+			font-size: 1.059rem;
+		}
+
+		&.btn-outline {
+			span {
+				background-color: transparent;
+				border: 2px solid;				
+			}			
+
+			&.white {
+				span {
+					border-color: $white;
+					color: $white;
+				}
+
+				&:hover {
+					span {
+						background-color: $gold-metallic;
+						color: $white;
+					}
+				}
+			}
+		}
+
+		+ .btn {
+			margin-left: .5rem;
+		}
 	}
 }
 

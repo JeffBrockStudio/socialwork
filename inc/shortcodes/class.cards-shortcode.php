@@ -46,18 +46,21 @@ class SocialWork_Card {
 		// get shortcode attributes.
 		$card_atts = shortcode_atts(
 			array(
-				'style'    => '', // different nanes for small + large, full-width.
-				'align'    => '', // left, right, center.
-				'color'    => '', // pull these options from STM Fast Facts?
-				'image'    => '', // url for the image from the media library.
-				'alt'      => '', // alt text for the image.
-				'icon'     => '', // used for step style card only.
-				'title'    => '', // required. headline.
-				'titletag' => 'h2', // title tag, only coded for h2, h3 and h4
-				'subtitle' => '', // used for step style card only.
-				'button'   => '', // button text.
-				'link'     => '', // button link.
-        'link_style'     => '', // link style (button or text).
+        'style'        => '', // different nanes for small + large, full-width.
+        'align'        => '', // left, right, center.
+        'color'        => '', // pull these options from STM Fast Facts?
+        'image'        => '', // url for the image from the media library.
+        'alt'          => '', // alt text for the image.
+        'icon'         => '', // used for step style card only.
+        'title'        => '', // required. headline.
+        'titletag'     => 'h2', // title tag, only coded for h2, h3 and h4
+        'subtitle'     => '', // used for step style card only.
+        'button'       => '', // button text.
+        'link'         => '', // button link.
+        'link_style'   => '', // link style (button or text).
+        'button_2'     => '', // secondary button text.
+        'link_2'       => '', // secondary button link.
+        'link_style_2' => '', // secondary link style (button or text).        
 			),
 			$atts
 		);
@@ -190,6 +193,13 @@ class SocialWork_Card {
 			$button_text = $card_atts['button'];
 		} else {
 			$button_text = 'Add button text!';
+		}
+
+    // get the secondary button text.
+		if ( $card_atts['button_2'] ) {
+			$button_2 = $card_atts['button_2'];
+		} else {
+			$button_2 = 'Add button text!';
 		}
 
 		// get the card title.
@@ -334,11 +344,20 @@ class SocialWork_Card {
 			$output .= '<div class="image-large"' . wp_kses_post( $background ) . '></div>';
 			$output .= '<div class="card-body">';
 			$output .= '<div class="inner-card-body">';
-			$output .= '<' . esc_attr( $card_atts['titletag'] ) . ' class="card-title">' . wp_kses_post( $card_title ) . '</' . esc_attr( $card_atts['titletag'] ) . '>';
+      $output .= '<h1 class="card-title">' . wp_kses_post( $card_title ) . '</h1>';			
 			$output .= wp_kses_post( $content );
-			if ( ! empty( $card_atts['link'] ) ) {
-				$output .= '<p class="button"><a href="' . esc_url( $card_atts['link'] ) . '" class="btn btn-lg arrow ' . esc_attr( $button_color ) . '"><span>' . esc_attr( $button_text ) . '</span><span class="arrow-box"><span class="arrow"></span></span></a></p>';
+      if ( ! empty( $card_atts['link'] ) || ! empty( $card_atts['link_2'] )) {
+        $output .= '<p class="button">';
+      }
+      if ( ! empty( $card_atts['link'] ) ) {
+				$output .= '<a href="' . esc_url( $card_atts['link'] ) . '" class="btn btn-lg arrow ' . esc_attr( $button_color ) . '"><span>' . esc_attr( $button_text ) . '</span><span class="arrow-box"><span class="arrow"></span></span></a>';
 			}
+      if ( ! empty( $card_atts['link_2'] ) ) {
+				$output .= '<a href="' . esc_url( $card_atts['link_2'] ) . '" class="btn btn-lg btn-outline arrow ' . esc_attr( $button_color ) . '"><span>' . esc_attr( $button_2 ) . '</span><span class="arrow-box"><span class="arrow"></span></span></a>';
+			}
+      if ( ! empty( $card_atts['link'] ) || ! empty( $card_atts['link_2'] )) {
+        $output .= '</p>';
+      }
 			$output .= '</div></div>';
 			$output .= '<div><svg class="slant-pattern"><defs><pattern id="pattern-stripe-' . $random_id . '" width="14" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(15)"><rect width="1" height="10" transform="translate(0,0)" fill="white"></rect></pattern><mask id="mask-stripe"><rect x="0" y="0" width="100%" height="100%" fill="url(#pattern-stripe-' . $random_id . ')" /></mask></defs><rect class="hbar purple-lines" x="0" y="0" width="100%" height="100"></rect></svg></div>';
 			$output .= '</div>';
