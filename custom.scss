@@ -335,7 +335,7 @@ figure.quote-block {
 
   // Large 
   &.large {
-    border-radius: 0;
+    // border-radius: 0;
   }
 
   // Full Width
@@ -735,6 +735,14 @@ figure.quote-block {
     a {
       font-size: 1.471rem;
       line-height: 1.24;
+
+      &:hover:visited {
+        color: $gold-metallic;
+      }
+
+      &:visited {
+        color: $purple;
+      }
     }
   }
 
