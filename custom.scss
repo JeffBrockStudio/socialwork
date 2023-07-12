@@ -75,6 +75,29 @@ footer.site-footer {
   }
 } 
 
+//
+// Elementor
+// --------------------------------------------------
+.elementor {
+
+  // Full-width sections
+  @include media-breakpoint-up(lg) {
+    .elementor-section-full_width {
+      padding-right: 10vw;
+      padding-left: 10vw;
+  
+      .elementor-container {
+        margin-right: -10px;
+        margin-left: -10px;
+      }
+    }
+  }
+}
+
+//
+// Widgets
+// --------------------------------------------------
+
 // Accordion
 .accordion {
   >.card {
@@ -108,6 +131,74 @@ footer.site-footer {
     display: none;
   }
 } 
+
+// Blockquote
+figure.quote-block {
+  background-color: $purple;
+  border-radius: $border-radius;  
+
+  // Simple
+  &.quote-simple {
+    div {
+      padding-left: 4rem;
+      padding-right: 4rem;
+
+      @include media-breakpoint-down(sm) {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+    }
+
+    blockquote {
+      color: $white;
+      font-weight: 400;
+      position: relative;
+
+      &:before,
+      &:after {
+        font-size: 5rem;
+      }
+
+      &:before {
+        bottom: auto;
+        position: absolute;
+        top: -3rem;
+      }
+
+      &:after {
+        bottom: -6rem;
+        left: auto;
+        position: absolute;
+        right: 0;
+      }
+
+      p {
+        color: $white;
+        margin-left: 6rem;
+        margin-right: 4rem;
+
+        @include media-breakpoint-down(sm) {
+          margin-left: 4rem;
+          margin-right: 1rem;
+        }
+      }
+    }
+
+    div figcaption {
+      color: $white;
+      margin-left: 6rem;
+      text-align: left;
+
+      @include media-breakpoint-down(sm) {
+        margin-left: 4rem;
+      }
+  
+      .quote-source-title {
+        font-style: normal;
+      }
+    }
+  } 
+}
 
 // Card
 .card {
@@ -176,6 +267,7 @@ footer.site-footer {
 
     &.purple {
       border-color: $purple;
+      .inner-card-body,
       p {
         color: $white;
       }
@@ -226,6 +318,41 @@ footer.site-footer {
       }
     }
    
+  }
+
+  // Full Width
+  &.full-width {
+    margin-top: -10px;
+    margin-bottom: 0;
+    padding-left: 10vw;
+    
+    @include media-breakpoint-up(md) {
+      grid-template-columns: 1fr 2fr;
+    }
+
+    @include media-breakpoint-down(sm) {
+      padding-left: 0;
+    }
+
+    &.img-right {
+      .card-body {
+        left: 4rem;
+
+        .inner-card-body {
+          margin-left: -3.5rem;
+        }
+      }
+    }
+
+    .card-body {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+
+      .inner-card-body {
+        max-width: 100%;
+      }
+    }
+    
   }
 
   // No image 
@@ -413,60 +540,4 @@ footer.site-footer {
   }
 }
 
-// Blockquote
-figure.quote-block {
-  background-color: $purple;
-  border-radius: $border-radius;  
-
-  // Simple
-  &.quote-simple {
-    div {
-      padding-left: 4rem;
-      padding-right: 4rem;
-    }
-
-    blockquote {
-      color: $white;
-      font-weight: 400;
-      position: relative;
-
-      &:before,
-      &:after {
-        font-size: 5rem;
-      }
-
-      &:before {
-        bottom: auto;
-        position: absolute;
-        top: -3rem;
-      }
-
-      &:after {
-        bottom: -6rem;
-        left: auto;
-        position: absolute;
-        right: 0;
-      }
-
-      p {
-        color: $white;
-        margin-left: 6rem;
-        margin-right: 4rem;
-      }
-    }
-
-    div figcaption {
-      color: $white;
-      margin-left: 6rem;
-      text-align: left;
-  
-      .quote-source-title {
-        font-style: normal;
-      }
-    }
-  } 
-
-
-  
-}
 
