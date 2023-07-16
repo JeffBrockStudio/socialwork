@@ -5,7 +5,7 @@ return array (
   'title' => '',
   'type' => 'resource',
   'id' => '64b3ae95cfae4',
-  'updated' => 1689497865,
+  'updated' => 1689498303,
   'columns' => 
   array (
     'title' => 
@@ -108,6 +108,54 @@ return array (
       'filter' => 'off',
       'filter_label' => '',
       'name' => '64b3aec09e3540',
+    ),
+    '64b3b16fc624dc' => 
+    array (
+      'type' => 'field_64b38da2ed21b',
+      'label' => 'Identifiers',
+      'width' => '200',
+      'width_unit' => 'px',
+      'character_limit' => '',
+      'export' => 'on',
+      'sort' => 'on',
+      'edit' => 'on',
+      'bulk_edit' => 'on',
+      'search' => 'on',
+      'filter' => 'off',
+      'filter_label' => '',
+      'name' => '64b3b16fc624dc',
+    ),
+    '64b3b17fcf9db4' => 
+    array (
+      'type' => 'field_64b38fd5dbcba',
+      'label' => 'Locator DOI',
+      'width' => '275',
+      'width_unit' => 'px',
+      'character_limit' => '',
+      'export' => 'on',
+      'sort' => 'on',
+      'edit' => 'on',
+      'bulk_edit' => 'on',
+      'search' => 'on',
+      'filter' => 'off',
+      'filter_label' => '',
+      'name' => '64b3b17fcf9db4',
+    ),
+    '64b3b19034fdf4' => 
+    array (
+      'type' => 'field_64b38dbced21c',
+      'label' => 'Locator URL',
+      'width' => '300',
+      'width_unit' => 'px',
+      'link_label' => '',
+      'export' => 'on',
+      'sort' => 'on',
+      'edit' => 'on',
+      'bulk_edit' => 'on',
+      'search' => 'on',
+      'filter' => 'off',
+      'filter_label' => '',
+      'name' => '64b3b19034fdf4',
     ),
     '64b3aed9ca3d70' => 
     array (
