@@ -79,7 +79,7 @@
             "name": "resource_year",
             "aria-label": "",
             "type": "number",
-            "instructions": "",
+            "instructions": "YYYY",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -89,7 +89,7 @@
             },
             "default_value": "",
             "min": "",
-            "max": "",
+            "max": 9999,
             "placeholder": "",
             "step": "",
             "prepend": "",
@@ -116,9 +116,26 @@
             "append": ""
         },
         {
-            "key": "field_64b38da2ed21b",
-            "label": "Identifier",
-            "name": "resource_identifier",
+            "key": "field_64b38dbced21c",
+            "label": "Locator URL",
+            "name": "resource_locator_url",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_64b38fd5dbcba",
+            "label": "Locator DOI",
+            "name": "resource_locator_doi",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -136,16 +153,16 @@
             "append": ""
         },
         {
-            "key": "field_64b38dbced21c",
-            "label": "Locator",
-            "name": "resource_locator",
+            "key": "field_64b38da2ed21b",
+            "label": "Identifiers",
+            "name": "resource_identifier",
             "aria-label": "",
             "type": "text",
-            "instructions": "DOI or URL",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "",
                 "class": "",
                 "id": ""
             },
@@ -231,5 +248,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1689488935
+    "modified": 1689492267
 }

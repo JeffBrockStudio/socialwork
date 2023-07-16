@@ -228,3 +228,12 @@ function custom_resources($atts) {
   
 }
 add_shortcode('publications', 'custom_resources');
+
+
+/**
+ * Admin Columns Pro local storage
+ */
+add_filter( 'acp/storage/file/directory', function() {
+	// Use a writable path, directory will be created for you
+	return get_stylesheet_directory() . '/acp-settings';
+} );
