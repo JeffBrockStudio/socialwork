@@ -96,10 +96,10 @@ function custom_create_post_types() {
 				'not_found'          => __( 'No publications found.' ),
 				'not_found_in_trash' => __( 'No publications found in Trash.' )
 			),
-			'menu_icon' => 'dashicons-calendar-alt',			
+			'menu_icon' => 'dashicons-analytics',			
 			'public' => true,
 			'hierarchical' => true,
-			'supports' => array( 'title', 'editor', 'thumbnail', 'page-attributes' ),
+			'supports' => array( 'title', 'editor' ),
 			'has_archive' => true			
 		)
 	);	
@@ -151,32 +151,32 @@ function custom_add_custom_taxonomies() {
 		)
 	);	
 	
-	// Seasons
-	register_taxonomy('seasons', 'event', 
+	// Publication Types	
+	register_taxonomy('publication_types', 'resource', 
 		array(
 			'labels' => array(
-				'name'                       => __( 'Seasons' ),
-				'singular_name'              => __( 'Season' ),
-				'menu_name'                  => __( 'Seasons' ),
-				'all_items'                  => __( 'All Seasons' ),
-				'parent_item'                => __( 'Parent Season' ),
-				'parent_item_colon'          => __( 'Parent Season' ),
-				'new_item_name'              => __( 'New Season Name' ),
-				'add_new_item'               => __( 'Add Season' ),
-				'edit_item'                  => __( 'Edit Season' ),
-				'update_item'                => __( 'Update Season' ),
-				'view_item'                  => __( 'View Season' ),
-				'separate_items_with_commas' => __( 'Separate seasons with commas' ),
-				'add_or_remove_items'        => __( 'Add or remove seasons' ),
+				'name'                       => __( 'Publication Types' ),
+				'singular_name'              => __( 'Publication Type' ),
+				'menu_name'                  => __( 'Types' ),
+				'all_items'                  => __( 'All Publication Types' ),
+				'parent_item'                => __( 'Parent Publication Type' ),
+				'parent_item_colon'          => __( 'Parent Publication Type' ),
+				'new_item_name'              => __( 'New Publication Type Name' ),
+				'add_new_item'               => __( 'Add Publication Type' ),
+				'edit_item'                  => __( 'Edit Publication Type' ),
+				'update_item'                => __( 'Update Publication Type' ),
+				'view_item'                  => __( 'View Publication Type' ),
+				'separate_items_with_commas' => __( 'Separate publication types with commas' ),
+				'add_or_remove_items'        => __( 'Add or remove publication types' ),
 				'choose_from_most_used'      => __( 'Choose from the most used' ),
-				'popular_items'              => __( 'Popular Seasons' ),
-				'search_items'               => __( 'Search Seasons' ),
+				'popular_items'              => __( 'Popular Publication Types' ),
+				'search_items'               => __( 'Search Publication Types' ),
 				'not_found'                  => __( 'Not Found' ),
 				'no_terms'                   => __( 'No items' ),
-				'items_list'                 => __( 'Seasons list' ),
-				'items_list_navigation'      => __( 'Seasons list navigation' )
+				'items_list'                 => __( 'Publication Types list' ),
+				'items_list_navigation'      => __( 'Publication Types list navigation' )
 			),		
-			'label' => __( 'Seasons' ),
+			'label' => __( 'Publication Types' ),
 			'hierarchical' => true		
 		)
 	);
