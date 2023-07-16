@@ -237,3 +237,31 @@ add_filter( 'acp/storage/file/directory', function() {
 	// Use a writable path, directory will be created for you
 	return get_stylesheet_directory() . '/acp-settings';
 } );
+
+
+/**
+ * Unregister tags for posts
+ */
+function alter_taxonomy_for_post() {
+	unregister_taxonomy_for_object_type('post_tag', 'post');
+}
+add_action( 'init', 'alter_taxonomy_for_post' );
+
+
+/**
+ * Disable post formats
+ */
+function remove_post_formats() { 
+	remove_theme_support('post-formats'); 
+} 
+add_action( 'after_setup_theme', 'remove_post_formats', 11 );
+
+
+/**
+ * Move Yoast SEO to bottom of edit screen.
+ */
+function yoasttobottom() {
+	return 'low';
+}
+add_filter( 'wpseo_metabox_prio', 'yoasttobottom');
+
