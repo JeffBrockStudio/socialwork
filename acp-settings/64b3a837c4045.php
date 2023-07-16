@@ -5,7 +5,7 @@ return array (
   'title' => '',
   'type' => 'team',
   'id' => '64b3a837c4045',
-  'updated' => 1689496924,
+  'updated' => 1689497707,
   'columns' => 
   array (
     'title' => 
@@ -40,13 +40,29 @@ return array (
       'filter_label' => '',
       'name' => '64b3aaaf24dd30',
     ),
+    '64b3b05fa56040' => 
+    array (
+      'type' => 'field_5ea8308383966',
+      'label' => 'Pronouns',
+      'width' => '',
+      'width_unit' => '%',
+      'character_limit' => '',
+      'export' => 'on',
+      'sort' => 'on',
+      'edit' => 'on',
+      'bulk_edit' => 'on',
+      'search' => 'on',
+      'filter' => 'off',
+      'filter_label' => '',
+      'name' => '64b3b05fa56040',
+    ),
     '64b3a7fbee5604' => 
     array (
       'type' => 'field_5ea830bb83968',
       'label' => 'Primary Title',
-      'width' => '',
-      'width_unit' => '%',
-      'character_limit' => '20',
+      'width' => '175',
+      'width_unit' => 'px',
+      'character_limit' => '',
       'export' => 'on',
       'sort' => 'on',
       'edit' => 'on',
@@ -174,8 +190,8 @@ return array (
     array (
       'type' => 'column-modified',
       'label' => 'Last Modified',
-      'width' => '',
-      'width_unit' => '%',
+      'width' => '200',
+      'width_unit' => 'px',
       'date_format' => 'F j, Y g:i a',
       'export' => 'on',
       'sort' => 'on',
@@ -186,6 +202,21 @@ return array (
       'filter_label' => '',
       'filter_format' => '',
       'name' => '64b3aa8457ced8',
+    ),
+    '64b3afda7020c4' => 
+    array (
+      'type' => 'column-last_modified_author',
+      'label' => 'By',
+      'width' => '',
+      'width_unit' => '%',
+      'display_author_as' => 'display_name',
+      'user_link_to' => 'edit_user',
+      'export' => 'on',
+      'sort' => 'on',
+      'search' => 'on',
+      'filter' => 'off',
+      'filter_label' => '',
+      'name' => '64b3afda7020c4',
     ),
   ),
   'settings' => 
