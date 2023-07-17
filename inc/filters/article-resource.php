@@ -11,9 +11,9 @@ $resource_locator_doi      = get_field( 'resource_locator_doi', $resource_id );
 <div class="col-12 item">
 	<article <?php post_class(); ?>>									
 										
-		<div class="row">
+		<div class="row no-gutters">
 				
-			<div class="col-12">
+			<div class="col-12 col-md-9">
 				<?php if ( $show['thumbnails'] ): ?>
 					<div class="image">
             <a href="<?php echo $permalink; ?>">
@@ -96,6 +96,14 @@ $resource_locator_doi      = get_field( 'resource_locator_doi', $resource_id );
 				</div>
 				
 			</div>
+
+      <div class="col-12 col-md-2 offset-md-1">
+        <ul class="access">
+					<li><a href="#" target="_blank"><?php _e( 'Google Scholar', 'socialwork');?></a></li>
+					<li><a href="#" target="_blank"><?php _e( 'Tagged', 'socialwork');?></a></li>
+					<li><a href="#" target="_blank"><?php _e( 'XML', 'socialwork');?></a></li>
+				</ul>
+      </div>
 							
 		</div>
 
