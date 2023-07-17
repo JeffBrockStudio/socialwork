@@ -1,0 +1,245 @@
+//
+// Resources
+// --------------------------------------------------
+
+  //
+	// Featured/Sticky Resource
+	// --------------------------------------------------
+	
+	.sticky-article {
+		background-color: $light;
+		padding-top: 3rem;
+		padding-bottom: 3rem;		
+		.superheading {
+			margin-bottom: 0.5rem;
+		}
+		.text {
+			margin-bottom: 1rem;
+		}
+		
+		&.job {
+			.buttons {
+				@include media-breakpoint-down(lg) {
+					margin-bottom: 2rem;
+				}
+			}
+			.excerpt {
+				padding-right: 2rem;
+				@include media-breakpoint-down(md) {
+					padding-right: 0;
+				}
+			}
+			.entry-meta {
+				ul {
+					list-style: none;
+					padding-left: 0;
+					li:not(:last-child) {
+						margin-bottom: 0.3rem;
+					}
+				}
+			}
+		}
+	}
+	
+	//
+	// Filters
+	// --------------------------------------------------
+	
+	.filter-wrapper {		
+		padding: 2rem 0;
+		.filter {
+			@include media-breakpoint-down(sm) {
+				margin-bottom: 1rem;
+			}
+		}
+		.label {
+			font-weight: 700;
+			margin-bottom: 0.5rem;	
+		}
+		input.submit {
+			background: $primary;
+			border-bottom-left-radius: $border-radius;
+			border-top-left-radius: $border-radius;
+			color: $white;
+			border: none;
+			font-family: 'Font Awesome 6 Pro';
+			height: 100%;
+			transition: $transition-base;
+			width: 2rem;
+			&:hover {
+				background: $link-hover-color;
+			}
+		}
+		.col-search {
+			@include media-breakpoint-down(sm) {
+				margin-top: 1rem;
+			}
+		}
+		.clear-filters {
+			cursor: pointer;
+			margin-top: 1rem;
+			@include media-breakpoint-down(sm) {
+				margin-top: 0;
+			}
+			&:hover {
+				color: $link-hover-color;
+			}
+		}
+	}
+	
+	
+	//
+	// List / Grid
+	// --------------------------------------------------
+	
+	.list-wrapper {
+		padding: 0 0 3rem;
+		
+		article {
+			padding: 1rem;
+		}
+		
+		&.layout-list {
+			article {
+				background: $white;
+        border: 1px solid #CCCCCC;
+				border-radius: $border-radius;
+			}
+		}
+		
+		&.layout-grid {
+			article {
+				background: $white;
+				border-radius: $border-radius;
+        border: 1px solid #CCCCCC;
+				.featured-image {
+					margin-bottom: 1rem;
+				}
+			}
+		}
+		
+		.featured-image {
+			img {
+				width: 100%;
+			}
+		}
+		
+		.taxonomies {
+			font-size: .9rem;
+			margin-bottom: 0.75rem;
+		}
+		
+		article {			
+//			height: calc( 100% - 4rem );
+			margin-bottom: 1rem;
+      margin-top: 0;		
+			> a {
+				color: inherit;
+				display: block;
+				padding: 2rem;
+				text-decoration: none !important;
+				@include media-breakpoint-down(sm) {
+					padding: 1rem;
+				}
+				&:hover {
+					outline: 8px solid $primary;
+				}
+			}
+			.title {
+				//margin-top: 0.75rem;
+        
+        h3 {
+          font-weight: 800;
+          margin-top: 0;
+
+          a {
+            text-decoration: none !important;
+          }
+        }
+			}						
+			.date,
+			.posted-on {
+				font-weight: $font-weight-bold;
+			}
+			.topic {
+				font-weight: $font-weight-bold;
+				text-align: right;
+			}
+			.type {
+				font-style: italic;
+			}
+			.text {
+				margin-top: 1rem;
+			}
+			
+			// Job
+			// ----------------------------------------------
+			&.job {
+				.title {
+					margin-top: 0;
+				}
+				.text {
+					margin-top: 0;
+				}
+				.taxonomies {
+					font-size: 1rem;
+					margin-top: 1rem;
+				}
+				.entry-meta {
+					ul {
+						list-style: none;
+						padding-left: 0;
+						li:not(:last-child) {
+							margin-bottom: 0.3rem;
+						}
+					}
+				}
+			}
+		}
+				
+	}
+	
+	
+	//
+	// Pagination
+	// --------------------------------------------------
+	.pagination-row {
+		justify-content: center;
+		width: 100%;
+		.btn {
+			background-image: none;
+			padding-right: $btn-padding-x;
+		}
+	
+		.pagination {
+			display: flex;
+			//justify-content: center;
+			.page-numbers {
+				font-family: $font-family-base;
+				font-size: 1.1rem;
+				font-weight: 700;
+				position: relative;
+				display: block;
+				padding: .5rem .75rem;
+				margin-left: -1px;
+				line-height: 1.25;
+				color: $white;
+				background-color: $primary;
+				border: 1px solid #dee2e6;
+				text-decoration: none;
+				text-transform: uppercase;
+				&:hover {
+					background-color: darken( $primary, 10% );
+				}
+			}
+			.current {
+				background-color: $black;
+				&:hover {
+					background-color: $black;
+				}
+			}
+			.dots:hover {
+				background: $secondary;
+			}
+		}
+	}

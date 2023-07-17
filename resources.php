@@ -83,12 +83,12 @@ $show = array();
 $show['author'] = FALSE;
 $show['button'] = FALSE;
 $show['date'] = FALSE;
-$show['excerpt'] = TRUE;
-$show['filters'] = TRUE;
-$show['search'] = TRUE;
+$show['excerpt'] = FALSE;
+$show['filters'] = FALSE;
+$show['search'] = FALSE;
 $show['sticky'] = FALSE;
 $show['taxonomies'] = TRUE;
-$show['thumbnails'] = TRUE;
+$show['thumbnails'] = FALSE;
 $show['title'] = TRUE;  
 
 
@@ -498,143 +498,141 @@ $show['title'] = TRUE;
 	?>
 	
 	<div id="<?php echo $post_type; ?>-list-wrapper" class="list-wrapper layout-<?php echo $layout; ?>">
-		<div class="<?php echo esc_attr( $container ); ?>">
-			<div id="posts-ajax" class="row <?php echo $post_type; ?>">
-				<?php
-				$the_query = new WP_Query( $args );
-				if ( $the_query->have_posts() ):
-					
-					$permalink_parent = get_permalink( $post->ID );									
-					$resources_list = array();	
-					while ( $the_query->have_posts() ):
-						$the_query->the_post();										
-						$resource_id = $post->ID;						
-						$resources_list[$resource_id]['id'] = $post->ID;					
-					endwhile;
-			
-					if ( count($resources_list) > 0 ):
-						$i = 1;
-						
-						if ( $post_type == 'team' ):?>							
-							<div class="view-content">
-							
-								<?php
-								$i = 1;
-								foreach ( $resources_list AS $resource_item):			
-									$resource_id = $resource_item['id'];
-									include( 'inc/filters/article-' .$post_type. '-full.php' );	?>
-									<?php
-								$i++;
-								endforeach;
-								wp_reset_postdata();?>
-							
-							</div>
-							<?php
-						else:
-							
-							foreach ( $resources_list AS $resource_item):			
-								$resource_id = $resource_item['id'];		
-								
-								$post = get_post( $resource_id ); 							
-								if ( has_category( 'in-the-news' )): 
-									$permalink = esc_url( get_field( 'news-external-url' ));
-									$target = '_blank';
-								else:
-									$permalink = esc_url( get_permalink( $resource_id ));
-									$target = '';
-								endif;
-								
-								// Item: Event, Post, Resource, Team													
-								include( 'inc/filters/article-' .$post_type. '.php' );	
-								
-								$i++; 
-							endforeach;
-							
-						endif;												
-							
-					endif;
-					
-				else: ?>
+		<div id="posts-ajax" class="row <?php echo $post_type; ?>">
+			<?php
+			$the_query = new WP_Query( $args );
+			if ( $the_query->have_posts() ):
 				
-					<div class="not-found">
-						<h3><?php echo get_field( 'text_no_' .$post_type. '_found', 'options' ); ?></h3>
-					</div>
-					<?php
+				$permalink_parent = get_permalink( $post->ID );									
+				$resources_list = array();	
+				while ( $the_query->have_posts() ):
+					$the_query->the_post();										
+					$resource_id = $post->ID;						
+					$resources_list[$resource_id]['id'] = $post->ID;					
+				endwhile;
+		
+				if ( count($resources_list) > 0 ):
+					$i = 1;
 					
-				endif; 									
-				?>
-	
-				<div class="row spinner-row">
-					<div class="col-12">
-						<div class="icon-spinner-circle"></div>
-					</div>
-				</div>
-					
-					<?php 						
-					if ( $pagination == 'ajax' ):
-						$next_posts_link = get_next_posts_link($load_more_text . ' <i class="fa fas fa-arrow-down"></i>', $the_query->max_num_pages);
-					
-						if( $next_posts_link ): ?>
-							<div class="row pagination-row">
-								<div class="col-12">
-									<?php 
-									echo $next_posts_link; ?>
-								</div>
-							</div>
-							<?php
-						endif;
-						wp_reset_postdata();				
+					if ( $post_type == 'team' ):?>							
+						<div class="view-content">
 						
-					elseif ( $pagination == 'links' ): ?>
-											
+							<?php
+							$i = 1;
+							foreach ( $resources_list AS $resource_item):			
+								$resource_id = $resource_item['id'];
+								include( 'inc/filters/article-' .$post_type. '-full.php' );	?>
+								<?php
+							$i++;
+							endforeach;
+							wp_reset_postdata();?>
+						
+						</div>
+						<?php
+					else:
+						
+						foreach ( $resources_list AS $resource_item):			
+							$resource_id = $resource_item['id'];		
+							
+							$post = get_post( $resource_id ); 							
+							if ( has_category( 'in-the-news' )): 
+								$permalink = esc_url( get_field( 'news-external-url' ));
+								$target = '_blank';
+							else:
+								$permalink = esc_url( get_permalink( $resource_id ));
+								$target = '';
+							endif;
+							
+							// Item: Event, Post, Resource, Team													
+							include( 'inc/filters/article-' .$post_type. '.php' );	
+							
+							$i++; 
+						endforeach;
+						
+					endif;												
+						
+				endif;
+				
+			else: ?>
+			
+				<div class="not-found">
+					<h3><?php echo get_field( 'text_no_' .$post_type. '_found', 'options' ); ?></h3>
+				</div>
+				<?php
+				
+			endif; 									
+			?>
+
+			<div class="row spinner-row">
+				<div class="col-12">
+					<div class="icon-spinner-circle"></div>
+				</div>
+			</div>
+				
+				<?php 						
+				if ( $pagination == 'ajax' ):
+					$next_posts_link = get_next_posts_link($load_more_text . ' <i class="fa fas fa-arrow-down"></i>', $the_query->max_num_pages);
+				
+					if( $next_posts_link ): ?>
 						<div class="row pagination-row">
 							<div class="col-12">
-								<div class="pagination">
-									<?php 
-									$total_pages = $the_query->max_num_pages;
-							
-									if ($total_pages > 1){
-							
-											$current_page = max(1, get_query_var('paged'));
-											
-											$querystring_array = array();											
-											if ( get_query_var('search') ):
-												$querystring_array['search'] = get_query_var('search');
-											endif;
-											
-											if ( get_query_var('news_topics') ):											
-												$querystring_array['news_topics'] = get_query_var('news_topics');
-											endif;
-											
-											if ( get_query_var('news_types') ):											
-												$querystring_array['news_types'] = get_query_var('resource_topics');
-											endif;
-											
-											// print ( '<pre>' );
-											// print_r( $querystring_array );
-											// print ( '</pre> ');
-							
-											echo paginate_links(array(
-													'base' => preg_replace('/\?.*/', '/', get_pagenum_link(1)) . '%_%',
-													'format' => 'page/%#%/',
-													'current' => $current_page,
-													'total' => $total_pages,
-													'prev_text' => __('«'),
-													'next_text' => __('»'),
-													'add_args' => $querystring_array
-											));
-									}								
-							
-									wp_reset_postdata();	
-									?>
-								</div>
+								<?php 
+								echo $next_posts_link; ?>
 							</div>
 						</div>
 						<?php
-					endif;	
-					wp_reset_postdata();	
-					?>
-				</div>
+					endif;
+					wp_reset_postdata();				
+					
+				elseif ( $pagination == 'links' ): ?>
+										
+					<div class="row pagination-row">
+						<div class="col-12">
+							<div class="pagination">
+								<?php 
+								$total_pages = $the_query->max_num_pages;
+						
+								if ($total_pages > 1){
+						
+										$current_page = max(1, get_query_var('paged'));
+										
+										$querystring_array = array();											
+										if ( get_query_var('search') ):
+											$querystring_array['search'] = get_query_var('search');
+										endif;
+										
+										if ( get_query_var('news_topics') ):											
+											$querystring_array['news_topics'] = get_query_var('news_topics');
+										endif;
+										
+										if ( get_query_var('news_types') ):											
+											$querystring_array['news_types'] = get_query_var('resource_topics');
+										endif;
+										
+										// print ( '<pre>' );
+										// print_r( $querystring_array );
+										// print ( '</pre> ');
+						
+										echo paginate_links(array(
+												'base' => preg_replace('/\?.*/', '/', get_pagenum_link(1)) . '%_%',
+												'format' => 'page/%#%/',
+												'current' => $current_page,
+												'total' => $total_pages,
+												'prev_text' => __('«'),
+												'next_text' => __('»'),
+												'add_args' => $querystring_array
+										));
+								}								
+						
+								wp_reset_postdata();	
+								?>
+							</div>
+						</div>
+					</div>
+					<?php
+				endif;	
+				wp_reset_postdata();	
+				?>
 			</div>
 		</div>
 			
