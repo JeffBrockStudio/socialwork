@@ -12,13 +12,25 @@ function uw_child_enqueue_styles() {
 	
 	wp_enqueue_style( 'uw_wp_theme-child-style', get_stylesheet_uri(),
         array( $parenthandle ), 
-        wp_get_theme()->get('Version') // this only works if you have Version in the style header
+        wp_get_theme()->get('Version') 
     );
 
     wp_enqueue_style( 'socialwork-style', get_stylesheet_directory_uri() . '/custom.css',
         array( $parenthandle ), 
-        wp_get_theme()->get('Version') // this only works if you have Version in the style header
+        wp_get_theme()->get('Version')
     );
+
+		// Pretty Dropdowns
+		wp_enqueue_script( 'pretty-dropdowns', get_stylesheet_directory_uri() . '/src/js/jquery.prettydropdowns.js', 
+				array( $parenthandle ),
+				wp_get_theme()->get('Version')
+		);
+
+		// Custom JavaScript for Social Work
+		wp_enqueue_script( 'custom-javascript', get_stylesheet_directory_uri() . '/src/js/custom-javascript.js', 
+				array( $parenthandle ),
+				wp_get_theme()->get('Version')
+		);
 }
 
 /**

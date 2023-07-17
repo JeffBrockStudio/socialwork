@@ -516,10 +516,12 @@ $show['title'] = TRUE;
 				
 				$permalink_parent = get_permalink( $post->ID );									
 				$resources_list = array();	
+
+			
 				while ( $the_query->have_posts() ):
 					$the_query->the_post();										
 					$resource_id = $post->ID;						
-					$resources_list[$resource_id]['id'] = $post->ID;					
+					$resources_list[$resource_id]['id'] = $post->ID;		
 				endwhile;
 		
 				if ( count($resources_list) > 0 ):
@@ -540,8 +542,7 @@ $show['title'] = TRUE;
 						
 						</div>
 						<?php
-					else:
-						
+					else:						
 						foreach ( $resources_list AS $resource_item):			
 							$resource_id = $resource_item['id'];		
 							
