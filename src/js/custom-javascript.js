@@ -115,8 +115,8 @@ jQuery(document).ready(function($) {
 	});		
 	
 	// Clear filters
-	$('.clear-filters').click(function() {
-	
+	$(document).on('click', '.clear-filters', function(event) {
+
 		hideElements();
 		
 		var post_type = $(this).data('post_type');

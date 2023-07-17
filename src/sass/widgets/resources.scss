@@ -311,7 +311,10 @@
 	// --------------------------------------------------
   .not-found {
     .inner {
-      background-color: #ebebeb;      
+      background-color: #ebebeb;    
+      border-radius: $border-radius;  
+      display: flex;
+      justify-content: space-between;
       font-weight: 700;
       padding: 1rem 1.5rem;
       text-align: left;
@@ -320,5 +323,32 @@
         font-size: 0.882rem;
         margin-bottom: 0;
       }
+    }
+  }
+
+  //
+	// Clear search
+	// --------------------------------------------------
+  .clear-filters {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    font-size: 0.882rem;
+
+    &:hover {
+      p {
+        color: $purple;
+      }
+
+      svg {
+        #clear-filters-button-background {
+          fill: $purple;
+        }
+      }
+    }
+
+    svg {
+      margin-right: 0.5rem;
+      
     }
   }
