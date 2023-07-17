@@ -1,4 +1,4 @@
-<div class="col-12 col-md-3">
+<div class="col-12 col-md-3 item">
   <div class="inner">
     <div class="thumb">
       <a href="<?php echo get_permalink( $resource_id ); ?>">
