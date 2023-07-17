@@ -265,3 +265,32 @@ function yoasttobottom() {
 }
 add_filter( 'wpseo_metabox_prio', 'yoasttobottom');
 
+
+/**
+ * Show links to authors.
+ */
+function show_authors($resources) { ?>
+	<p class="authors">
+		<strong><?php 
+			if (count($resources) == 1):
+				_e( 'Authors', 'socialwork');
+			else:
+				_e( 'Author(s)', 'socialwork');
+			endif; ?>:
+		</strong>
+		<?php
+		$i = 1;
+		foreach ($resources as $post):
+			setup_postdata($post); ?>
+			<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+			<?php
+			if ($i < count($resources)):
+				echo ' | ';
+			endif;
+			$i++;
+		endforeach;
+		wp_reset_postdata(); ?>
+	</p>
+	<?php
+}
+

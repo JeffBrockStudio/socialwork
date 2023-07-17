@@ -131,7 +131,7 @@
 		
 		article {			
 //			height: calc( 100% - 4rem );
-			margin-bottom: 1rem;
+			margin-bottom: 0.6rem;
       margin-top: 0;		
 			> a {
 				color: inherit;
@@ -172,28 +172,24 @@
 				margin-top: 1rem;
 			}
 			
-			// Job
+			// Publication
 			// ----------------------------------------------
-			&.job {
-				.title {
-					margin-top: 0;
-				}
-				.text {
-					margin-top: 0;
-				}
-				.taxonomies {
-					font-size: 1rem;
-					margin-top: 1rem;
-				}
-				.entry-meta {
-					ul {
-						list-style: none;
-						padding-left: 0;
-						li:not(:last-child) {
-							margin-bottom: 0.3rem;
-						}
-					}
-				}
+			&.resource {
+        padding: 1.5rem 1.5rem 1.5rem 2rem;
+        
+				.authors {
+          br {
+            display: none;
+          }
+        }
+
+        .publication-name {
+          margin-bottom: 0;
+
+          strong + br {
+            display: none;
+          }
+        }
 			}
 		}
 				
