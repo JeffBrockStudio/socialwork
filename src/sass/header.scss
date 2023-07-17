@@ -1,0 +1,25 @@
+//
+// Header
+// --------------------------------------------------
+header.site-header {
+
+  // Wordmark
+  div.navbar .site-branding .uw-wordmark {
+    background: transparent url(assets/images/SSW_UW_wordmark.png) no-repeat scroll left center;
+    background-size: contain;
+    height: 90px;
+    left: 20px;
+    transform: none;
+
+    @include media-breakpoint-down(lg) {
+      height: 40px;
+      left: 10px;
+      width: 240px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      height: 30px;  
+      width: 170px;
+    }
+  }
+}

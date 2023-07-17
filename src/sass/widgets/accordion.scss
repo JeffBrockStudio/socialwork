@@ -1,0 +1,36 @@
+//
+// Accordion
+// --------------------------------------------------
+
+.accordion {
+  >.card {
+    &:first-of-type {
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+  }
+
+  .card {
+    border: none;
+    margin-bottom: 3px;
+
+    .card-header {
+      background-color: $gray-light;
+      border-bottom: none;
+
+      h3 button {
+        font-size: 1.471rem;
+        font-weight: 700;
+        line-height: 1.252;
+        
+        span.btn-text {
+          padding: 1.5rem;
+        }
+      }
+    }
+  } 
+
+  + p {
+    display: none;
+  }
+} 

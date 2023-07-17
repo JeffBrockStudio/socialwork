@@ -1,0 +1,70 @@
+.single-team {
+  .image {
+    margin-bottom: 1rem;
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .bio {
+    margin-top: 2rem;
+  }
+
+  header {
+    margin-bottom: 0;
+  }
+
+  .title {
+    color: $purple;
+    font-family: 'Encode Sans Condensed', sans-serif;
+    font-size: 1.471rem;
+    font-weight: 700;
+  }
+
+  
+
+    .additional-affiliations,
+    .degrees,
+    .email,
+    .phone,
+    .room,
+    .cv {
+      color: $black;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+      margin-bottom: 0.5rem;
+
+      br {
+        display: none;
+      }
+
+      svg {
+        margin-right: .5rem;
+        width: 1.5rem;
+      }
+    }
+
+    .additional-affiliations,
+    .degrees {
+      font-weight: bold;
+    }
+
+    .email,
+    .phone {
+      margin-bottom: .5rem;
+    }
+
+    .professional-interests {
+      margin-top: 3rem;
+      ul {
+        padding-left: 0;
+      }
+      li {
+        margin-bottom: 0.5rem;
+      }
+    }
+  
+}

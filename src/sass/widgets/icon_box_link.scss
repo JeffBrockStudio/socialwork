@@ -1,0 +1,73 @@
+//
+// Icon Box Link
+// --------------------------------------------------
+
+.elementor-widget-ucaddon_socialwork_icon_box_link {
+  height: 100%;
+
+  .elementor-widget-container,
+  .social-work-icon-box-link,
+  a {
+    height: 100%;
+  }
+
+  .social-work-icon-box-link {
+
+    a {
+      color: $white;
+      display: block;
+      padding: 1.5rem;
+      position: relative;
+      text-decoration: none;
+    }
+  
+    h3 {
+      margin-top: 0;
+      padding-right: 3rem;
+    }
+
+    .icon + h3 {
+      margin-top: 30px;
+    }
+  
+    // Hide extra paragraph from wpautop
+    a + p {
+      display: none;
+    }
+
+    .arrow {
+      position: absolute;
+      right: 1.5rem;
+      bottom: 1rem;
+    }
+  
+    &.purple {
+      
+      a,
+      h3 {
+        color: $white;
+      }
+
+      a {
+        background-color: $purple;
+        &:hover {
+          background-color: darken( $purple, 5% );
+        }
+      }
+    }
+
+    &.gold {            
+      a,
+      h3 {
+        color: $white;
+      }
+
+      a {
+        background-color: $gold-metallic;
+        &:hover {
+          background-color: darken( $gold-metallic, 5% );
+        }
+      }
+    }
+  }  
+}

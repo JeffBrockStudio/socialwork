@@ -1,0 +1,70 @@
+//
+// Blockquote
+// --------------------------------------------------
+
+figure.quote-block {
+  background-color: $purple;
+  border-radius: $border-radius;  
+
+  // Simple
+  &.quote-simple {
+    div {
+      padding-left: 4rem;
+      padding-right: 4rem;
+
+      @include media-breakpoint-down(sm) {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+    }
+
+    blockquote {
+      color: $white;
+      font-weight: 400;
+      position: relative;
+
+      &:before,
+      &:after {
+        font-size: 5rem;
+      }
+
+      &:before {
+        bottom: auto;
+        position: absolute;
+        top: -3rem;
+      }
+
+      &:after {
+        bottom: -6rem;
+        left: auto;
+        position: absolute;
+        right: 0;
+      }
+
+      p {
+        color: $white;
+        margin-left: 6rem;
+        margin-right: 4rem;
+
+        @include media-breakpoint-down(sm) {
+          margin-left: 4rem;
+          margin-right: 1rem;
+        }
+      }
+    }
+
+    div figcaption {
+      color: $white;
+      margin-left: 6rem;
+      text-align: left;
+
+      @include media-breakpoint-down(sm) {
+        margin-left: 4rem;
+      }
+  
+      .quote-source-title {
+        font-style: normal;
+      }
+    }
+  } 
+}

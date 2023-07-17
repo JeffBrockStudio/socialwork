@@ -1,0 +1,45 @@
+//
+// Statistics
+// --------------------------------------------------
+
+.statistics {
+  margin-bottom: 3rem !important;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+
+  .statistic {
+
+    .number {
+      font-family: 'Encode Sans Condensed', sans-serif;
+      font-size: 2.353rem;
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+
+    .text {
+      font-weight: 700;
+      line-height: 1.3529rem;
+      padding-left: 1.3rem;
+      padding-right: 1.3rem;
+    }
+
+    .source {
+      margin-top: 0.7rem;
+      padding-left: 1.1rem;
+      padding-right: 1.1rem;
+
+      cite {
+        display: block;
+        font-size: 0.882rem;
+        line-height: 1.4667;
+      }
+    }
+
+    &.purple {
+      color: $white;
+    }
+  
+    text-align: center;
+  }
+}

@@ -194,7 +194,7 @@ function custom_team($atts) {
    ), $atts);	
    
   ob_start();
-    require('team.php');
+	require('team.php');
     
   // Save output and stop output buffering
   $output = ob_get_clean();
