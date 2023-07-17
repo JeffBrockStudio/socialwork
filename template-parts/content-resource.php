@@ -104,14 +104,14 @@ $resource_identifier       = get_field( 'resource_identifier', $resource_id );
 					<a href="#" target="_blank"><?php _e( 'XML', 'socialwork');?></a>
 				</p>
 
-				<div class="abstract">
-					<p><strong><?php _e( 'Abstract', 'socialwork'); ?>:</strong></p>
-
-					<div class="entry">
-						<?php the_content(); ?>
+				<?php if ( !empty( get_the_content() ) ): ?>
+					<div class="abstract">
+						<p><strong><?php _e( 'Abstract', 'socialwork'); ?>:</strong></p>
+						<div class="entry">
+							<?php the_content(); ?>
+						</div>						
 					</div>
-				</div>
-			</div>
+				<?php endif; ?>
 
 		</div>
 	</div><!-- .entry-content -->
