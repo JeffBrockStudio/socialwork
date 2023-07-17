@@ -91,7 +91,7 @@ function custom_create_post_types() {
 				'edit_item'          => __( 'Edit Publication' ),
 				'view_item'          => __( 'View Publication' ),
 				'all_items'          => __( 'All Publications' ),
-				'search_items'       => __( 'Search Publications' ),
+				'search_items'       => __( 'Search name or keyword' ),
 				'parent_item_colon'  => __( 'Parent Publications:' ),
 				'not_found'          => __( 'No publications found.' ),
 				'not_found_in_trash' => __( 'No publications found in Trash.' )

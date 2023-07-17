@@ -46,7 +46,7 @@
 	// --------------------------------------------------
 	
 	.filter-wrapper {		
-		padding: 2rem 0;
+		padding: 0 0 3rem;
 		.filter {
 			@include media-breakpoint-down(sm) {
 				margin-bottom: 1rem;
@@ -57,23 +57,41 @@
 			margin-bottom: 0.5rem;	
 		}
 		input.submit {
-			background: $primary;
-			border-bottom-left-radius: $border-radius;
-			border-top-left-radius: $border-radius;
+			background-color: $gold-metallic;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='19' viewBox='0 0 20 19' fill='none'%3E%3Cpath d='M19.9609 16.6106L15.0738 11.8891C15.935 10.7035 16.4424 9.26845 16.4424 7.72159C16.4424 3.66587 12.9695 0.365234 8.70122 0.365234C4.43296 0.365234 0.960938 3.66587 0.960938 7.72159C0.960938 11.7773 4.43384 15.0779 8.70122 15.0779C10.3929 15.0779 11.9538 14.554 13.2285 13.6754L18.0831 18.3644L19.9609 16.609V16.6106ZM8.70122 12.5758C5.88498 12.5758 3.59458 10.3981 3.59458 7.72242C3.59458 5.0467 5.88586 2.86908 8.70122 2.86908C11.5166 2.86908 13.8079 5.0467 13.8079 7.72242C13.8079 10.3981 11.5166 12.5758 8.70122 12.5758Z' fill='white'/%3E%3C/svg%3E");
+      background-position: center;
+      background-repeat: no-repeat;
+			border-bottom-right-radius: $border-radius;
+			border-top-right-radius: $border-radius;
 			color: $white;
 			border: none;
-			font-family: 'Font Awesome 6 Pro';
 			height: 100%;
 			transition: $transition-base;
-			width: 2rem;
+			width: 3rem;
 			&:hover {
-				background: $link-hover-color;
+				background-color: $purple;
 			}
 		}
 		.col-search {
-			@include media-breakpoint-down(sm) {
-				margin-top: 1rem;
-			}
+      @include media-breakpoint-down(sm) {
+        margin-top: 1rem;  
+      }
+
+      .label {
+        display: none;
+      }
+
+      .search-query {
+        border-bottom-left-radius: $border-radius !important;
+			  border-top-left-radius: $border-radius !important;
+        font-family: $headings-font-family; 
+        font-size: 1.059rem;
+        font-weight: 600;
+        height: 48px;
+        padding-left: 1rem;
+      }
+
+
 		}
 		.clear-filters {
 			cursor: pointer;
@@ -196,7 +214,7 @@
           }
         }
 
-        .access {
+        ul.access {
           list-style: none;
           margin-left: 0;
           padding-left: 0;

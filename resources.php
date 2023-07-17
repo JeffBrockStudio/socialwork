@@ -96,7 +96,7 @@ $show['button'] = FALSE;
 $show['date'] = FALSE;
 $show['excerpt'] = FALSE;
 $show['filters'] = FALSE;
-$show['search'] = FALSE;
+$show['search'] = TRUE;
 $show['sticky'] = FALSE;
 $show['taxonomies'] = TRUE;
 $show['thumbnails'] = FALSE;
@@ -243,7 +243,7 @@ $show['title'] = TRUE;
 										endif; ?>
 											<div class="<?php echo $col_styles;?>">
 											
-												<div class="label"><?php _e( 'Filter by', 'powehi' ) ?>:</div>
+												<div class="label"><?php _e( 'Filter by', 'socialwork' ) ?>:</div>
 												
 												<div class="row">
 													
@@ -289,7 +289,7 @@ $show['title'] = TRUE;
 												</div>
 												
 												<div class="clear-filters" data-post_type="<?php echo $post_type; ?>" data-taxonomies='<?php echo json_encode( $taxonomies ) ?>' data-search_placeholder="<?php echo $post_type_labels->search_items; ?>">
-													<i class="fas fa-times"></i> <?php _e( 'Clear all filters', 'powehi' ); ?>
+													<i class="fas fa-times"></i> <?php _e( 'Clear all filters', 'socialwork' ); ?>
 												</div>									
 											</div>
 										<?php 
@@ -298,7 +298,7 @@ $show['title'] = TRUE;
 									<?php 
 									if ( $show['search'] ): 
 										if (!$show['filters']):
-											$col_styles = 'col-12';
+											$col_styles = 'col-12 col-md-8 offset-md-2';
 										else:
 											$col_styles = 'col-12 col-md-4 offset-md-1';
 										endif; ?>
@@ -309,21 +309,21 @@ $show['title'] = TRUE;
 											
 											<div class="search">
 												<form id="<?php echo $post_type; ?>-search" class="filters-search-form" data-post_type="<?php echo $post_type; ?>" data-taxonomies='<?php echo json_encode( $taxonomies ) ?>'>
-													<label class="sr-only" for="s"><?php _e( 'Search', 'powehi' ); ?></label>
-													<div class="input-group">
-														<span class="input-group-prepend">
-															<input 
-																class="submit" 
-																name="submit" 
-																type="submit" 
-																value="&#xf002;">
-														</span>															
+													<label class="sr-only" for="s"><?php _e( 'Search', 'socialwork' ); ?></label>
+													<div class="input-group">														
 														<input 
 															id="<?php echo $post_type; ?>-search-query" 
 															class="field form-control search-query" 
 															type="text"
-															placeholder="<?php if ( isset($_GET['search']) ) { esc_attr_e( $_GET['search'], 'understrap' ); } else { esc_attr_e( $post_type_labels->search_items, 'understrap' ); }; ?>" 
-															value="">											
+															placeholder="<?php if ( isset($_GET['search']) ) { esc_attr_e( $_GET['search'], 'socialwork' ); } else { esc_attr_e( $post_type_labels->search_items, 'socialwork' ); }; ?>" 
+															value="">						
+															<span class="input-group-append">
+															<input 
+																class="submit" 
+																name="submit" 
+																type="submit" 
+																value="">
+														</span>																				
 													</div>
 												</form>									
 											</div>

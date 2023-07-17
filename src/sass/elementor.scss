@@ -1,6 +1,40 @@
 //
 // Elementor
 // --------------------------------------------------
+.elementor-section {
+	&.m-0 {
+		margin-left: 8px!important;
+    margin-right: 8px!important;
+	}
+
+	.narrow {
+		padding-left: 14rem;
+		padding-right: 14rem;
+
+    @include media-breakpoint-down(lg) {
+      padding-left: 8rem;
+      padding-right: 8rem;
+    }
+
+    @include media-breakpoint-down(md) {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+	}
+}
+
+.elementor-shortcode {
+	.btn {
+		&:hover {
+			span {
+				background-color: darken( $gold-metallic, 10% );
+			}	
+		}
+		span {
+			border-radius: $border-radius;
+		}
+	}
+}
 
 .elementor {
 
