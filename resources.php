@@ -575,10 +575,8 @@ $show['title'] = TRUE;
 			endif; 									
 			?>
 
-			<div class="row spinner-row">
-				<div class="col-12">
-					<div class="icon-spinner-circle"></div>
-				</div>
+			<div class="col-12 spinner-row">
+				<div class="icon-spinner-circle"></div>
 			</div>
 				
 				<?php 						

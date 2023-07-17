@@ -141,8 +141,6 @@ jQuery(document).ready(function($) {
 		loadAjax(href);
 	});
 
-	console.log( 'custom-javascript.js loaded' );
-	
 		
 });
 

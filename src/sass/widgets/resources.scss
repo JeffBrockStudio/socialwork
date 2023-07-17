@@ -283,3 +283,23 @@
 			}
 		}
 	}
+
+  //
+	// Spinner
+	// --------------------------------------------------
+  .spinner-row {
+    display: none;
+    height: 3rem;
+    margin-top: 0;
+    margin-bottom: 3rem;
+    &.visible {
+      display: block;
+    }
+    .icon-spinner-circle {
+      background: url(assets/svg/spinner.svg) no-repeat center;
+      background-size: cover;
+      margin: 0 auto;
+      height: 2rem;
+      width: 2rem;	
+    }
+  }
