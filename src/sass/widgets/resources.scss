@@ -230,7 +230,69 @@
 			}
 		}
 				
-	}
+    &#team-list-wrapper {
+      .thumb {
+        display: block;
+				margin-bottom: 0.5rem;
+				position: relative;
+
+        img {
+          width: 100%;
+        }
+			}
+
+			.text {
+				text-align: left;
+				h3 {
+					font-size: 1.5rem;
+					font-weight: 700;
+					margin-bottom: 0.25rem;
+					margin-top: 0;
+				}
+				p {
+          color: $purple;
+					font-size: 1.1rem;
+					font-weight: 700;
+					line-height: 1.5;
+					&.title {
+						margin-bottom: 0.2rem;
+					}
+				}
+				.pronouns {
+					font-style: italic;
+					font-weight: normal;
+					margin-top: -0.75rem;
+					text-transform: none;
+				}
+        .additional-affiliations,
+        .degrees,
+        .email,
+        .phone,
+        .room {
+          color: $black;
+          font-size: 0.882rem;
+          font-weight: 400;
+          line-height: 1.5;
+          margin-bottom: 0.75rem;
+
+          br {
+            display: none;
+          }
+
+          svg {
+            margin-right: .5rem;
+            width: 1.5rem;
+          }
+        }
+
+        .email,
+        .phone {
+          margin-bottom: .5rem;
+        }
+			}
+    }
+  
+  }
 	
 	
 	//
@@ -312,7 +374,7 @@
   .not-found,
   .results-found {
     margin-bottom: 2.2rem;
-    
+
     .inner {
       background-color: #ebebeb;    
       border-radius: $border-radius;  

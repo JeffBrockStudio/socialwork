@@ -32,7 +32,7 @@ switch( $post_type ):
 	// Team
 	case 'team':
 		$preselected_filter_name = 'team_roles';
-		$search_engine = 'default';
+		$search_engine = 'team';
 		
 		$terms = get_sub_field( 'team_roles' );
 		if ( $terms ):
@@ -549,7 +549,6 @@ $show['title'] = TRUE;
 					$i = 1;
 					
 					if ( $post_type == 'team' ):?>							
-						<div class="view-content">
 						
 							<?php
 							$i = 1;
@@ -561,7 +560,6 @@ $show['title'] = TRUE;
 							endforeach;
 							wp_reset_postdata();?>
 						
-						</div>
 						<?php
 					else:						
 						foreach ( $resources_list AS $resource_item):			
