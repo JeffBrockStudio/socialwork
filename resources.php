@@ -568,7 +568,9 @@ $show['title'] = TRUE;
 			else: ?>
 
 				<div class="col-12 not-found">
-					<h3>No publications found with that keyword combination.</h3>
+					<div class="inner">
+						<p><?php _e( 'No results for', 'socialwork');?>: "<?php esc_attr_e( $_GET['search'], 'socialwork' ); ?>"</p>
+					</div>
 				</div>
 				<?php
 				

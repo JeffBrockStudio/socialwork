@@ -310,5 +310,15 @@
 	// Not Found
 	// --------------------------------------------------
   .not-found {
-    text-align: center;
+    .inner {
+      background-color: #ebebeb;      
+      font-weight: 700;
+      padding: 1rem 1.5rem;
+      text-align: left;
+
+      p {
+        font-size: 0.882rem;
+        margin-bottom: 0;
+      }
+    }
   }
