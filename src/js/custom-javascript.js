@@ -26,6 +26,7 @@ jQuery(document).ready(function($) {
 	// Functions 
 	function hideElements() {
 		$('.not-found').hide();
+		$('.results-found').hide();
 		$('.pagination-row').remove();		
 		$('#posts-ajax .item').remove();
 		$('.spinner-row').addClass('visible');

@@ -520,7 +520,31 @@ $show['title'] = TRUE;
 					$resource_id = $post->ID;						
 					$resources_list[$resource_id]['id'] = $post->ID;		
 				endwhile;
-		
+				
+				if ( array_key_exists( 'search', $_GET ) && $_GET['search'] ) { ?>
+					<div class="col-12 results-found">
+						<div class="inner">
+							<p><?php echo $the_query->post_count; 
+							if ($the_query->post_count == 1):
+								_e( ' result for', 'socialwork');
+							else:
+								_e( ' results for', 'socialwork');
+							endif; ?>: "<?php esc_attr_e( $_GET['search'], 'socialwork' ); ?>"								
+							</p>
+
+							<div class="clear-filters" data-post_type="<?php echo $post_type; ?>" data-taxonomies='<?php echo json_encode( $taxonomies ) ?>' data-search_placeholder="<?php echo $post_type_labels->search_items; ?>">
+								<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
+									<path id="clear-filters-button-background" d="M12.8286 25.6383C19.6904 25.6383 25.253 20.0756 25.253 13.2137C25.253 6.35175 19.6904 0.789062 12.8286 0.789062C5.96687 0.789062 0.404297 6.35175 0.404297 13.2137C0.404297 20.0756 5.96687 25.6383 12.8286 25.6383Z" fill="#85754D"/>
+									<path d="M17.7679 8.15479L7.77051 18.1524" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+									<path d="M7.77051 8.15479L17.7679 18.1524" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+								<p><?php _e( 'Clear search', 'socialwork' ); ?></p>
+							</div>		
+						</div>
+					</div>
+				<?php } ?>
+
+				<?php
 				if ( count($resources_list) > 0 ):
 					$i = 1;
 					

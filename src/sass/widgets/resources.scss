@@ -307,9 +307,12 @@
 
 
   //
-	// Not Found
+	// Not Found & Results Found
 	// --------------------------------------------------
-  .not-found {
+  .not-found,
+  .results-found {
+    margin-bottom: 2.2rem;
+    
     .inner {
       background-color: #ebebeb;    
       border-radius: $border-radius;  
