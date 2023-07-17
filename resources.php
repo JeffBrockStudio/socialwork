@@ -566,9 +566,9 @@ $show['title'] = TRUE;
 				endif;
 				
 			else: ?>
-			
-				<div class="not-found">
-					<h3><?php echo get_field( 'text_no_' .$post_type. '_found', 'options' ); ?></h3>
+
+				<div class="col-12 not-found">
+					<h3>No publications found with that keyword combination.</h3>
 				</div>
 				<?php
 				
