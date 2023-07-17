@@ -84,7 +84,7 @@ $show['author'] = FALSE;
 $show['button'] = FALSE;
 $show['date'] = FALSE;
 $show['excerpt'] = TRUE;
-$show['filters'] = FALSE;
+$show['filters'] = TRUE;
 $show['search'] = TRUE;
 $show['sticky'] = FALSE;
 $show['taxonomies'] = TRUE;
@@ -215,7 +215,6 @@ $show['title'] = TRUE;
 	if ( 	((array_key_exists('filters', $show)) AND $show['filters'] ) 
 		OR 	((array_key_exists('search', $show)) AND $show['search'] ) ): ?>				
 		<div id="<?php echo $post_type; ?>-filter-wrapper" class="filter-wrapper">
-			<div class="<?php echo esc_attr( $container ); ?>">
 				<div class="row">
 					
 					<div class="col-12">	
@@ -223,62 +222,78 @@ $show['title'] = TRUE;
 							<div class="filters"> 	
 								
 								<div class="row">
-		
-									<div class="col-12 col-md-7">
-										<?php if ((array_key_exists('filters', $show)) AND $show['filters'] ): ?>
-											<div class="label"><?php _e( 'Filter by', 'powehi' ) ?>:</div>
+
+									<?php 
+									if ( $show['filters'] ): 
+										if (!$show['search']):
+											$col_styles = 'col-12';
+										else:
+											$col_styles = 'col-12 col-md-7';
+										endif; ?>
+											<div class="<?php echo $col_styles;?>">
 											
-											<div class="row">
+												<div class="label"><?php _e( 'Filter by', 'powehi' ) ?>:</div>
 												
-												<?php								
-												foreach ( $taxonomies AS $taxonomy ): 
-													$taxonomy_details = get_taxonomy( $taxonomy );
-													$taxonomy_labels = $taxonomy_details->labels;
-													?>
-													<?php if ( $taxonomy_details->publicly_queryable ): ?>
-														<div class="col-12 col-md-6">		
-															<div class="filter <?php echo $taxonomy; ?>">
-																<label for="select-<?php echo $taxonomy; ?>" class="sr-only"><?php echo $taxonomy_labels->menu_name; ?></label>
-																<select id="select-<?php echo $taxonomy; ?>" data-taxonomies='<?php echo json_encode( $taxonomies ) ?>' data-post_type="<?php echo $post_type; ?>">
-																	<option value="" selected><?php echo $taxonomy_labels->menu_name; ?></option>
-																	<?php
-																	if ( isset( $_GET[$taxonomy] )):
-																		$current = $_GET[$taxonomy];
-																	elseif ( get_sub_field( $preselected_filter_name ) AND !(isset( $_GET['override'] ) )):
-																		$catinfo = get_term( get_sub_field( $preselected_filter_name ) );    			 
-																		$current = $catinfo->slug;
-																	else:
-																		$current = '';
-																	endif; 		 
-																	$terms = get_terms( array(
-																		'taxonomy' => $taxonomy,
-																		'hide_empty' => true
-																	) );   
-																	foreach ( $terms AS $term ) {
-																		if ( $term->slug != 'members' ):?>
-																			<option value="<?php echo $term->slug; ?>"<?php if ( $term->slug == $current) { echo ' selected'; };  ?>><?php echo $term->name; ?></option>
-																			<?php 
-																		endif;
-																	};
-																	wp_reset_postdata(); ?> 		                        
-																</select>
+												<div class="row">
+													
+													<?php								
+													foreach ( $taxonomies AS $taxonomy ): 
+														$taxonomy_details = get_taxonomy( $taxonomy );
+														$taxonomy_labels = $taxonomy_details->labels;
+														?>
+														<?php if ( $taxonomy_details->publicly_queryable ): ?>
+															<div class="col-12 col-md-6">		
+																<div class="filter <?php echo $taxonomy; ?>">
+																	<label for="select-<?php echo $taxonomy; ?>" class="sr-only"><?php echo $taxonomy_labels->menu_name; ?></label>
+																	<select id="select-<?php echo $taxonomy; ?>" data-taxonomies='<?php echo json_encode( $taxonomies ) ?>' data-post_type="<?php echo $post_type; ?>">
+																		<option value="" selected><?php echo $taxonomy_labels->menu_name; ?></option>
+																		<?php
+																		if ( isset( $_GET[$taxonomy] )):
+																			$current = $_GET[$taxonomy];
+																		elseif ( get_sub_field( $preselected_filter_name ) AND !(isset( $_GET['override'] ) )):
+																			$catinfo = get_term( get_sub_field( $preselected_filter_name ) );    			 
+																			$current = $catinfo->slug;
+																		else:
+																			$current = '';
+																		endif; 		 
+																		$terms = get_terms( array(
+																			'taxonomy' => $taxonomy,
+																			'hide_empty' => true
+																		) );   
+																		foreach ( $terms AS $term ) {
+																			if ( $term->slug != 'members' ):?>
+																				<option value="<?php echo $term->slug; ?>"<?php if ( $term->slug == $current) { echo ' selected'; };  ?>><?php echo $term->name; ?></option>
+																				<?php 
+																			endif;
+																		};
+																		wp_reset_postdata(); ?> 		                        
+																	</select>
+																</div>
 															</div>
-														</div>
-													<?php			
-													endif;								
-												endforeach;										
-												?>
+														<?php			
+														endif;								
+													endforeach;										
+													?>
+													
+												</div>
 												
+												<div class="clear-filters" data-post_type="<?php echo $post_type; ?>" data-taxonomies='<?php echo json_encode( $taxonomies ) ?>' data-search_placeholder="<?php echo $post_type_labels->search_items; ?>">
+													<i class="fas fa-times"></i> <?php _e( 'Clear all filters', 'powehi' ); ?>
+												</div>									
 											</div>
-											
-											<div class="clear-filters" data-post_type="<?php echo $post_type; ?>" data-taxonomies='<?php echo json_encode( $taxonomies ) ?>' data-search_placeholder="<?php echo $post_type_labels->search_items; ?>">
-												<i class="fas fa-times"></i> <?php _e( 'Clear all filters', 'powehi' ); ?>
-											</div>
-										<?php endif; ?>
-									</div>
+										<?php 
+									endif; ?>
+
+									<?php 
+									if ( $show['search'] ): 
+										if (!$show['filters']):
+											$col_styles = 'col-12';
+										else:
+											$col_styles = 'col-12 col-md-4 offset-md-1';
+										endif; ?>
 										
-									<div class="col-12 col-md-4 offset-md-1 col-search">		
-										<?php if ( (array_key_exists('search', $show)) AND $show['search'] ): ?>
+									<div class="<?php echo $col_styles;?> col-search">		
+									
 											<div class="label"><?php echo $post_type_labels->search_items; ?></div>							
 											
 											<div class="search">
@@ -301,9 +316,9 @@ $show['title'] = TRUE;
 													</div>
 												</form>									
 											</div>
-										<?php endif;?>
-									</div>
-									
+										</div>
+										
+									<?php endif;?>
 								</div>	
 								
 							</div>
@@ -311,7 +326,6 @@ $show['title'] = TRUE;
 						</div>
 					</div>
 					
-				</div>
 			</div>
 		</div>
 				

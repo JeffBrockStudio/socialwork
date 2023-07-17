@@ -36,7 +36,9 @@ $target = '';
 					
 					<?php if ( $show['button'] ): ?>
 						<div class="buttons">
-							<a class="btn btn-primary" href="<?php echo $permalink; ?>" target="<?php echo $target; ?>">Read More</a>
+							<a class="btn btn-primary" href="<?php echo $permalink; ?>" target="<?php echo $target; ?>">
+                <?php _e( 'Read More', 'socialwork'); ?>
+              </a>
 						</div>
 					<?php endif; ?>
 					
