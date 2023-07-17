@@ -1,10 +1,21 @@
-<?php 
+<?php
+
+// Get shortcode attributes.
+$resource_atts = shortcode_atts(
+	array(
+		'pagination' => 'links',
+		'posts_per_page' => '10',  
+		'post_type' => 'resource',      
+	),
+	$atts
+);
+
 /**
  * Content settings
  */	
 
 // Post type 
-$post_type = 'resource';  
+$post_type = $resource_atts['post_type'];  
 
 // Taxonomies for this post type
 $taxonomies = get_object_taxonomies( $post_type );		
@@ -14,7 +25,7 @@ switch( $post_type ):
 	
 	// Resource
 	case 'resource':
-		$preselected_filter_name = 'resource_topics';
+		$preselected_filter_name = 'publication_types';
 		$search_engine = 'resource';
 		break;		
 		
@@ -58,14 +69,14 @@ endswitch;
 $preselected_filter = get_sub_field( $preselected_filter_name );
 
 // Number of posts per page
-$posts_per_page = get_sub_field( 'number_of_posts' );
+$posts_per_page = $resource_atts['posts_per_page'];
 if ( !$posts_per_page ):
 	// If none is set manually, get WordPress default
 	$posts_per_page = get_option( 'posts_per_page' );
 endif;
 
 // Pagination style
-$pagination = 'links';
+$pagination = $resource_atts['pagination'];
 
 // Infinite Load button text
 $load_more_text = 'Load More';
@@ -586,8 +597,7 @@ $show['title'] = TRUE;
 					
 				elseif ( $pagination == 'links' ): ?>
 										
-					<div class="row pagination-row">
-						<div class="col-12">
+						<div class="col-12 pagination-row">
 							<div class="pagination">
 								<?php 
 								$total_pages = $the_query->max_num_pages;
@@ -628,7 +638,6 @@ $show['title'] = TRUE;
 								?>
 							</div>
 						</div>
-					</div>
 					<?php
 				endif;	
 				wp_reset_postdata();	
