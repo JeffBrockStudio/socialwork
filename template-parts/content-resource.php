@@ -36,7 +36,7 @@ $resource_identifier       = get_field( 'resource_identifier', $resource_id );
 								if (count($resource_authors) == 1):
 									_e( 'Author', 'socialwork');
 								else:
-									_e( 'Author(s)', 'socialwork');
+									_e( 'Authors', 'socialwork');
 								endif; ?>:
 							</strong>
 							<?php
