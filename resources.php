@@ -25,8 +25,14 @@ $taxonomies = get_object_taxonomies( $post_type );
 
 // Custom post type variables
 switch( $post_type ):
+
+	// Project
+	case 'project':
+		$preselected_filter_name = '';
+		$search_engine = 'project';
+		break;
 	
-	// Resource
+	// Publication
 	case 'resource':
 		$preselected_filter_name = 'publication_types';
 		$search_engine = 'resource';

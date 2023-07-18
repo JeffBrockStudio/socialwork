@@ -1,10 +1,10 @@
 <?php
 /**
- * Template part for displaying page content in page.php
+ * Template part for displaying page content in single-team.php
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package uw_wp_theme
+ * @package socialwork
  */
 
 ?>

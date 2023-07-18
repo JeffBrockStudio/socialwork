@@ -194,6 +194,22 @@
 			.text {
 				margin-top: 1rem;
 			}
+
+      // Project
+			// ----------------------------------------------
+			&.project {
+        padding: 1.5rem 1.5rem 1.5rem 2rem;
+        
+				.authors {
+          br {
+            display: none;
+          }
+        }   
+        
+        .project-date {
+          margin-bottom: 0;
+        }
+			}
 			
 			// Publication
 			// ----------------------------------------------
