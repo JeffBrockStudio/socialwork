@@ -3,9 +3,12 @@
 // Get shortcode attributes.
 $resource_atts = shortcode_atts(
 	array(
-		'pagination' => 'links',
-		'posts_per_page' => '10',  
-		'post_type' => 'resource',      
+		'pagination'      => 'links',
+		'posts_per_page'  => '10',
+		'post_type'       => 'resource',
+		'show_search'     => 'true',
+		'show_filters'    => 'true',
+		'show_thumbnails' => 'true',
 	),
 	$atts
 );
@@ -91,16 +94,16 @@ $layout = 'list';
 
 // Show/hide choices
 $show = array();
-$show['author'] = FALSE;
-$show['button'] = FALSE;
-$show['date'] = FALSE;
-$show['excerpt'] = FALSE;
-$show['filters'] = FALSE;
-$show['search'] = TRUE;
-$show['sticky'] = FALSE;
-$show['taxonomies'] = TRUE;
-$show['thumbnails'] = FALSE;
-$show['title'] = TRUE;  
+$show['author'] = 'false';
+$show['button'] = 'false';
+$show['date'] = 'false';
+$show['excerpt'] = 'false';
+$show['filters'] = $resource_atts['show_filters'];
+$show['search'] = $resource_atts['show_search'];
+$show['sticky'] = 'false';
+$show['taxonomies'] = 'true';
+$show['thumbnails'] = $resource_atts['show_thumbnails'];
+$show['title'] = 'true';  
 
 
 // Hide individual elements in meta data ?>	
@@ -223,8 +226,8 @@ $show['title'] = TRUE;
 	<?php endif; ?>
 		
 	<?php
-	if ( 	((array_key_exists('filters', $show)) AND $show['filters'] ) 
-		OR 	((array_key_exists('search', $show)) AND $show['search'] ) ): ?>				
+	if ( 	((array_key_exists('filters', $show)) AND $show['filters'] == 'true' ) 
+		OR 	((array_key_exists('search', $show)) AND $show['search'] == 'true' ) ): ?>				
 		<div id="<?php echo $post_type; ?>-filter-wrapper" class="filter-wrapper">
 				<div class="row">
 					
@@ -235,8 +238,8 @@ $show['title'] = TRUE;
 								<div class="row">
 
 									<?php 
-									if ( $show['filters'] ): 
-										if (!$show['search']):
+									if ( $show['filters'] == 'true' ): 
+										if ( $show['search'] == 'false'):
 											$col_styles = 'col-12';
 										else:
 											$col_styles = 'col-12 col-md-7';
@@ -293,8 +296,8 @@ $show['title'] = TRUE;
 									endif; ?>
 
 									<?php 
-									if ( $show['search'] ): 
-										if (!$show['filters']):
+									if ( $show['search'] == 'true' ): 
+										if ( $show['filters'] == 'false'):
 											$col_styles = 'col-12 col-md-8 offset-md-2';
 										else:
 											$col_styles = 'col-12 col-md-4 offset-md-1';

@@ -1,10 +1,13 @@
 <div class="col-12 col-md-3 item">
   <div class="inner">
-    <div class="thumb">
-      <a href="<?php echo get_permalink( $resource_id ); ?>">
-        <?php echo get_the_post_thumbnail( $resource_id, 'medium' ); ?>
-      </a>                      
-    </div>
+    <?php if ( $show['thumbnails'] == 'true' ): ?>
+      <div class="thumb">      
+        <a href="<?php echo get_permalink( $resource_id ); ?>">
+          <?php echo get_the_post_thumbnail( $resource_id, 'medium' ); ?>
+        </a>                      
+      </div>
+    <?php endif; ?>
+    
     <div class="text">
       <h3><?php echo get_the_title( $resource_id ); ?></h3>
       <?php if ( get_field( 'team_position', $resource_id )) { ?>

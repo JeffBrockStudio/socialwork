@@ -14,7 +14,7 @@ $resource_locator_doi      = get_field( 'resource_locator_doi', $resource_id );
 		<div class="row no-gutters">
 				
 			<div class="col-12 col-md-9">
-				<?php if ( $show['thumbnails'] ): ?>
+				<?php if ( $show['thumbnails'] == 'true' ): ?>
 					<div class="image">
             <a href="<?php echo $permalink; ?>">
               <?php echo get_the_post_thumbnail( $resource_id, 'medium' ); ?>
@@ -73,19 +73,19 @@ $resource_locator_doi      = get_field( 'resource_locator_doi', $resource_id );
             </p>
 				<?php } ?>	
 
-					<?php if ( $show['date'] ): ?>
+					<?php if ( $show['date'] == 'true' ): ?>
 						<div class="entry-meta">
 							<?php echo ( get_the_date( get_option('date_format'), $resource_id )); ?>																
 						</div>
 					<?php endif; ?>						
 										
-					<?php if ( $show['excerpt'] ): ?>
+					<?php if ( $show['excerpt'] == 'true' ): ?>
 						<div class="text">
 							<?php echo apply_filters( 'the_content', get_field( 'resource_short_description_text', $resource_id )); ?>	
 						</div>
 					<?php endif; ?>
 					
-					<?php if ( $show['button'] ): ?>
+					<?php if ( $show['button'] == 'true' ): ?>
 						<div class="buttons">
 							<a class="btn btn-primary" href="<?php echo $permalink; ?>" target="<?php echo $target; ?>">
                 <?php _e( 'Read More', 'socialwork'); ?>
