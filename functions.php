@@ -115,6 +115,33 @@ function custom_create_post_types() {
 			'has_archive' => true			
 		)
 	);	
+
+	// Projects
+	register_post_type( 'project',
+		array(
+			'labels' => array(
+				'name'               => __( 'Projects' ),
+				'singular_name'      => __( 'Project' ),
+				'menu_name'          => __( 'Projects' ),
+				'name_admin_bar'     => __( 'Project' ),
+				'add_new'            => __( 'Add New' ),
+				'add_new_item'       => __( 'Add New Project' ),
+				'new_item'           => __( 'New Project' ),
+				'edit_item'          => __( 'Edit Project' ),
+				'view_item'          => __( 'View Project' ),
+				'all_items'          => __( 'All Projects' ),
+				'search_items'       => __( 'Search name or keyword' ),
+				'parent_item_colon'  => __( 'Parent Projects:' ),
+				'not_found'          => __( 'No projects found.' ),
+				'not_found_in_trash' => __( 'No projects found in Trash.' )
+			),
+			'menu_icon' => 'dashicons-clipboard',			
+			'public' => true,
+			'hierarchical' => true,
+			'supports' => array( 'title', 'editor' ),
+			'has_archive' => true			
+		)
+	);	
 }
 add_action( 'init', 'custom_create_post_types' );
 
