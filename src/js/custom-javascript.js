@@ -12,7 +12,7 @@ jQuery(document).ready(function($) {
 	 * Pretty Dropdown
 	 */
 	 
-	$dropdown = $('select').prettyDropdown({
+	$dropdown = $('.filter-wrapper select').prettyDropdown({
 		classic: true,
 		height: 44,
 		width: '100%'

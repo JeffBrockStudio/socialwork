@@ -511,3 +511,14 @@ add_filter( 'searchwp\source\post\attributes\meta', function( $meta_value, $args
 
   return $content_to_index;
 }, 20, 2 );
+
+
+// Generate Google Scholar link from publication title
+function generate_google_scholar_link( $post_id ) {
+	$post_title = get_the_title( $post_id );
+	$encoded_title = urlencode( $post_title );
+	$google_scholar_link = "https://scholar.google.com/scholar?q={$encoded_title}";
+
+	return $google_scholar_link;
+}
+
