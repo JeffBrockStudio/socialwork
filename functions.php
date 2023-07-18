@@ -306,3 +306,91 @@ function show_authors($resources) { ?>
 	<?php
 }
 
+
+/**
+ * Add custom CSS/JS for Advanced Custom Fields.
+ */
+function custom_acf_admin_head() {
+	?>
+	<style type="text/css">
+		.acf-editor-wrap iframe {
+		    max-height: 400px;
+		}
+
+		.short .acf-editor-wrap iframe {
+		    max-height: 160px;
+		    min-height: 0;
+		}
+
+		.short .acf-editor-wrap 	.mce-menubar {
+			display: none;
+		}
+		
+		.acf-tab-group {
+			padding-left: 0;
+		}		
+				
+		/* Add border between repeater items */		
+		.acf-repeater.-block .ui-sortable tr.acf-row td {
+ 			border-bottom: 4px solid #F9F9F9;
+ 			border-top: 4px solid #F9F9F9;
+		}
+
+		.acf-repeater.-block .ui-sortable tr.acf-row:first-child td {
+			border-top: none;
+		}
+
+		.acf-repeater.-block .ui-sortable tr.acf-row:nth-last-child(2) td {
+			border-bottom: none;
+		}
+		
+		.acf-repeater.-block .acf-row-handle .acf-icon {
+			margin-top: -14px;
+		}
+		
+		/* Hide unnecessary label in sidebar ACF */
+		#side-sortables .acf-field-image .acf-label {
+			display: none;
+		}		
+		
+		/* Hide unnecessary taxonomies in sidebar ACF */
+		#side-sortables #publication_typesdiv,
+		#side-sortables #team_rolesdiv {
+			display: none;			
+		}
+		
+		/* Color palette field */
+		.acf-palette-field-layout .acf-palette-label:before {
+			border-color: #ffffff;
+		}				
+		
+		/* Make SVG icons 100% width */
+		.acf-image-uploader .image-wrap {
+			max-width: 100% !important;
+			width: 100%;
+		}
+		
+		/* TinyMCE */
+		.mce-edit-area {
+			padding-left: 1rem !important;
+			padding-right: 1rem !important;
+		}		
+		.mce-edit-area iframe {
+			margin-top: 1rem;
+		}				
+				
+	</style>
+
+	<script type="text/javascript">
+	(function($){
+
+	  jQuery('#pageparentdiv label[for=menu_order]').parents('p').eq(0).remove();
+	  jQuery('#pageparentdiv input#menu_order').remove();
+
+	})(jQuery);
+	</script>
+		
+	<?php
+}
+add_action('acf/input/admin_head', 'custom_acf_admin_head');
+
