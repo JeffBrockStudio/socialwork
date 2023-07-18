@@ -9,14 +9,13 @@
 
 ?>
 <?php $resource_id = get_the_ID();
-$resource_authors          = get_field( 'resource_authors', $resource_id );
-$resource_type 					   = get_the_terms( $resource_id, 'publication_types' );
-$resource_publication_name = get_field( 'resource_publication_name', $resource_id );
-$resource_year             = get_field( 'resource_year', $resource_id );
-$resource_info             = get_field( 'resource_info', $resource_id );
-$resource_locator_url      = get_field( 'resource_locator_url', $resource_id );
-$resource_locator_doi      = get_field( 'resource_locator_doi', $resource_id );
-$resource_identifier       = get_field( 'resource_identifier', $resource_id );
+
+$project_principal_investigators = get_field( 'project_principal_investigators', $resource_id );
+$project_co_investigators        = get_field( 'project_co_investigators', $resource_id );
+$project_other_investigators     = get_field( 'project_other_investigators', $resource_id );
+$project_other_names             = get_field( 'project_other_names', $resource_id );
+$project_funding                 = get_field( 'project_funding', $resource_id );
+$project_date                    = get_field( 'project_date', $resource_id );
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -28,15 +27,15 @@ $resource_identifier       = get_field( 'resource_identifier', $resource_id );
 					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 				</header><!-- .entry-header -->
 
-				<?php if ($resource_authors):				
-					// Display authors and their links.
-					$posts = $resource_authors; ?>
+				<?php if ($project_principal_investigators):				
+					// Display principal investigators and their links.
+					$posts = $project_principal_investigators; ?>
 						<p class="authors">
 							<strong><?php 
-								if (count($resource_authors) == 1):
-									_e( 'Author', 'socialwork');
+								if (count($project_principal_investigators) == 1):
+									_e( 'Principal Investigator', 'socialwork');
 								else:
-									_e( 'Authors', 'socialwork');
+									_e( 'Principal Investigators', 'socialwork');
 								endif; ?>:
 							</strong>
 							<?php
@@ -56,54 +55,76 @@ $resource_identifier       = get_field( 'resource_identifier', $resource_id );
 					endif;
 				?>
 
-				<?php if ($resource_publication_name) {?>
-					<p class="publication-name">
-						<strong><?php _e( 'Publication', 'socialwork');?>:</strong> 
-						<?php echo $resource_publication_name;
-						if ($resource_year): echo ': ' . $resource_year; endif;
-
-						if ($resource_info): echo ': ' . $resource_info . '.'; endif;
-
-						if ($resource_identifier): echo ' ' . $resource_identifier; endif;
-
-						if ($resource_locator_url): ?>
-							<br><strong><?php _e( 'URL', 'socialwork');?>:</strong> <a href="<?php echo $resource_locator_url; ?>" target="_blank"><?php echo $resource_locator_url; ?></a>
+				<?php if ($project_co_investigators):				
+					// Display co-investigators and their links.
+					$posts = $project_co_investigators; ?>
+						<p class="authors">
+							<strong><?php 
+								if (count($project_co_investigators) == 1):
+									_e( 'Co-Investigator', 'socialwork');
+								else:
+									_e( 'Co-Investigators', 'socialwork');
+								endif; ?>:
+							</strong>
 							<?php
-						endif; 
-						
-						if ($resource_locator_doi): ?>
-							<br><strong><?php _e( 'DOI', 'socialwork');?>:</strong> <?php echo $resource_locator_doi; ?>
-							<?php
-						endif; 
-						?>
-					</p>
-				<?php } ?>	
-
-				<?php
-				if ($resource_type != ''): ?>
-					<p class="publication-type">
-						<strong><?php _e( 'Publication type', 'socialwork');?>:</strong> 
+							$i = 1;
+							foreach ($posts as $post):
+								setup_postdata($post); ?>
+								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+								<?php
+								if ($i < count($posts)):
+									echo ' | ';
+								endif;
+								$i++;
+							endforeach;
+							wp_reset_postdata(); ?>
+						</p>
 						<?php
-						$i = 1;
-						foreach ($resource_type as $type):
-							echo $type->name;
-							if ($i < count($resource_type)):
-								echo ', ';
-							endif;
-							$i++;
-						endforeach; ?>
-					</p>
-					<?php
-				endif;				
+					endif;
 				?>
-				
-				<p class="access">
-					<strong><?php _e( 'Access', 'socialwork');?>:</strong>
-					<a href="#" target="_blank"><?php _e( 'Google Scholar', 'socialwork');?></a> | 
-					<a href="#" target="_blank"><?php _e( 'Tagged', 'socialwork');?></a> | 
-					<a href="#" target="_blank"><?php _e( 'XML', 'socialwork');?></a>
-				</p>
 
+				<?php if ($project_other_investigators):				
+					// Display other investigators and their links.
+					$posts = $project_other_investigators; ?>
+						<p class="authors">
+							<strong><?php 
+								if (count($project_other_investigators) == 1):
+									_e( 'Other Investigator', 'socialwork');
+								else:
+									_e( 'Other Investigators', 'socialwork');
+								endif; ?>:
+							</strong>
+							<?php
+							$i = 1;
+							foreach ($posts as $post):
+								setup_postdata($post); ?>
+								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+								<?php
+								if ($i < count($posts)):
+									echo ' | ';
+								endif;
+								$i++;
+							endforeach;
+							wp_reset_postdata(); ?>
+						</p>
+						<?php
+					endif;
+				?>
+
+				<?php if ($project_funding): ?>
+					<p class="funding">
+						<strong><?php _e( 'Funding', 'socialwork');?>:</strong> 
+						<?php echo $project_funding; ?>
+					</p>
+				<?php endif; ?>	
+
+				<?php if ($project_date): ?>
+					<p class="project-date">
+						<strong><?php _e( 'Date', 'socialwork');?>:</strong> 
+						<?php echo $project_date; ?>
+					</p>
+				<?php endif; ?>	
+				
 				<?php if ( !empty( get_the_content() ) ): ?>
 					<div class="abstract">
 						<p><strong><?php _e( 'Abstract', 'socialwork'); ?>:</strong></p>
