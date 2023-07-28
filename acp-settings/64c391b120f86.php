@@ -5,7 +5,7 @@ return array (
   'title' => '',
   'type' => 'page',
   'id' => '64c391b120f86',
-  'updated' => 1690538417,
+  'updated' => 1690546985,
   'columns' => 
   array (
     'title' => 
@@ -21,6 +21,25 @@ return array (
       'search' => 'on',
       'name' => 'title',
     ),
+    '64c3b324d0624c' => 
+    array (
+      'type' => 'column-featured_image',
+      'label' => 'Featured Image',
+      'width' => '',
+      'width_unit' => '%',
+      'featured_image_display' => 'image',
+      'image_size' => 'cpac-custom',
+      'image_size_w' => '60',
+      'image_size_h' => '60',
+      'export' => 'on',
+      'sort' => 'on',
+      'edit' => 'on',
+      'bulk_edit' => 'on',
+      'search' => 'on',
+      'filter' => 'off',
+      'filter_label' => '',
+      'name' => '64c3b324d0624c',
+    ),
     '64c391abb81064' => 
     array (
       'type' => 'column-parent',
@@ -35,6 +54,41 @@ return array (
       'filter' => 'off',
       'filter_label' => '',
       'name' => '64c391abb81064',
+    ),
+    '64c3ad77c45a1c' => 
+    array (
+      'type' => 'column-page_template',
+      'label' => 'Page Template',
+      'width' => '',
+      'width_unit' => '%',
+      'export' => 'on',
+      'sort' => 'on',
+      'edit' => 'on',
+      'bulk_edit' => 'on',
+      'search' => 'on',
+      'filter' => 'off',
+      'filter_label' => '',
+      'name' => '64c3ad77c45a1c',
+    ),
+    '64c3add6e39580' => 
+    array (
+      'type' => 'column-meta',
+      'label' => 'Sidebar Nav',
+      'width' => '',
+      'width_unit' => '%',
+      'field' => 'sidebar_nav_menu',
+      'field_type' => '',
+      'before' => '',
+      'after' => '',
+      'edit' => 'off',
+      'editable_type' => 'text',
+      'export' => 'on',
+      'sort' => 'on',
+      'bulk_edit' => 'on',
+      'search' => 'on',
+      'filter' => 'off',
+      'filter_label' => '',
+      'name' => '64c3add6e39580',
     ),
     'author' => 
     array (

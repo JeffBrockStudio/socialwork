@@ -17,10 +17,13 @@
 @import "src/sass/elementor";         // Elementor
 @import "src/sass/widgets";           // Widgets
 
-@import "src/sass/header";            // Header
-@import "src/sass/footer";            // Footer
+@import "src/sass/header";   // Header
+@import "src/sass/footer";   // Footer
+@import "src/sass/sidebar";  // Sidebar
+@import "src/sass/page";  // Page
 
 @import "src/sass/single-team";      // Single team template
 @import "src/sass/single-resource";  // Single resource template
 @import "src/sass/single-post";      // Single post template
 @import "src/sass/single-project";   // Single project template
+
