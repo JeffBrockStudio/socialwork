@@ -1,0 +1,229 @@
+{
+    "key": "group_64c3a35b67241",
+    "title": "Sidebar",
+    "fields": [
+        {
+            "key": "field_64c3a35b69d53",
+            "label": "Sidebar Nav Menu",
+            "name": "sidebar_nav_menu",
+            "aria-label": "",
+            "type": "acfe_menus",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "acfe_save_meta": 0,
+            "menus": "",
+            "field_type": "select",
+            "max": "",
+            "default_value": [],
+            "return_format": "object",
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "placeholder": "",
+            "search_placeholder": "",
+            "allow_custom": 0,
+            "choices": [],
+            "layout": "",
+            "toggle": 0,
+            "other_choice": 0,
+            "min": ""
+        },
+        {
+            "key": "field_64c3a3a223c78",
+            "label": "Sidebar Content",
+            "name": "sidebar_content",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "acfe_save_meta": 0,
+            "acfe_repeater_stylised_button": 0,
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_64c3a3d123c79",
+            "button_label": "Add Sidebar Content",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_64c3a3d123c79",
+                    "label": "Heading",
+                    "name": "heading",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "acfe_save_meta": 0,
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_64c3a3a223c78"
+                },
+                {
+                    "key": "field_64c3a3dc23c7a",
+                    "label": "Content",
+                    "name": "content",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "acfe_save_meta": 0,
+                    "default_value": "",
+                    "acfe_wysiwyg_min_height": 200,
+                    "acfe_wysiwyg_max_height": "",
+                    "acfe_wysiwyg_valid_elements": "",
+                    "acfe_wysiwyg_custom_style": "",
+                    "acfe_wysiwyg_disable_wp_style": 0,
+                    "acfe_wysiwyg_autoresize": 1,
+                    "acfe_wysiwyg_disable_resize": 0,
+                    "acfe_wysiwyg_remove_path": 1,
+                    "acfe_wysiwyg_menubar": 0,
+                    "acfe_wysiwyg_transparent": 0,
+                    "acfe_wysiwyg_merge_toolbar": 1,
+                    "acfe_wysiwyg_custom_toolbar": 1,
+                    "acfe_wysiwyg_toolbar_buttons": {
+                        "acfe_wysiwyg_toolbar_1": [
+                            {
+                                "acfe_wysiwyg_toolbar_row": "formatselect"
+                            },
+                            {
+                                "acfe_wysiwyg_toolbar_row": "|"
+                            },
+                            {
+                                "acfe_wysiwyg_toolbar_row": "styleselect"
+                            },
+                            {
+                                "acfe_wysiwyg_toolbar_row": "|"
+                            },
+                            {
+                                "acfe_wysiwyg_toolbar_row": "bold"
+                            },
+                            {
+                                "acfe_wysiwyg_toolbar_row": "italic"
+                            },
+                            {
+                                "acfe_wysiwyg_toolbar_row": "bullist"
+                            },
+                            {
+                                "acfe_wysiwyg_toolbar_row": "numlist"
+                            },
+                            {
+                                "acfe_wysiwyg_toolbar_row": "|"
+                            },
+                            {
+                                "acfe_wysiwyg_toolbar_row": "alignleft"
+                            },
+                            {
+                                "acfe_wysiwyg_toolbar_row": "aligncenter"
+                            },
+                            {
+                                "acfe_wysiwyg_toolbar_row": "outdent"
+                            },
+                            {
+                                "acfe_wysiwyg_toolbar_row": "indent"
+                            },
+                            {
+                                "acfe_wysiwyg_toolbar_row": "|"
+                            }
+                        ],
+                        "acfe_wysiwyg_toolbar_2": {
+                            "64c3a538a907e": {
+                                "acfe_wysiwyg_toolbar_row": "|"
+                            },
+                            "64c3a540a907f": {
+                                "acfe_wysiwyg_toolbar_row": "charmap"
+                            },
+                            "64c3a545a9080": {
+                                "acfe_wysiwyg_toolbar_row": "subscript"
+                            },
+                            "64c3a549a9081": {
+                                "acfe_wysiwyg_toolbar_row": "superscript"
+                            },
+                            "64c3a54da9082": {
+                                "acfe_wysiwyg_toolbar_row": "hr"
+                            },
+                            "64c3a552a9083": {
+                                "acfe_wysiwyg_toolbar_row": "|"
+                            },
+                            "64c3a557a9084": {
+                                "acfe_wysiwyg_toolbar_row": "pastetext"
+                            },
+                            "64c3a55ba9085": {
+                                "acfe_wysiwyg_toolbar_row": "removeformat"
+                            },
+                            "64c3a55fa9086": {
+                                "acfe_wysiwyg_toolbar_row": "undo"
+                            },
+                            "64c3a564a9087": {
+                                "acfe_wysiwyg_toolbar_row": "redo"
+                            }
+                        },
+                        "acfe_wysiwyg_toolbar_3": "",
+                        "acfe_wysiwyg_toolbar_4": ""
+                    },
+                    "tabs": "all",
+                    "toolbar": "basic",
+                    "media_upload": 1,
+                    "delay": 0,
+                    "acfe_wysiwyg_auto_init": 0,
+                    "acfe_wysiwyg_height": 300,
+                    "parent_repeater": "field_64c3a3a223c78"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_display_title": "",
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1690543667
+}

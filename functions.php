@@ -600,3 +600,24 @@ function create_endnote_xml_file() {
 	exit;
 }
 
+/**
+ * Register additional menus.
+ */
+function socialwork_register_menus() {
+	register_nav_menus(
+		array(
+			'about-menu'          => __( 'About Sidebar Menu' ),
+			'admissions-menu'     => __( 'Admissions Sidebar Menu' ),
+			'academics-menu'      => __( 'Academics Sidebar Menu' ),
+			'student-life-menu'   => __( 'Student Life Sidebar Menu' ),
+			'faculty-menu'        => __( 'Faculty Sidebar Menu' ),
+			'research-menu'       => __( 'Research Sidebar Menu' ),
+			'alumni-friends-menu' => __( 'Alumni & Friends Sidebar Menu' ),
+			'news-events-menu'    => __( 'News & Events Sidebar Menu' ),
+			'give-now-menu'       => __( 'Give Now Sidebar Menu' )
+		)
+	);
+}
+add_action( 'init', 'socialwork_register_menus' );
+
+
