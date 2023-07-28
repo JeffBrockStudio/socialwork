@@ -13,8 +13,20 @@
 ?>
 
 <?php //wp_print_styles( array( 'uw_wp_theme-sidebar', 'uw_wp_theme-widgets' ) ); ?>
-<aside id="secondary" class="primary-sidebar uw-sidebar widget-area col-md-2">
-	<?php uw_sidebar_menu(); ?>
+<aside id="secondary" class="primary-sidebar uw-sidebar widget-area col-md-3">
+
+  <?php global $sidebar_nav_menu; 
+  if ( $sidebar_nav_menu ):
+    wp_nav_menu(
+      array(
+        'fallback_cb'     => '',
+        'menu'             => $sidebar_nav_menu->term_id,
+        'depth'           => 3,
+        'container_class'      => 'sidebar-menu',
+      )
+    );
+  endif;
+  ?>
 
   <?php
   global $sidebar_content;
@@ -35,6 +47,5 @@
     endforeach;
   endif;
   ?>
-
-	<?php dynamic_sidebar( 'sidebar' ); ?>
+	
 </aside><!-- #secondary -->

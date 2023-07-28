@@ -10,4 +10,34 @@
   .content {
     line-height: 1.6;
   }
+
+  .menu {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .sidebar-menu {
+    background-color: #ebebeb;
+    border-radius: $border-radius;
+    margin-bottom: 3rem;
+    padding: 1.5rem;
+
+    a {
+      color: $black;
+      text-decoration: none;
+
+      &:hover {
+        color: $purple;
+      }
+    }
+
+    .menu {
+      margin-bottom: 0;
+    }
+
+    li:not(:last-child) {
+      margin-bottom: 0.5rem;
+    }
+  }
 }
