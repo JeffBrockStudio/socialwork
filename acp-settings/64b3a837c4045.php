@@ -5,7 +5,7 @@ return array (
   'title' => '',
   'type' => 'team',
   'id' => '64b3a837c4045',
-  'updated' => 1689498740,
+  'updated' => 1691266995,
   'columns' => 
   array (
     'title' => 
@@ -20,6 +20,26 @@ return array (
       'bulk_edit' => 'on',
       'search' => 'on',
       'name' => 'title',
+    ),
+    '64ceaf86018938' => 
+    array (
+      'type' => 'column-meta',
+      'label' => 'Last name',
+      'width' => '',
+      'width_unit' => '%',
+      'field' => 'team_last_name',
+      'field_type' => '',
+      'before' => '',
+      'after' => '',
+      'edit' => 'on',
+      'editable_type' => 'text',
+      'export' => 'on',
+      'sort' => 'on',
+      'bulk_edit' => 'on',
+      'search' => 'on',
+      'filter' => 'off',
+      'filter_label' => '',
+      'name' => '64ceaf86018938',
     ),
     '64b3aaaf24dd30' => 
     array (

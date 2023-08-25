@@ -5,7 +5,7 @@ return array (
   'title' => '',
   'type' => 'page',
   'id' => '64c391b120f86',
-  'updated' => 1690546985,
+  'updated' => 1691517130,
   'columns' => 
   array (
     'title' => 
@@ -20,6 +20,18 @@ return array (
       'bulk_edit' => 'on',
       'search' => 'on',
       'name' => 'title',
+    ),
+    '64d280bd56c8b4' => 
+    array (
+      'type' => 'column-slug',
+      'label' => 'Slug',
+      'width' => '',
+      'width_unit' => '%',
+      'export' => 'on',
+      'sort' => 'on',
+      'edit' => 'on',
+      'search' => 'on',
+      'name' => '64d280bd56c8b4',
     ),
     '64c3b324d0624c' => 
     array (
@@ -69,6 +81,17 @@ return array (
       'filter' => 'off',
       'filter_label' => '',
       'name' => '64c3ad77c45a1c',
+    ),
+    '64c3f9f46bc6a8' => 
+    array (
+      'type' => 'column-permalink',
+      'label' => 'Permalink',
+      'width' => '',
+      'width_unit' => '%',
+      'export' => 'on',
+      'sort' => 'on',
+      'edit' => 'on',
+      'name' => '64c3f9f46bc6a8',
     ),
     '64c3add6e39580' => 
     array (

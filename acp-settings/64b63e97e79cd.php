@@ -5,7 +5,7 @@ return array (
   'title' => '',
   'type' => 'project',
   'id' => '64b63e97e79cd',
-  'updated' => 1689665632,
+  'updated' => 1691533304,
   'columns' => 
   array (
     'title' => 
@@ -20,6 +20,18 @@ return array (
       'bulk_edit' => 'on',
       'search' => 'on',
       'name' => 'title',
+    ),
+    '64d2bfe9d33334' => 
+    array (
+      'type' => 'column-slug',
+      'label' => 'Slug',
+      'width' => '',
+      'width_unit' => '%',
+      'export' => 'on',
+      'sort' => 'on',
+      'edit' => 'on',
+      'search' => 'on',
+      'name' => '64d2bfe9d33334',
     ),
     '64b63e6b126e98' => 
     array (
