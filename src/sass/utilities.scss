@@ -41,59 +41,98 @@
 }
 
 // Button
-.button {
-	.btn {
-		&:focus {
-			border-color: transparent !important;
-			box-shadow: none !important;
-			outline-offset: 3px;
+
+.btn {
+	&:focus {
+		border-color: transparent !important;
+		box-shadow: none !important;
+		outline-offset: 3px;
+	}
+
+	&.primary.btn-lg {
+		span {
+			background-color: $gold-metallic;
+			border-color: $gold-metallic;
+		}
+	}
+
+	&.gold:hover,
+	&.primary.btn-lg:hover,
+	&.primary.btn-lg:focus,
+	&.primary.btn-lg:active {
+			span {
+				background-color: #675B3B !important;
+				border-color: #675B3B !important;
+			}
 		}
 
-		&.gold:hover {
-				span {
-					background-color: #675B3B !important;
-					border-color: #675B3B !important;
-				}
+	span {
+		border-radius: 4px;
+		transition: $transition-base;
+	}
+
+	&.btn-lg {
+		font-size: 1.059rem;
+	}
+
+	&.btn-outline,
+	&.secondary.btn-lg {
+		span {
+			background-color: transparent;
+			border: 2px solid;				
+		}			
+
+		&.white {
+			span {
+				border-color: $white;
+				color: $white;
 			}
 
-		span {
-			border-radius: 4px;
-			transition: $transition-base;
-		}
-
-		&.btn-lg {
-			font-size: 1.059rem;
-		}
-
-		&.btn-outline {
-			span {
-				background-color: transparent;
-				border: 2px solid;				
-			}			
-
-			&.white {
+			&:hover {
 				span {
-					border-color: $white;
+					background-color: $gold-metallic;
 					color: $white;
 				}
-
-				&:hover {
-					span {
-						background-color: $gold-metallic;
-						color: $white;
-					}
-				}
 			}
 		}
+	}
 
-		+ .btn {
-			margin-left: .5rem;
+	&.secondary.btn-lg {
+		span {
+			border-color: $gold-metallic;
+			color: $gold-metallic;
+		}
 
-			@include media-breakpoint-down(lg) {
-				margin-left: 0;
-				margin-top: 1rem;
+		&:hover,
+		&:focus,
+		&:active {
+			span {
+				background-color: $gold-metallic;
+				border-color: $gold-metallic;
+				color: $white;
 			}
 		}
+	}
+
+	+ .btn {
+		margin-left: .5rem;
+
+		@include media-breakpoint-down(lg) {
+			margin-left: 0;
+			margin-top: 1rem;
+		}
+	}
+}
+
+
+
+// Button - Elementor
+.elementor-section .btn {
+
+	
+	// Primary
+	&.primary {
+
 	}
 }
 
