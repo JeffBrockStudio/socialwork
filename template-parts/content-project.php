@@ -111,6 +111,15 @@ $project_date                    = get_field( 'project_date', $resource_id );
 					endif;
 				?>
 
+				<?php if ($project_other_investigators): ?>
+					<p class="other-names">
+						<strong><?php _e( 'Other Names', 'socialwork');?>:</strong> 
+						<?php echo $project_other_names; ?>
+					</p>
+					<?php
+				endif;
+				?>
+
 				<?php if ($project_funding): ?>
 					<p class="funding">
 						<strong><?php _e( 'Funding', 'socialwork');?>:</strong> 
