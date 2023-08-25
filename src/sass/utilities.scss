@@ -251,6 +251,41 @@
 
 
 //
+// WP Data Tables
+// --------------------------------------------------
+h3 + .wpdt-c.wpDataTableContainerSimpleTable,
+h3 + p + .wpdt-c.wpDataTableContainerSimpleTable {
+	margin-top: 2rem;
+}
+
+body .wpdt-c.wpDataTableContainerSimpleTable {
+	.wpdtSimpleTable.wpDataTable {
+		th {
+			background-color: $purple !important;
+			color: $white;
+			font-weight: 700;
+			padding: 1rem !important;
+			text-align: left;
+		}
+		tbody {
+			td {
+				padding: 1rem !important;
+				text-align: left !important;
+
+				br {
+					display: none;
+				}
+			}
+
+			tr.even td {
+				background-color: $gray-light;
+			}
+		}
+	} 
+} 
+
+
+//
 // Hide elements from parent theme
 // --------------------------------------------------
 
