@@ -85,7 +85,8 @@ function custom_create_post_types() {
 			'public' => true,
 			'hierarchical' => true,
 			'supports' => array( 'title', 'editor', 'thumbnail' ),
-			'has_archive' => true			
+			'has_archive' => true,
+			'rewrite' => array( 'slug' => 'people', 'with_front' => FALSE)			
 		)
 	);	
 	
