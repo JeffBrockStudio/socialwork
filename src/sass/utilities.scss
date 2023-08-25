@@ -54,6 +54,63 @@
 			background-color: $gold-metallic;
 			border-color: $gold-metallic;
 		}
+
+		&:focus {
+			span {
+				background-color: $gold-metallic !important;
+				color: $white;
+			}
+		}
+	}
+
+	&.primary-reversed.btn-lg {
+		span {
+			background-color: $white;
+			border-color: $white;
+			color: $gold-metallic;
+		}
+
+		&:hover {
+			span {
+				background-color: $gold-light;
+				color: $black;
+			}
+		}
+
+		&:focus {
+			outline-offset: 3px;
+			outline-color: $white !important;
+
+			span {
+				border-color: transparent !important;
+				box-shadow: none !important;				
+			}
+		}
+	}
+
+	&.secondary-reversed.btn-lg {
+		span {
+			background-color: transparent;
+			border-color: $white;
+			color: $white;
+		}
+
+		&:hover {
+			span {
+				background-color: $white;
+				color: $gold-metallic;
+			}
+		}
+
+		&:focus {
+			outline-offset: 3px;
+			outline-color: $white !important;
+
+			span {
+				border-color: $white !important;
+				box-shadow: none !important;				
+			}
+		}
 	}
 
 	&.gold:hover,
