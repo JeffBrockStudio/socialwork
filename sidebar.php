@@ -13,7 +13,7 @@
 ?>
 
 <?php //wp_print_styles( array( 'uw_wp_theme-sidebar', 'uw_wp_theme-widgets' ) ); ?>
-<aside id="secondary" class="primary-sidebar uw-sidebar widget-area col-md-3">
+<aside id="secondary" class="primary-sidebar uw-sidebar widget-area col-md-2">
 
   <?php global $sidebar_nav_menu; 
   if ( $sidebar_nav_menu ):

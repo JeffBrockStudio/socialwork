@@ -29,7 +29,7 @@ get_template_part( 'template-parts/header', 'hero' );
 		}
 		?>
 
-		<main id="primary" class="site-main uw-body-copy col-md-<?php echo ( ( $sidebar_nav_menu OR $sidebar_content ) ? '8' : '12' ); ?>">
+		<main id="primary" class="site-main uw-body-copy col-md-<?php echo ( ( $sidebar_nav_menu OR $sidebar_content ) ? '9' : '12' ); ?>">
 		
 		<?php
 		while ( have_posts() ) : the_post();
