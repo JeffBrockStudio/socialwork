@@ -15,16 +15,42 @@
 <?php //wp_print_styles( array( 'uw_wp_theme-sidebar', 'uw_wp_theme-widgets' ) ); ?>
 <aside id="secondary" class="primary-sidebar uw-sidebar widget-area col-md-2">
 
-  <?php global $sidebar_nav_menu; 
-  if ( $sidebar_nav_menu ):
-    wp_nav_menu(
-      array(
-        'fallback_cb'     => '',
-        'menu'             => $sidebar_nav_menu->term_id,
-        'depth'           => 3,
-        'container_class'      => 'sidebar-menu',
-      )
-    );
+  <?php
+  function get_top_ancestor_id() {
+    global $post;
+    if ($post->post_parent) {
+      $ancestors = array_reverse(get_post_ancestors($post->ID));
+      return $ancestors[0];
+    } else {
+      return $post->ID;
+    }
+  }
+
+  $top_ancestor_id = get_top_ancestor_id();  
+
+  
+  global $sidebar_nav_menu; 
+  if ( $sidebar_nav_menu ): ?>
+
+    <div class="sidebar-menu-wrapper">
+      <div class="landing-page">
+        <a href="<?php echo get_permalink($top_ancestor_id)?>">
+          <?php echo get_the_title( $top_ancestor_id ); ?>
+        </a>
+      </div>
+
+      <?php
+      wp_nav_menu(
+        array(
+          'fallback_cb'     => '',
+          'menu'             => $sidebar_nav_menu->term_id,
+          'depth'           => 3,
+          'container_class'      => 'sidebar-menu',
+        )
+      );
+      ?>
+    </div>
+    <?php
   endif;
   ?>
 
