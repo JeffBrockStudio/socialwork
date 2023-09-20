@@ -10,6 +10,7 @@
 ?>
 <?php $resource_id = get_the_ID();
 $resource_authors          = get_field( 'resource_authors', $resource_id );
+$resource_author_list      = get_field( 'resource_author_list', $resource_id );
 $resource_type 					   = get_the_terms( $resource_id, 'publication_types' );
 $resource_publication_name = get_field( 'resource_publication_name', $resource_id );
 $resource_year             = get_field( 'resource_year', $resource_id );
@@ -28,7 +29,16 @@ $resource_identifier       = get_field( 'resource_identifier', $resource_id );
 					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 				</header><!-- .entry-header -->
 
-				<?php if ($resource_authors):				
+				<?php 
+				if ($resource_author_list): ?>
+					<p class="authors">
+						<strong><?php _e( 'Author(s)', 'socialwork');?>:</strong> <?php echo $resource_author_list; ?>
+					</p>
+					<?php
+				endif;
+
+				/*
+				if ($resource_authors):				
 					// Display authors and their links.
 					$posts = $resource_authors; ?>
 						<p class="authors">
@@ -54,6 +64,7 @@ $resource_identifier       = get_field( 'resource_identifier', $resource_id );
 						</p>
 						<?php
 					endif;
+					*/
 				?>
 
 				<?php if ($resource_publication_name) {?>
