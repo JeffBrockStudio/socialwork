@@ -91,7 +91,7 @@ class SocialWork_Accordion {
 		$output = do_shortcode( $content );
 
  		return sprintf(
-			'<div class="testing accordion %s" id="%s"><div class="screen-reader-text">%s</div>%s</div>',
+			'<div class="accordion %s" id="%s"><div class="screen-reader-text">%s</div>%s</div>',
 			$class,
 			$accordion_name,
 			$accordion_atts['name'],
@@ -131,7 +131,7 @@ class SocialWork_Accordion {
 		$output = do_shortcode( $content );
 
 		return sprintf(
-			'<div class="card"><div class="card-header" id="accordion-header"><h3 class="mb-0"><button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse" aria-expanded="%s" aria-controls="collapse"><span class="btn-text">TEST%s</span><span class="subheading">%s</span><span class="arrow-box"><span class="arrow"></span></span></button></h3></div><div id="collapse" class="collapse %s" aria-labelledby="collapse" data-parent="#accordion">%s</div></div>',
+			'<div class="accordion"><div class="card-header" id="accordion-header"><h3 class="mb-0"><button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse" aria-expanded="%s" aria-controls="collapse"><span class="btn-text">TEST%s</span><span class="subheading">%s</span><span class="arrow-box"><span class="arrow"></span></span></button></h3></div><div id="collapse" class="collapse %s" aria-labelledby="collapse" data-parent="#accessible-accordion">%s</div></div>',
 			$active_tab,
 			$section_atts['title'],
 			$section_atts['subheading'],

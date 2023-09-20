@@ -3,20 +3,110 @@ jQuery(document).ready(function($) {
 		
 	
 	/**
-	 * Team Members
+	 * Accordion
 	 */
-	
+
+	"use strict";
+
+	var UWAccordion = function() {
+		// Add unique IDs to each accordion
+		var accordions = document.querySelectorAll("#accessible-accordion");
+		console.log( 'accordions' + accordions );
+
+		if (accordions.length > 1) {
+			for (var i = 0; i < accordions.length; i++) {
+				accordions[i].id = "accordion-" + i;
+			}
+		}
+
+		// Add unique IDs to each collapse
+		var collapses = document.querySelectorAll(".accordion #collapse");
+		if (collapses.length > 0) {
+			for (var j = 0; j < collapses.length; j++) {
+				collapses[j].id = "collapse-" + j;
+				collapses[j].parentElement.getElementsByClassName("btn-link")[0].dataset.target = "#" + collapses[j].id;
+				collapses[j].parentElement.getElementsByClassName("btn-link")[0].setAttribute("aria-controls", collapses[j].id);
+				collapses[j].dataset.parent = "#" + collapses[j].parentElement.parentElement.id;
+				collapses[j].previousElementSibling.id = collapses[j].id + "-header";
+				collapses[j].setAttribute("aria-labelledby", collapses[j].previousElementSibling.id);
+			}
+		}
+
+		// Add role="region" to the collapse when it is shown
+		var collapsesArray = Array.prototype.slice.call(document.querySelectorAll(".card .collapse"));
+		if (collapsesArray.length > 1) {
+			for (var k = 0; k < collapsesArray.length; k++) {
+				var isCollapsed = collapsesArray[k].classList.contains("collapse");
+				new MutationObserver(function(mutations) {
+					mutations.forEach(function(mutation) {
+						if (mutation.attributeName === "class") {
+							var isShown = mutation.target.classList.contains("show");
+							if (isCollapsed !== isShown) {
+								if (isShown) {
+									collapsesArray[k].setAttribute("role", "region");
+								} else {
+									collapsesArray[k].removeAttribute("role", "region");
+								}
+							}
+						}
+					});
+				}).observe(collapsesArray[k], { attributes: true });
+			}
+		}
+
+		// Add focus class to the accordion when a button is focused
+		document.querySelectorAll(".card .card-header button").forEach(function(button) {
+			button.addEventListener("focus", function(event) {
+				button.parentElement.parentElement.parentElement.parentElement.classList.add("focus");
+			});
+			button.addEventListener("blur", function(event) {
+				button.parentElement.parentElement.parentElement.parentElement.classList.remove("focus");
+			});
+		});
+
+		// Keyboard navigation for the accordion
+		document.querySelectorAll(".accordion").forEach(function(accordion) {
+			var buttons = Array.prototype.slice.call(accordion.querySelectorAll(".card-header button"));
+			accordion.addEventListener("keydown", function(event) {
+				var target = event.target;
+				var key = event.which.toString();
+				var ctrl = event.ctrlKey && key.match(/33|34/);
+				if (target.classList.contains("btn-link")) {
+					if (key.match(/38|40/) || ctrl) {
+						var index = buttons.indexOf(target);
+						var direction = key.match(/34|40/) ? 1 : -1;
+						var length = buttons.length;
+						buttons[(index + length + direction) % length].focus();
+						event.preventDefault();
+					} else if (key.match(/35|36/)) {
+						switch (key) {
+							case "36":
+								buttons[0].focus();
+								break;
+							case "35":
+								buttons[buttons.length - 1].focus();
+								break;
+						}
+						event.preventDefault();
+					}
+				}
+			});
+		});
+	};
+
+	new UWAccordion;
+
 	
 	
 	/**
 	 * Pretty Dropdown
 	 */
 	 
-	$dropdown = $('.filter-wrapper select').prettyDropdown({
-		classic: true,
-		height: 44,
-		width: '100%'
-	});	
+	// $dropdown = $('.filter-wrapper select').prettyDropdown({
+	// 	classic: true,
+	// 	height: 44,
+	// 	width: '100%'
+	// });	
 	
 	
 	/**
