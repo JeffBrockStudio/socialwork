@@ -5,7 +5,7 @@ return array (
   'title' => '',
   'type' => 'resource',
   'id' => '64b3ae95cfae4',
-  'updated' => 1689498303,
+  'updated' => 1695197628,
   'columns' => 
   array (
     'title' => 
@@ -41,17 +41,13 @@ return array (
       'filter_label' => '',
       'name' => '64b3ae4beac084',
     ),
-    '64b3ae68ced918' => 
+    '650aa9797ced90' => 
     array (
-      'type' => 'field_64b38a662104a',
-      'label' => 'Author(s)',
+      'type' => 'field_64f21f0402bab',
+      'label' => 'Author List',
       'width' => '180',
       'width_unit' => 'px',
-      'post_property_display' => 'title',
-      'character_limit' => '',
-      'post_link_to' => 'edit_post',
-      'number_of_items' => '10',
-      'separator' => 'comma',
+      'character_limit' => '30',
       'export' => 'on',
       'sort' => 'on',
       'edit' => 'on',
@@ -59,7 +55,7 @@ return array (
       'search' => 'on',
       'filter' => 'off',
       'filter_label' => '',
-      'name' => '64b3ae68ced918',
+      'name' => '650aa9797ced90',
     ),
     '64b3ae81bbe76c' => 
     array (
