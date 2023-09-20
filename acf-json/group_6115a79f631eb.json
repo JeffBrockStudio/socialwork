@@ -3,6 +3,27 @@
     "title": "Resource Details",
     "fields": [
         {
+            "key": "field_64f21f0402bab",
+            "label": "Author list",
+            "name": "resource_author_list",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "acfe_save_meta": 0,
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_64b38a662104a",
             "label": "Author(s)",
             "name": "resource_authors",
@@ -28,7 +49,10 @@
             "return_format": "object",
             "min": "",
             "max": "",
-            "elements": ""
+            "elements": "",
+            "bidirectional_target": [],
+            "acfe_add_post": 0,
+            "acfe_edit_post": 0
         },
         {
             "key": "field_6115ab1f8902b",
@@ -51,7 +75,10 @@
             "return_format": "id",
             "field_type": "select",
             "allow_null": 0,
-            "multiple": 0
+            "multiple": 0,
+            "bidirectional_target": [],
+            "min": "",
+            "max": ""
         },
         {
             "key": "field_64b38c727f6d1",
@@ -191,5 +218,12 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1689658702
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_display_title": "",
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1693589333
 }
