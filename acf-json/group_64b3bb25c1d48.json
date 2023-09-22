@@ -16,6 +16,7 @@
                 "class": "",
                 "id": ""
             },
+            "acfe_save_meta": 0,
             "post_type": [
                 "team"
             ],
@@ -26,9 +27,19 @@
                 "taxonomy"
             ],
             "return_format": "object",
+            "acfe_add_post": 0,
+            "acfe_edit_post": 0,
+            "acfe_bidirectional": {
+                "acfe_bidirectional_enabled": "1",
+                "acfe_bidirectional_related": [
+                    "field_650d2d8c9ea1c"
+                ]
+            },
             "min": "",
             "max": "",
-            "elements": ""
+            "elements": "",
+            "bidirectional": 0,
+            "bidirectional_target": []
         }
     ],
     "location": [
@@ -49,5 +60,12 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1689500654
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_display_title": "",
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1695363144
 }

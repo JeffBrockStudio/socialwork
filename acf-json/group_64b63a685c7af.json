@@ -20,7 +20,8 @@
             "maxlength": "",
             "rows": 3,
             "placeholder": "",
-            "new_lines": "br"
+            "new_lines": "br",
+            "acfe_textarea_code": 0
         },
         {
             "key": "field_64b63a687642c",
@@ -68,7 +69,16 @@
             "return_format": "object",
             "min": "",
             "max": "",
-            "elements": ""
+            "elements": "",
+            "bidirectional_target": [],
+            "acfe_add_post": 0,
+            "acfe_edit_post": 0,
+            "acfe_bidirectional": {
+                "acfe_bidirectional_enabled": true,
+                "acfe_bidirectional_related": [
+                    "field_650d3096ca1f6"
+                ]
+            }
         },
         {
             "key": "field_64b63b6239053",
@@ -96,7 +106,16 @@
             "return_format": "object",
             "min": "",
             "max": "",
-            "elements": ""
+            "elements": "",
+            "bidirectional_target": [],
+            "acfe_add_post": 0,
+            "acfe_edit_post": 0,
+            "acfe_bidirectional": {
+                "acfe_bidirectional_enabled": true,
+                "acfe_bidirectional_related": [
+                    "field_650d38e1efef1"
+                ]
+            }
         },
         {
             "key": "field_64b63b8a39054",
@@ -124,7 +143,16 @@
             "return_format": "object",
             "min": "",
             "max": "",
-            "elements": ""
+            "elements": "",
+            "bidirectional_target": [],
+            "acfe_add_post": 0,
+            "acfe_edit_post": 0,
+            "acfe_bidirectional": {
+                "acfe_bidirectional_enabled": true,
+                "acfe_bidirectional_related": [
+                    "field_650d390defef2"
+                ]
+            }
         },
         {
             "key": "field_64b63a6876444",
@@ -144,7 +172,8 @@
             "maxlength": "",
             "rows": 2,
             "placeholder": "",
-            "new_lines": "br"
+            "new_lines": "br",
+            "acfe_textarea_code": 0
         }
     ],
     "location": [
@@ -165,5 +194,12 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1689664881
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_display_title": "",
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1695365570
 }
