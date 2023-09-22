@@ -24,37 +24,6 @@
             "append": ""
         },
         {
-            "key": "field_64b38a662104a",
-            "label": "Author(s)",
-            "name": "resource_authors",
-            "aria-label": "",
-            "type": "relationship",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "post_type": [
-                "team"
-            ],
-            "post_status": "",
-            "taxonomy": "",
-            "filters": [
-                "search",
-                "taxonomy"
-            ],
-            "return_format": "object",
-            "min": "",
-            "max": "",
-            "elements": "",
-            "bidirectional_target": [],
-            "acfe_add_post": 0,
-            "acfe_edit_post": 0
-        },
-        {
             "key": "field_6115ab1f8902b",
             "label": "Publication Type",
             "name": "resource_type",
@@ -198,6 +167,43 @@
             "placeholder": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_64b38a662104a",
+            "label": "Author(s)",
+            "name": "resource_authors",
+            "aria-label": "",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "team"
+            ],
+            "post_status": "",
+            "taxonomy": "",
+            "filters": [
+                "search",
+                "taxonomy"
+            ],
+            "return_format": "object",
+            "min": "",
+            "max": "",
+            "elements": "",
+            "bidirectional_target": [],
+            "acfe_add_post": 0,
+            "acfe_edit_post": 0,
+            "acfe_bidirectional": {
+                "acfe_bidirectional_enabled": true,
+                "acfe_bidirectional_related": [
+                    "field_650d2baa29ab1"
+                ]
+            }
         }
     ],
     "location": [
@@ -225,5 +231,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1693589333
+    "modified": 1695362044
 }
