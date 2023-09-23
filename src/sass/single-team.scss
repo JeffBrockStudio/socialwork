@@ -66,5 +66,18 @@
         margin-bottom: 0.5rem;
       }
     }
+
+    .published-research {
+      margin-top: 3rem;
+      ul {
+        list-style: none;
+        margin-top: 1.5rem;
+        margin-left: 0;
+        padding-left: 0;
+      }
+      li:not(:last-child) {
+        margin-bottom: 1.5rem;
+      }
+    }
   
 }
