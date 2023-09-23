@@ -126,6 +126,30 @@
 					<?php
 				endif;
 				?>
+
+				<?php
+				$posts = get_field('team_projects_principal_investigator', $resource_id);
+				if ($posts): ?>
+					<div class="research-projects">						
+						<h3><?php _e( 'Research projects', 'socialwork'); ?></h3>
+
+						<ul>
+							<?php
+							foreach ($posts as $post):
+								setup_postdata($post); ?>
+								<li>
+									<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+								</li>
+								
+								<?php
+							endforeach;
+							wp_reset_postdata();
+							?>
+						</ul>
+					</div>
+					<?php
+				endif;
+				?>
 			</div>
 
 		</div>
