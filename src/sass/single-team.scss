@@ -68,7 +68,8 @@
     }
 
     .published-research,
-    .research-projects {
+    .research-projects,
+    .related-news {
       margin-top: 3rem;
       margin-bottom: 4rem;
       ul {
@@ -79,6 +80,16 @@
       }
       li:not(:last-child) {
         margin-bottom: 1.5rem;
+      }
+    }
+
+    .related-news {
+      .meta-data {
+        margin-bottom: .5rem;
+      }
+
+      li:not(:last-child) {
+        margin-bottom: 1.8rem;
       }
     }
   

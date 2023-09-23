@@ -69,11 +69,42 @@
 				<?php
 				if ( get_field( 'team_professional_interests', $resource_id )) { ?>
 					<div class="professional-interests">
-						<h3>Professional Interests</h3>
+						<h3>Professional interests</h3>
 						<?php echo get_field( 'team_professional_interests', $resource_id ); ?>
 					</div>
 				<?php 
 				} ?>
+
+				<?php
+				$posts = get_field('team_news', $resource_id);
+				if ($posts): ?>
+					<div class="related-news">						
+						<h3><?php _e( 'Related news', 'socialwork'); ?></h3>
+
+						<ul>
+							<?php
+							foreach ($posts as $post):
+								setup_postdata($post); ?>
+								<li>
+									<div class="meta-data">
+										<?php
+										$news_date = get_the_date( 'F j, Y' );
+										echo $news_date;
+										?>
+									</div>
+									
+									<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+								</li>
+								
+								<?php
+							endforeach;
+							wp_reset_postdata();
+							?>
+						</ul>
+					</div>
+					<?php
+				endif;
+				?>
 
 				
 			</div>
@@ -82,8 +113,6 @@
 				<header class="entry-header">
 					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 				</header><!-- .entry-header -->
-
-				
 
 				<?php if ( get_field( 'team_position', $resource_id )) { ?>
 						<p class="title"><?php echo get_field( 'team_position', $resource_id ); ?></p>
