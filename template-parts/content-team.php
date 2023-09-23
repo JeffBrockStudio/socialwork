@@ -92,7 +92,7 @@
 										echo $news_date;
 										?>
 									</div>
-									
+
 									<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 								</li>
 								
@@ -157,28 +157,72 @@
 				?>
 
 				<?php
+				// Query research projects.
+				$loop_count = 1;
+				$max_projects = 5;
+				$research_projects = array();
+
+				// First group: Principal investigator.
 				$posts = get_field('team_projects_principal_investigator', $resource_id);
-				if ($posts): ?>
+				if ($posts): 
+					foreach ($posts as $post):
+						setup_postdata($post);
+						$research_projects[$loop_count]['title'] = get_the_title();
+						$research_projects[$loop_count]['permalink'] = get_permalink();
+						$loop_count++;
+					endforeach;
+				endif;
+
+				// Second group: Co-investigator.
+				$posts = get_field('team_projects_co_investigator', $resource_id);
+				if ($posts): 
+					foreach ($posts as $post):
+						setup_postdata($post);
+						$research_projects[$loop_count]['title'] = get_the_title();
+						$research_projects[$loop_count]['permalink'] = get_permalink();
+						$loop_count++;
+					endforeach;
+				endif;
+
+				// Third group:	Other investigator.
+				$posts = get_field('team_projects_other_investigator', $resource_id);
+				if ($posts): 
+					foreach ($posts as $post):
+						setup_postdata($post);
+						$research_projects[$loop_count]['title'] = get_the_title();
+						$research_projects[$loop_count]['permalink'] = get_permalink();
+						$loop_count++;
+					endforeach;
+				endif;
+
+				wp_reset_postdata();
+				?>				
+
+				<?php
+				if (count($research_projects)): ?>
 					<div class="research-projects">						
 						<h3><?php _e( 'Research projects', 'socialwork'); ?></h3>
 
 						<ul>
-							<?php
-							foreach ($posts as $post):
-								setup_postdata($post); ?>
+							<?php 
+							$i = 1;
+							foreach ($research_projects as $research_project): 
+								if ( $i > $max_projects ):
+									break; 
+								endif; ?>
 								<li>
-									<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-								</li>
-								
+									<a href="<?php echo $research_project['permalink']; ?>"><?php echo  $research_project['title']; ?></a>
+								</li>								
 								<?php
+								$i++;
 							endforeach;
-							wp_reset_postdata();
 							?>
 						</ul>
 					</div>
 					<?php
 				endif;
 				?>
+				
 			</div>
 
 		</div>
