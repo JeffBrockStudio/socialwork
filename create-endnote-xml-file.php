@@ -139,6 +139,10 @@ if ($publication_date_published):
   // Add the pub-dates element
   $pub_dates = $dates->addChild('pub-dates');
 
+  // Clean up legacy formatting
+  $publication_date_published = str_replace('Date Published: ', '', $publication_date_published); 
+  $publication_date_published = str_replace(' ;', '', $publication_date_published); 
+
   // Add the date element
   $date = $pub_dates->addChild('date');
   $style = $date->addChild('style', $publication_date_published);
@@ -148,6 +152,11 @@ if ($publication_date_published):
 endif;
 
 if ($publication_volume):
+
+  // Clean up legacy formatting
+  $publication_volume = str_replace('Volume: ', '', $publication_volume); 
+  $publication_volume = str_replace(' ;', '', $publication_volume); 
+
   // Add the volume element
   $volume = $record->addChild('volume');
   $style = $volume->addChild('style', $publication_volume);
@@ -157,6 +166,11 @@ if ($publication_volume):
 endif;   
 
 if ($publication_pagination):
+ 
+  // Clean up legacy formatting
+  $publication_pagination = str_replace('Pagination: ', '', $publication_pagination); 
+  $publication_pagination = str_replace(' ;', '', $publication_pagination); 
+
   // Add the pages element
   $pages = $record->addChild('pages');
   $style = $pages->addChild('style', $publication_pagination);
@@ -173,6 +187,11 @@ $style->addAttribute('font', 'default');
 $style->addAttribute('size', '100%');
 
 if ($publication_issue):
+
+  // Clean up legacy formatting
+  $publication_issue = str_replace('Issue: ', '', $publication_issue); 
+  $publication_issue = str_replace(' ;', '', $publication_issue); 
+
   // Add the issue element
   $issue = $record->addChild('issue');
   $style = $issue->addChild('style', $publication_issue);
