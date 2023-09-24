@@ -5,7 +5,7 @@ return array (
   'title' => '',
   'type' => 'resource',
   'id' => '64b3ae95cfae4',
-  'updated' => 1695197628,
+  'updated' => 1695549850,
   'columns' => 
   array (
     'title' => 
@@ -104,6 +104,26 @@ return array (
       'filter' => 'off',
       'filter_label' => '',
       'name' => '64b3aec09e3540',
+    ),
+    '65100991e10624' => 
+    array (
+      'type' => 'column-content',
+      'label' => 'Content',
+      'width' => '',
+      'width_unit' => '%',
+      'string_limit' => 'word_limit',
+      'excerpt_length' => '20',
+      'before' => '',
+      'after' => '',
+      'edit' => 'on',
+      'editable_type' => 'textarea',
+      'export' => 'on',
+      'sort' => 'on',
+      'bulk_edit' => 'on',
+      'search' => 'on',
+      'filter' => 'off',
+      'filter_label' => '',
+      'name' => '65100991e10624',
     ),
     '64b3b16fc624dc' => 
     array (
