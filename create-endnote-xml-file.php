@@ -19,7 +19,7 @@ $endnote_reference_type = get_field('endnote_reference_type', 'publication_types
 // Get the publication title
 $publication_title = $publication->post_title;
 
-// Get the name of the publication (journal, book, etc.)
+// Get the name of the publication
 $publication_name = get_field( 'resource_publication_name', $publication_id );
 
 // Get the publication year
@@ -116,12 +116,14 @@ $style->addAttribute('face', 'normal');
 $style->addAttribute('font', 'default');
 $style->addAttribute('size', '100%');
 
-// Add the secondary title element
-$secondary_title = $titles->addChild('secondary-title');
-$style = $secondary_title->addChild('style', $publication_name);
-$style->addAttribute('face', 'normal'); 
-$style->addAttribute('font', 'default');
-$style->addAttribute('size', '100%');
+if ($publication_name):
+  // Add the secondary title element
+  $secondary_title = $titles->addChild('secondary-title');
+  $style = $secondary_title->addChild('style', $publication_name);
+  $style->addAttribute('face', 'normal'); 
+  $style->addAttribute('font', 'default');
+  $style->addAttribute('size', '100%');
+endif;
 
 // Add the dates element
 $dates = $record->addChild('dates');
