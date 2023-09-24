@@ -47,7 +47,7 @@ $publication_date_published = get_field('resource_date_published', $publication_
 header('Content-Type: text/xml');
 
 // Set the filename and force download
-//header('Content-Disposition: attachment; filename="endnote.xml"');
+header('Content-Disposition: attachment; filename="endnote.xml"');
 
 // Create the XML content
 $xml = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8"?><xml></xml>');
