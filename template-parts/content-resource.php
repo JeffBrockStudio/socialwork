@@ -112,7 +112,7 @@ $resource_identifier       = get_field( 'resource_identifier', $resource_id );
 					<strong><?php _e( 'Access', 'socialwork');?>:</strong>
 					<a href="#" target="_blank"><?php _e( 'Google Scholar', 'socialwork');?></a> | 
 					<a href="#" target="_blank"><?php _e( 'Tagged', 'socialwork');?></a> | 
-					<a href="#" target="_blank"><?php _e( 'XML', 'socialwork');?></a>
+					<a href="<?php echo get_stylesheet_directory_uri(); ?>/create-endnote-xml-file.php?publication_id=<?php the_ID(); ?>" target="_blank" ><?php _e( 'XML', 'socialwork');?></a>
 				</p>
 
 				<?php if ( !empty( get_the_content() ) ): ?>

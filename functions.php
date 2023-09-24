@@ -564,42 +564,7 @@ function generate_endnote_file() {
 	// Output the XML content
 	echo $xml->asXML();
 }
-function create_endnote_xml_file() {
-	// Set the content type to XML
-	header('Content-Type: text/xml');
 
-	// Set the filename and force download
-	header('Content-Disposition: attachment; filename="endnote.xml"');
-
-	// Create the XML content
-	$xml = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8"?><xml></xml>');
-
-	// Add the root element
-	$records = $xml->addChild('records');
-
-	// Add the record elements
-	$record = $records->addChild('record');
-	$record->addAttribute('xmlns', 'http://www.endnote.com/xmlexport');
-
-	// Add the title element
-	$title = $record->addChild('titles');
-	$title->addChild('title', 'Example Title');
-
-	// Add the author elements
-	$authors = $record->addChild('authors');
-	$author = $authors->addChild('author');
-	$author->addChild('first', 'John');
-	$author->addChild('last', 'Doe');
-
-	// Add the year element
-	$record->addChild('dates', '2021');
-
-	// Output the XML content
-	echo $xml->asXML();
-
-	// Stop the script from running
-	exit;
-}
 
 /**
  * Register additional menus.
