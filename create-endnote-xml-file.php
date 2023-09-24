@@ -25,6 +25,24 @@ $publication_name = get_field( 'resource_publication_name', $publication_id );
 // Get the publication year
 $publication_year = get_field('resource_year', $publication_id);
 
+// Get the publication author list (being used temporarily)
+$publication_author_list = get_field('resource_author_list', $publication_id);
+
+// Get the publication authors
+$publication_authors = get_field('resource_authors', $publication_id);
+
+// Get the publication volume
+$publication_volume = get_field('resource_volume', $publication_id);
+
+// Get the publication issue
+$publication_issue = get_field('resource_issue', $publication_id);
+
+// Get the publication pagination
+$publication_pagination = get_field('resource_pagination', $publication_id);
+
+// Get the publication date published
+$publication_date_published = get_field('resource_date_published', $publication_id);
+
 // Set the content type to XML
 header('Content-Type: text/xml');
 
@@ -54,22 +72,39 @@ $contributors = $record->addChild('contributors');
 // Add the authors element
 $authors = $contributors->addChild('authors');
 
-// Get the publication authors
-$publication_authors = get_field('resource_authors', $publication_id);
-$posts = $publication_authors;
-$i = 1;
-foreach ($posts as $post):
-  setup_postdata($post); 
+if ($publication_author_list):
 
-  // Add the author element
-  $author = $authors->addChild('author');
-  $style = $author->addChild('style', get_the_title());
-  $style->addAttribute('face', 'normal'); 
-  $style->addAttribute('font', 'default');
-  $style->addAttribute('size', '100%');
+  // Convert author_list to an array
+  $authors_array = explode(';', $publication_author_list);
+  foreach ($authors_array as $author_name):
 
-endforeach;
-wp_reset_postdata();
+    // Add the author element
+    $author = $authors->addChild('author');
+    $style = $author->addChild('style', trim($author_name));
+    $style->addAttribute('face', 'normal'); 
+    $style->addAttribute('font', 'default');
+    $style->addAttribute('size', '100%');
+
+  endforeach;
+
+elseif ($publication_authors):
+
+  // Loop through the authors and add them to the XML
+  $posts = $publication_authors;
+  foreach ($posts as $post):
+    setup_postdata($post); 
+
+    // Add the author element
+    $author = $authors->addChild('author');
+    $style = $author->addChild('style', get_the_title());
+    $style->addAttribute('face', 'normal'); 
+    $style->addAttribute('font', 'default');
+    $style->addAttribute('size', '100%');
+
+  endforeach;
+  wp_reset_postdata();
+
+endif;
 
 // Add the titles element
 $titles = $record->addChild('titles');
@@ -98,43 +133,52 @@ $style->addAttribute('face', 'normal');
 $style->addAttribute('font', 'default');
 $style->addAttribute('size', '100%');
 
-// Add the pub-dates element
-$pub_dates = $dates->addChild('pub-dates');
+if ($publication_date_published):
+  // Add the pub-dates element
+  $pub_dates = $dates->addChild('pub-dates');
 
-// Add the date element
-$date = $pub_dates->addChild('date');
-$style = $date->addChild('style', 'TEST');
-$style->addAttribute('face', 'normal'); 
-$style->addAttribute('font', 'default');
-$style->addAttribute('size', '100%');
+  // Add the date element
+  $date = $pub_dates->addChild('date');
+  $style = $date->addChild('style', $publication_date_published);
+  $style->addAttribute('face', 'normal'); 
+  $style->addAttribute('font', 'default');
+  $style->addAttribute('size', '100%');
+endif;
 
-// Add the volume element
-$volume = $record->addChild('volume');
-$style = $volume->addChild('style', 'VOLUME');
-$style->addAttribute('face', 'normal'); 
-$style->addAttribute('font', 'default');
-$style->addAttribute('size', '100%');
+if ($publication_volume):
+  // Add the volume element
+  $volume = $record->addChild('volume');
+  $style = $volume->addChild('style', $publication_volume);
+  $style->addAttribute('face', 'normal'); 
+  $style->addAttribute('font', 'default');
+  $style->addAttribute('size', '100%');
+endif;   
 
-// Add the pages element
-$pages = $record->addChild('pages');
-$style = $pages->addChild('style', 'PAGES');
-$style->addAttribute('face', 'normal'); 
-$style->addAttribute('font', 'default');
-$style->addAttribute('size', '100%');
+if ($publication_pagination):
+  // Add the pages element
+  $pages = $record->addChild('pages');
+  $style = $pages->addChild('style', $publication_pagination);
+  $style->addAttribute('face', 'normal'); 
+  $style->addAttribute('font', 'default');
+  $style->addAttribute('size', '100%');
+endif;
 
 // Add the language element
 $language = $record->addChild('language');
-$style = $language->addChild('style', 'LANGUAGE');
+$style = $language->addChild('style', 'eng');
 $style->addAttribute('face', 'normal'); 
 $style->addAttribute('font', 'default');
 $style->addAttribute('size', '100%');
 
-// Add the issue element
-$issue = $record->addChild('issue');
-$style = $issue->addChild('style', 'ISSUE');
-$style->addAttribute('face', 'normal'); 
-$style->addAttribute('font', 'default');
-$style->addAttribute('size', '100%');
+if ($publication_issue):
+  // Add the issue element
+  $issue = $record->addChild('issue');
+  $style = $issue->addChild('style', $publication_issue);
+  $style->addAttribute('face', 'normal'); 
+  $style->addAttribute('font', 'default');
+  $style->addAttribute('size', '100%');
+endif;
+
 
 // Output the XML content
 echo $xml->asXML();
