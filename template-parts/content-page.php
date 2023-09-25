@@ -10,23 +10,6 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
-	<?php
-	if ( ( is_single() || is_home() ) && get_option( 'show_byline_on_posts' ) ) :
-
-		if ( get_option( 'show_author_on_posts' ) && 'post' === get_post_type() ) {
-			?>
-			<div class="author-info">
-			<?php if ( function_exists( 'coauthors' ) ) { coauthors(); } else { the_author(); } ?>
-			<p class="author-desc"> <small><?php the_author_meta(); ?></small></p>
-			</div>
-
-			<?php
-		}
-	endif;
-	?>
 
 	<div class="entry-content">
 		<?php

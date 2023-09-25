@@ -1,5 +1,14 @@
 .page-template-elementor_theme {
 
+ 
+
+  .card-title {
+    color: $white;
+    font-size: 2.647rem;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
   .entry-title {
     text-transform: none;
   }
@@ -7,6 +16,16 @@
   .card.large {
     margin-top: 26px;
     margin-bottom: 0.5rem;
+
+    &.hero-default {
+      .card-body h1 {
+        font-family: 'Encode Sans Compressed', Sans-serif;
+      }
+      .card-body h2 {
+        font-size: 2.647rem;
+        line-height: var(--e-global-typography-primary-line-height );
+      }
+    }
 
     .card-body h2 {
       font-size: 2.647rem;
