@@ -56,6 +56,10 @@ remove_filter( 'the_content', 'wpautop' );
 */
 require get_stylesheet_directory() . '/inc/shortcodes/shortcodes.php';
 
+/**
+ * Custom template functions.
+*/
+require get_stylesheet_directory() . '/inc/template-functions.php';
 
 /**
  * Register custom post types.
