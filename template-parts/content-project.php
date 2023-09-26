@@ -111,7 +111,7 @@ $project_date                    = get_field( 'project_date', $resource_id );
 					endif;
 				?>
 
-				<?php if ($project_other_investigators): ?>
+				<?php if ($project_other_names): ?>
 					<p class="other-names">
 						<strong><?php _e( 'Other Names', 'socialwork');?>:</strong> 
 						<?php echo $project_other_names; ?>
