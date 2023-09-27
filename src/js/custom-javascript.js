@@ -132,7 +132,7 @@ jQuery(document).ready(function($) {
 	}
 	
 	function buildHref(thisObj) {
-		
+
 		var url = [location.protocol, '//', location.host, location.pathname].join('');	 
 		var href = url + '?';		  
 		var queryParams = new URLSearchParams(window.location.search);
@@ -148,7 +148,7 @@ jQuery(document).ready(function($) {
 				queryParams.delete( element );	
 			}
 		});
-		
+
 		// Search query
 		var post_type = thisObj.data('post_type');		
 		var search_query = encodeURIComponent($('#' + post_type + '-search-query').val());		
@@ -161,7 +161,6 @@ jQuery(document).ready(function($) {
 		
 		// Update querystrings
 		history.pushState(null, null, '?'+queryParams.toString());		
-		
 		return href;
 	}
 	 
@@ -189,7 +188,7 @@ jQuery(document).ready(function($) {
 			// Prevent unnecessary AJAX reloads with the "cleared" class.
 			$(this).removeClass( 'cleared' );
 		} else {	
-			href = buildHref( $(this) );
+			var href = buildHref( $(this) );
 			loadAjax(href);
 		}
 	
@@ -200,8 +199,8 @@ jQuery(document).ready(function($) {
 		event.preventDefault();	
 	
 		hideElements();		
-		
-		href = buildHref( $(this) );
+
+		var href = buildHref( $(this) );
 		loadAjax(href);
 	});		
 	
@@ -224,8 +223,10 @@ jQuery(document).ready(function($) {
 		queryParams.delete( 'search' );			
 		history.pushState(null, null, '?'+queryParams.toString());
 	
-		$('.filter select').val('').attr('selected','selected').addClass('cleared').change();
-		$dropdown.refresh();
+		if ( $('.filter select').length) {
+			$('.filter select').val('').attr('selected','selected').addClass('cleared').change();
+			$dropdown.refresh();
+		}
 		
 		$('#' + post_type + '-search-query').val('').attr('placeholder', search_placeholder );					
 		
