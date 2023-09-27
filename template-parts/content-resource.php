@@ -11,10 +11,13 @@
 <?php $resource_id = get_the_ID();
 $resource_authors          = get_field( 'resource_authors', $resource_id );
 $resource_author_list      = get_field( 'resource_author_list', $resource_id );
-$resource_type 					   = get_the_terms( $resource_id, 'publication_types' );
+$resource_type             = get_the_terms( $resource_id, 'publication_types' );
 $resource_publication_name = get_field( 'resource_publication_name', $resource_id );
 $resource_year             = get_field( 'resource_year', $resource_id );
-$resource_info             = get_field( 'resource_info', $resource_id );
+$resource_volume           = get_field( 'resource_volume', $resource_id );
+$resource_issue            = get_field( 'resource_issue', $resource_id );
+$resource_pagination       = get_field( 'resource_pagination', $resource_id );
+$resource_date_published   = get_field( 'resource_date_published', $resource_id );
 $resource_locator_url      = get_field( 'resource_locator_url', $resource_id );
 $resource_locator_doi      = get_field( 'resource_locator_doi', $resource_id );
 $resource_identifier       = get_field( 'resource_identifier', $resource_id );
@@ -70,10 +73,17 @@ $resource_identifier       = get_field( 'resource_identifier', $resource_id );
 				<?php if ($resource_publication_name) {?>
 					<p class="publication-name">
 						<strong><?php _e( 'Publication', 'socialwork');?>:</strong> 
-						<?php echo $resource_publication_name;
-						if ($resource_year): echo ': ' . $resource_year; endif;
+						<?php 
+						if ($resource_year): echo $resource_year . '. ' ; endif;
+						echo '<cite>"' . $resource_publication_name . '"</cite>';
 
-						if ($resource_info): echo ': ' . $resource_info . '.'; endif;
+						if ($resource_volume): echo ' ' . $resource_volume . ', '; endif;
+
+						if ($resource_issue): echo ' ' . $resource_issue . ' '; endif;
+
+						if ($resource_date_published): echo '(' . $resource_date_published . ')'; endif;
+
+						if ($resource_pagination): echo ': ' . $resource_pagination . '. '; endif;
 
 						if ($resource_identifier): echo ' ' . $resource_identifier; endif;
 
