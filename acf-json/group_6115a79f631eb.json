@@ -92,26 +92,6 @@
             "append": ""
         },
         {
-            "key": "field_64b38d7593f1b",
-            "label": "Pub: Info",
-            "name": "resource_info",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "Volume, start page, etc.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
             "key": "field_64b38dbced21c",
             "label": "Locator URL",
             "name": "resource_locator_url",
@@ -142,10 +122,11 @@
                 "class": "",
                 "id": ""
             },
+            "acfe_save_meta": 0,
             "default_value": "",
             "maxlength": "",
             "placeholder": "",
-            "prepend": "",
+            "prepend": "https:\/\/doi.org\/",
             "append": ""
         },
         {
@@ -315,5 +296,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1695539270
+    "modified": 1695841230
 }
