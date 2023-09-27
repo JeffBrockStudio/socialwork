@@ -72,6 +72,19 @@
 				background-color: $purple;
 			}
 		}
+
+		.col-filters {
+			.label {
+        display: none;
+      }
+
+			.filter {
+				br {
+					display: none;
+				}
+			}
+		}
+
 		.col-search {
       @include media-breakpoint-down(sm) {
         margin-top: 1rem;  

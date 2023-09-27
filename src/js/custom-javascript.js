@@ -102,11 +102,11 @@ jQuery(document).ready(function($) {
 	 * Pretty Dropdown
 	 */
 	 
-	// $dropdown = $('.filter-wrapper select').prettyDropdown({
-	// 	classic: true,
-	// 	height: 44,
-	// 	width: '100%'
-	// });	
+	var $dropdown = $('.filter-wrapper select').prettyDropdown({
+		classic: true,
+		height: 44,
+		width: '100%'
+	});	
 	
 	
 	/**

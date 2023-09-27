@@ -246,9 +246,9 @@ $show['title'] = 'true';
 									<?php 
 									if ( $show['filters'] == 'true' ): 
 										if ( $show['search'] == 'false'):
-											$col_styles = 'col-12';
+											$col_styles = 'col-12 col-filters';
 										else:
-											$col_styles = 'col-12 col-md-7';
+											$col_styles = 'col-12 col-md-7 col-filters';
 										endif; ?>
 											<div class="<?php echo $col_styles;?>">
 											
@@ -547,7 +547,7 @@ $show['title'] = 'true';
 									<path d="M17.7679 8.15479L7.77051 18.1524" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 									<path d="M7.77051 8.15479L17.7679 18.1524" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 								</svg>
-								<p><?php _e( 'Clear search', 'socialwork' ); ?></p>
+								<p><?php _e( 'Clear filters', 'socialwork' ); ?></p>
 							</div>		
 						</div>
 					</div>
