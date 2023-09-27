@@ -518,6 +518,10 @@ $show['title'] = 'true';
 	<div id="<?php echo $post_type; ?>-list-wrapper" class="list-wrapper layout-<?php echo $layout; ?>">
 		<div id="posts-ajax" class="row <?php echo $post_type; ?>">
 			<?php
+			$args_count_only = $args;
+			$args_count_only['posts_per_page'] = -1;
+			$number_of_results = count(get_posts($args_count_only));			
+
 			$the_query = new WP_Query( $args );
 			if ( $the_query->have_posts() ):
 				
@@ -535,7 +539,8 @@ $show['title'] = 'true';
 					(array_key_exists( 'team_roles', $_GET ) && $_GET['team_roles'] )) { ?>
 					<div class="col-12 results-found">
 						<div class="inner">
-							<p><?php echo $the_query->post_count; 
+							<p><?php //echo $the_query->post_count; 
+							echo $number_of_results;
 							if ($the_query->post_count == 1):
 								_e( ' result for', 'socialwork');
 							else:
