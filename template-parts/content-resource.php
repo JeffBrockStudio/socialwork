@@ -77,13 +77,17 @@ $resource_identifier       = get_field( 'resource_identifier', $resource_id );
 						if ($resource_year): echo $resource_year . '. ' ; endif;
 						echo '<cite>"' . $resource_publication_name . '"</cite>';
 
-						if ($resource_volume): echo ' ' . $resource_volume . ', '; endif;
+						if ($resource_volume): echo ' ' . $resource_volume; endif;
 
-						if ($resource_issue): echo ' ' . $resource_issue . ' '; endif;
+						if ($resource_volume && $resource_issue): echo ', '; endif;
 
-						if ($resource_date_published): echo '(' . $resource_date_published . ')'; endif;
+						if ($resource_issue): echo $resource_issue; endif;
 
-						if ($resource_pagination): echo ': ' . $resource_pagination . '. '; endif;
+						if ($resource_date_published): echo ' (' . $resource_date_published . ')'; endif;
+
+						if ($resource_pagination): echo ': ' . $resource_pagination; endif;
+
+						echo '. ';
 
 						if ($resource_identifier): echo ' ' . $resource_identifier; endif;
 
