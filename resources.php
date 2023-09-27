@@ -248,7 +248,7 @@ $show['title'] = 'true';
 										if ( $show['search'] == 'false'):
 											$col_styles = 'col-12 col-filters';
 										else:
-											$col_styles = 'col-12 col-md-7 col-filters';
+											$col_styles = 'col-12 col-md-5 offset-md-1 col-filters';
 										endif; ?>
 											<div class="<?php echo $col_styles;?>">
 											
@@ -262,7 +262,7 @@ $show['title'] = 'true';
 														$taxonomy_labels = $taxonomy_details->labels;
 														?>
 														<?php if ( $taxonomy_details->publicly_queryable ): ?>
-															<div class="col-12 col-md-6">		
+															<div class="col-12">		
 																<div class="filter <?php echo $taxonomy; ?>">
 																	<label for="select-<?php echo $taxonomy; ?>" class="sr-only"><?php echo $taxonomy_labels->menu_name; ?></label>
 																	<select id="select-<?php echo $taxonomy; ?>" data-taxonomies='<?php echo json_encode( $taxonomies ) ?>' data-post_type="<?php echo $post_type; ?>">
@@ -306,7 +306,7 @@ $show['title'] = 'true';
 										if ( $show['filters'] == 'false'):
 											$col_styles = 'col-12 col-md-8 offset-md-2';
 										else:
-											$col_styles = 'col-12 col-md-4 offset-md-1';
+											$col_styles = 'col-12 col-md-5';
 										endif; ?>
 										
 									<div class="<?php echo $col_styles;?> col-search">		
