@@ -379,7 +379,8 @@ $show['title'] = 'true';
 	
 	// Order by
 	if ( $post_type == 'team') {
-		$args['orderby'] = 'menu_order';	
+		$args['orderby'] = 'meta_value';	
+		$args['meta_key'] = 'team_last_name';	
 	} elseif ( $post_type == 'event') {	
 		$args['orderby'] = 'meta_value';	
 		$args['meta_key'] = 'event_start_date';	
