@@ -530,7 +530,8 @@ $show['title'] = 'true';
 					$resources_list[$resource_id]['id'] = $post->ID;		
 				endwhile;
 				
-				if ( array_key_exists( 'search', $_GET ) && $_GET['search'] ) { ?>
+				if (( array_key_exists( 'search', $_GET ) && $_GET['search'] ) OR
+					(array_key_exists( 'team_roles', $_GET ) && $_GET['team_roles'] )) { ?>
 					<div class="col-12 results-found">
 						<div class="inner">
 							<p><?php echo $the_query->post_count; 
@@ -538,7 +539,13 @@ $show['title'] = 'true';
 								_e( ' result for', 'socialwork');
 							else:
 								_e( ' results for', 'socialwork');
-							endif; ?>: "<?php esc_attr_e( $_GET['search'], 'socialwork' ); ?>"								
+							endif; ?>: 
+							<?php if (array_key_exists( 'search', $_GET ) ): ?>
+								"<?php esc_attr_e( $_GET['search'], 'socialwork' ); ?>"
+							<?php elseif ( array_key_exists( 'team_roles', $_GET ) ): ?>"<?php
+									// Get term name by slug
+									$term = get_term_by( 'slug', $_GET['team_roles'], 'team_roles' );
+									echo $term->name; ?>"<?php endif; ?>						
 							</p>
 
 							<div class="clear-filters" data-post_type="<?php echo $post_type; ?>" data-taxonomies='<?php echo json_encode( $taxonomies ) ?>' data-search_placeholder="<?php echo $post_type_labels->search_items; ?>">
