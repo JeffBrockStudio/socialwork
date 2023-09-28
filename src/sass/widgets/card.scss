@@ -167,6 +167,14 @@
       h1 {
         color: $white;
       }
+
+      .btn-outline.white {
+        color: $white;
+        
+        span {
+          background-color: transparent;
+        }
+      }
     }
 
     .card-body {
@@ -181,6 +189,8 @@
         }
       }
     }
+
+    
     
   }
 
