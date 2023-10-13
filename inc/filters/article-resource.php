@@ -66,7 +66,7 @@ $resource_locator_doi      = get_field( 'resource_locator_doi', $resource_id );
               endif; 
               
               if ($resource_locator_doi): ?>
-                <br><strong><?php _e( 'DOI', 'socialwork');?>:</strong> <?php echo $resource_locator_doi; ?>
+                <br><strong><?php _e( 'DOI', 'socialwork');?>:</strong> <a href="https://doi.org/<?php echo $resource_locator_doi; ?>" target="_blank">https://doi.org/<?php echo $resource_locator_doi; ?></a>
                 <?php
               endif; 
               ?>
