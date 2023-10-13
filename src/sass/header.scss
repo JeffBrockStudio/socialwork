@@ -23,3 +23,57 @@ header.site-header {
     }
   }
 }
+
+
+// 
+// Navbar
+// --------------------------------------------------
+.navbar.white-bar {
+
+  > .container-fluid {
+    @media (max-width: 1214px) {
+      padding-right: 1vw;
+      padding-left: 1vw;
+    }
+  }
+  .navbar-nav {
+    .nav-item {
+      a.nav-link {
+        @media (max-width: 1700px) {
+          padding-left: 0.75rem;
+          padding-right: 0.75rem;      
+        }
+        @media (max-width: 1600px) {
+          font-size: 18px;
+          padding-left: 0.55rem;
+          padding-right: 0.55rem;      
+        }
+        @media (max-width: 1460px) {
+          font-size: 17px;
+          padding-left: 0.5rem;
+          padding-right: 0.5rem;      
+        }
+        @media (max-width: 1400px) {
+          font-size: 16px;
+          padding-left: 0.4rem;
+          padding-right: 0.4rem;  
+        }
+        @media (max-width: 1275px) {
+          font-size: 15px;
+          padding-left: 0.3rem;
+          padding-right: 0.3rem;  
+        }
+        @media (max-width: 950px) {
+          font-size: 14px;
+          padding-left: 0.3rem;
+          padding-right: 0.3rem;  
+        }
+        @media (max-width: 767px) {
+          font-size: 18px;
+          padding-left: 0.3rem;
+          padding-right: 0.3rem;  
+        }
+      }
+    }
+  }
+}
