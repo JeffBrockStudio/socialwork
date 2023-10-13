@@ -251,7 +251,7 @@
         },
         {
             "key": "field_650fe02f0ce78",
-            "label": "Date Published",
+            "label": "Month Published",
             "name": "resource_date_published",
             "aria-label": "",
             "type": "text",
@@ -296,5 +296,5 @@
     "acfe_display_title": "",
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1695841230
+    "modified": 1697221206
 }
