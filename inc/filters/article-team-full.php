@@ -2,11 +2,14 @@
   <div class="inner">
     <?php if ( $show['thumbnails'] == 'true' ): ?>
       <div class="thumb">      
-        <a href="<?php echo get_permalink( $resource_id ); ?>">
+        <?php if ( get_the_post_thumbnail( $resource_id )): ?>
           <?php echo get_the_post_thumbnail( $resource_id, 'medium' ); ?>
-        </a>                      
+        <?php else: ?>	
+          <img src="<?php $image = get_field( 'default_image_team', 'options' ); echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" height="<?php echo $image['height'] ?>" width="<?php echo $image['width'] ?>" />
+        <?php endif; ?>                     
       </div>
     <?php endif; ?>
+
     
     <div class="text">
       <h3><?php echo get_the_title( $resource_id ); ?></h3>

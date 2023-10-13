@@ -427,6 +427,21 @@ function custom_acf_admin_head() {
 add_action('acf/input/admin_head', 'custom_acf_admin_head');
 
 
+if( current_user_can('manage_options') AND function_exists('acf_add_options_page') ) {
+
+	acf_add_options_page(array(
+		'page_title'  => 'SSW Settings',
+		'menu_title'  => 'SSW Settings',
+		'menu_slug'   => 'theme-general-options',
+		'capability'  => 'edit_posts',
+		'redirect'    => true,
+		'icon_url'	  => 'dashicons-admin-site',
+		'position'    => 58 // End of the menu, before the separator at 59
+	));
+	
+}
+
+
 /**
  * Tell SearchWP to index the Title from a Relationship ACF field instead of the post ID
  * https://searchwp.com/documentation/knowledge-base/process-acf-fields-to-index-expected-data/
