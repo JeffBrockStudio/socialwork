@@ -54,7 +54,7 @@ $show['date']                    = 'true';
 					endif;
 				  ?>          
 
-					<?php if ( $show['date'] == 'true' ): ?>
+					<?php if ( $show['date'] == 'true' AND $project_date ): ?>
 						<p class="project-date">
 							<strong><?php _e( 'Date', 'socialwork');?>:</strong> <?php echo $project_date; ?>																
 						</p>
