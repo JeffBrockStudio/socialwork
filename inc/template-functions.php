@@ -61,13 +61,16 @@ if ( is_category() || is_single() || is_post_type_archive() || is_tag() ) {
     } elseif ( 'team' === get_post_type() ) {  
       $main_page = get_field('main_page_team','options');
       $html .= '<li><a href="' . esc_url( get_permalink( $main_page ) ) . '">' . get_the_title( $main_page ) . '</a>';
+    } elseif ( 'project' === get_post_type() ) {  
+      $main_page = get_field('main_page_project','options');
+      $html .= '<li><a href="' . esc_url( get_permalink( $main_page ) ) . '">' . get_the_title( $main_page ) . '</a>';  
     } elseif ( has_category() ) {
       $thecat   = get_the_category( $post->ID );
       $category = array_shift( $thecat );
       $html    .= '<li><a href="' . get_category_link( $category->term_id ) . '" title="' . get_cat_name( $category->term_id ) . ' ">' . get_cat_name( $category->term_id ) . '</a>';
     }
     // check if is Custom Post Type.
-    if ( ! is_singular( array( 'page', 'attachment', 'post', 'team' ) ) ) {
+    if ( ! is_singular( array( 'page', 'attachment', 'post', 'team', 'project' ) ) ) {
       $posttype = get_post_type_object( get_post_type() );
       $html    .= '<li><a href="' . home_url( '/' ) . '" title="' . get_bloginfo( 'title' ) . '">' . get_bloginfo( 'title' ) . '</a>';
     }
