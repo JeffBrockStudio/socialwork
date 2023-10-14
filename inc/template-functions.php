@@ -56,17 +56,18 @@ if ( is_category() || is_single() || is_post_type_archive() || is_tag() ) {
 
   if ( is_single() ) {
     if ( 'post' === get_post_type() ) {
-      $page_for_posts = 769;
-      $html .= '<li><a href="' . esc_url( get_permalink( $page_for_posts ) ) . '">' . get_the_title( $page_for_posts ) . '</a>';
-      //if ( 'post' === get_post_type() && get_option( 'page_for_posts', true ) ) {  
-      //$html .= '<li><a href="' . esc_url( get_post_type_archive_link( 'post' ) ) . '">' . get_the_title( get_option( 'page_for_posts' ) ) . '</a>';
+      $main_page = get_field('main_page_post','options');
+      $html .= '<li><a href="' . esc_url( get_permalink( $main_page ) ) . '">' . get_the_title( $main_page ) . '</a>';
+    } elseif ( 'team' === get_post_type() ) {  
+      $main_page = get_field('main_page_team','options');
+      $html .= '<li><a href="' . esc_url( get_permalink( $main_page ) ) . '">' . get_the_title( $main_page ) . '</a>';
     } elseif ( has_category() ) {
       $thecat   = get_the_category( $post->ID );
       $category = array_shift( $thecat );
       $html    .= '<li><a href="' . get_category_link( $category->term_id ) . '" title="' . get_cat_name( $category->term_id ) . ' ">' . get_cat_name( $category->term_id ) . '</a>';
     }
     // check if is Custom Post Type.
-    if ( ! is_singular( array( 'page', 'attachment', 'post' ) ) ) {
+    if ( ! is_singular( array( 'page', 'attachment', 'post', 'team' ) ) ) {
       $posttype = get_post_type_object( get_post_type() );
       $html    .= '<li><a href="' . home_url( '/' ) . '" title="' . get_bloginfo( 'title' ) . '">' . get_bloginfo( 'title' ) . '</a>';
     }
