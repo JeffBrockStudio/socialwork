@@ -33,7 +33,7 @@
         array(
           'fallback_cb'     => '',
           'menu'             => $sidebar_nav_menu->term_id,
-          'depth'           => 3,
+          'depth'           => 4,
           'container_class'      => 'sidebar-menu',
         )
       );
