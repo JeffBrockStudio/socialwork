@@ -293,3 +293,32 @@ body .wpdt-c.wpDataTableContainerSimpleTable {
 .slant-pattern {
 	display: none !important;
 }
+
+
+//
+// Provide space between images and text
+// --------------------------------------------------
+img[style*="float:left"], 
+img[style*="float: left"] {
+  margin: 0px 20px 0px 0px;
+}
+img[style*="float:right"], 
+img[style*="float: right"] {
+  margin: 0px 0px 0px 20px;
+}
+
+
+//
+// Add space between cards
+// --------------------------------------------------
+@media (min-width: 768px) {
+	.elementor-column.elementor-col-50, .elementor-column[data-col="50"] {
+			margin-right: 1%;
+	}
+}
+@media (min-width: 768px) {
+	.elementor-column.elementor-col-33, .elementor-column[data-col="33"] {
+			width: 33.333%;
+			margin-right: 1%;
+	}
+}
