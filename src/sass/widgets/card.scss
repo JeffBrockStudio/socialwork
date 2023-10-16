@@ -299,8 +299,13 @@
       }
 
       .card-img {
+        aspect-ratio: 370/194;
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
+        height: unset;
+        object-fit: cover;
+        width: 100%;
+
       }
 
       p.button {
