@@ -75,13 +75,23 @@
           li {
             font-weight: 400;
   
+            &.current-menu-item, 
             &.current_page_item {
               font-weight: 700;
             }
 
+            .sub-menu {
+              display: none;
+            }
+
+            &.current-menu-item,
             &.current-page-ancestor {
               > a {
                 font-weight: 700;
+              }
+
+              > .sub-menu {
+                display: block;
               }
             }
 
