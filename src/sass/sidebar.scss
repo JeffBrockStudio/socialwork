@@ -21,7 +21,7 @@
     background-color: #ebebeb;
     border-radius: $border-radius;
     margin-bottom: 3rem;
-    margin-right: -2rem;
+    margin-right: -3rem;
     padding: 1.4rem 1.5rem 2rem;
 
     .landing-page {
@@ -78,6 +78,14 @@
             &.current_page_item {
               font-weight: 700;
             }
+
+            &.current-page-ancestor {
+              > a {
+                font-weight: 700;
+              }
+            }
+
+
           }
         }
       }
