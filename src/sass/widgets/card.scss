@@ -323,7 +323,7 @@
   }
 
   .btn+.btn {
-    @include media-breakpoint-down(lg) {
+    @include media-breakpoint-down(xl) {
       margin-top: 1rem;
     }
   }
