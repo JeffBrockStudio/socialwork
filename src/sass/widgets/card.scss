@@ -322,9 +322,15 @@
     border-radius: $border-radius;
   }
 
+  .btn {
+    margin-bottom: 1rem;
+  }
+
   .btn+.btn {
-    @include media-breakpoint-down(xl) {
-      margin-top: 1rem;
-    }
+    margin-bottom: 0;
+    
+    // @include media-breakpoint-down(xl) {
+    //   margin-top: 1rem;
+    // }
   }
 }
