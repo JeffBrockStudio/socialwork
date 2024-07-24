@@ -91,9 +91,8 @@ class SocialWork_Accordion {
 		$output = do_shortcode( $content );
 
  		return sprintf(
-			'<div class="accordion %s" id="%s"><div class="screen-reader-text">%s</div>%s</div>',
+			'<div class="accordion %s" id="uw-accordion"><div class="screen-reader-text">%s</div>%s</div>',
 			$class,
-			$accordion_name,
 			$accordion_atts['name'],
 			$output
 		);
