@@ -43,6 +43,11 @@ h2.elementor-heading-title {
 	font-size: 2.176rem;
   font-weight: 900;
   line-height: 1.3;
+
+  @include media-breakpoint-down(md) {
+    font-size: 1.647rem !important;
+    margin-bottom: 1rem;
+  }
 }
 
 h3,

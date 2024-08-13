@@ -322,3 +322,13 @@ img[style*="float: right"] {
 			margin-right: 1%;
 	}
 }
+
+
+.wp-caption img[class*="wp-image-"] {
+
+	@include media-breakpoint-down(md) {
+		margin: 0;
+		width: 100%;
+	}
+	
+}
