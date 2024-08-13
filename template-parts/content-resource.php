@@ -89,15 +89,18 @@ $resource_identifier       = get_field( 'resource_identifier', $resource_id );
 
 						echo '. ';
 
-						if ($resource_identifier): echo ' ' . $resource_identifier; endif;
+						if ($resource_identifier): ?>						 
+							<p class="publication-type"><strong><?php _e( 'Identifier(s)', 'socialwork');?>:</strong> <?php echo $resource_identifier; ?></p>
+							<?php						 
+						endif;
 
 						if ($resource_locator_url): ?>
-							<br><strong><?php _e( 'URL', 'socialwork');?>:</strong> <a href="<?php echo $resource_locator_url; ?>" target="_blank"><?php echo $resource_locator_url; ?></a>
+							<p class="publication-type"><strong><?php _e( 'URL', 'socialwork');?>:</strong> <a href="<?php echo $resource_locator_url; ?>" target="_blank"><?php echo $resource_locator_url; ?></a></p>
 							<?php
 						endif; 
 						
 						if ($resource_locator_doi): ?>
-							<br><strong><?php _e( 'DOI', 'socialwork');?>:</strong> <a href="https://doi.org/<?php echo $resource_locator_doi; ?>" target="_blank">https://doi.org/<?php echo $resource_locator_doi; ?></a>
+							<p class="publication-type"><strong><?php _e( 'DOI', 'socialwork');?>:</strong> <a href="https://doi.org/<?php echo $resource_locator_doi; ?>" target="_blank">https://doi.org/<?php echo $resource_locator_doi; ?></a></p>
 							<?php
 						endif; 
 						?>
