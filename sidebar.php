@@ -47,7 +47,7 @@
   global $sidebar_content;
   $items = $sidebar_content;
 
-  if ($items !== ''):
+  if ($items !== '' and !empty($items)):
     foreach ($items AS $item): ?>
       <h3 class="sidebar-heading"><?php echo $item['heading']; ?></h3>
       <?php

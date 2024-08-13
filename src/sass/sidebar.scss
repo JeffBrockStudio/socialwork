@@ -2,6 +2,12 @@
   margin-left: 15px;
   padding-left: 0; 
 
+  @include media-breakpoint-down(md) {
+    margin-right: 15px;
+    padding-right: 0;
+    width: calc( 100% - 30px );
+  }
+
   .sidebar-heading {
     font-size: 1.471rem;
     margin-top: 0;
@@ -23,6 +29,10 @@
     margin-bottom: 3rem;
     margin-right: -3rem;
     padding: 1.4rem 1.5rem 2rem;
+
+    @include media-breakpoint-down(md) {
+      margin-right: 0;
+    }
 
     .landing-page {
       border-bottom: 3px solid $purple;
