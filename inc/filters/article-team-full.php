@@ -3,16 +3,16 @@
     <?php if ( $show['thumbnails'] == 'true' ): ?>
       <div class="thumb">      
         <?php if ( get_the_post_thumbnail( $resource_id )): ?>
-          <?php echo get_the_post_thumbnail( $resource_id, 'medium' ); ?>
+          <a href="<?php echo get_permalink( $resource_id );?>"><?php echo get_the_post_thumbnail( $resource_id, 'medium' ); ?></a>
         <?php else: ?>	
-          <img src="<?php $image = get_field( 'default_image_team', 'options' ); echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" height="<?php echo $image['height'] ?>" width="<?php echo $image['width'] ?>" />
+          <a href="<?php echo get_permalink( $resource_id );?>"><img src="<?php $image = get_field( 'default_image_team', 'options' ); echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>" height="<?php echo $image['height'] ?>" width="<?php echo $image['width'] ?>" /></a>
         <?php endif; ?>                     
       </div>
     <?php endif; ?>
 
     
     <div class="text">
-      <h3><?php echo get_the_title( $resource_id ); ?></h3>
+      <h3><a href="<?php echo get_permalink( $resource_id );?>"><?php echo get_the_title( $resource_id ); ?></a></h3>
       <?php if ( get_field( 'team_position', $resource_id )) { ?>
           <p><?php echo get_field( 'team_position', $resource_id ); ?></p>
       <?php } ?>	
