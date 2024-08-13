@@ -181,6 +181,14 @@ jQuery(document).ready(function($) {
 	
 	// Filters
 	$(document).on('change', '.filter select', function() {
+
+		// Clear search text input
+		$('#team-search-query').val('');
+		$('#team-search-query').attr('placeholder', 'Search Team Members');
+		
+		// Reset all other filters, and force Pretty Dropdown to update
+		$('.filter select').not(this).val('').attr('selected','');
+		$dropdown.refresh();
 			
 		hideElements();				
 		if ( $(this).hasClass( 'cleared' )) {
@@ -203,6 +211,37 @@ jQuery(document).ready(function($) {
 		var href = buildHref( $(this) );
 		loadAjax(href);
 	});		
+
+	// On focus of search input, clear all filters
+	$('#team-search-query').focus(function() {
+
+		// If any '.filter select' has a value, clear it
+		var filters = false;
+		$('.filter select').each(function() {
+			if ( $(this).val() ) {
+				filters = true;
+			}
+		});
+
+		if ( filters ) {
+			hideElements();		
+		};
+		
+		var url = [location.protocol, '//', location.host, location.pathname].join('');	 
+		var href = url;
+		var queryParams = new URLSearchParams(window.location.search);		    		    		
+		
+		queryParams.delete( 'search' );			
+		history.pushState(null, null, '?'+queryParams.toString());
+		
+		// Reset all filters, and force Pretty Dropdown to update
+		$('.filter select').val('').attr('selected','');
+		$dropdown.refresh();
+		
+		href = href + '?view=list';
+		loadAjax(href);
+
+	});
 	
 	// Clear filters
 	$(document).on('click', '.clear-filters', function(event) {

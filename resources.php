@@ -457,7 +457,7 @@ $show['title'] = 'true';
 		else:
 		
 			$tax_query = array();
-			$tax_query['relation'] = 'AND';
+			$tax_query['relation'] = 'OR';
 			
 			foreach ( $filters AS $filter ):
 				array_push( $tax_query,
