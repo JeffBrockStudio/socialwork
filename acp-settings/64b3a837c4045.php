@@ -7,7 +7,7 @@ return array (
     'title' => '',
     'type' => 'team',
     'id' => '64b3a837c4045',
-    'updated' => 1721787966,
+    'updated' => 1724711204,
     'columns' => 
     array (
       'title' => 
@@ -80,6 +80,21 @@ return array (
         'filter' => 'off',
         'filter_label' => '',
         'name' => '64b3aaaf24dd30',
+      ),
+      '542d19d6ec49bc' => 
+      array (
+        'type' => 'field_64aee4129cad5',
+        'label' => 'CV',
+        'width' => '',
+        'width_unit' => '%',
+        'export' => 'on',
+        'sort' => 'on',
+        'edit' => 'on',
+        'bulk_edit' => 'on',
+        'search' => 'on',
+        'filter' => 'off',
+        'filter_label' => '',
+        'name' => '542d19d6ec49bc',
       ),
       '64b3b05fa56040' => 
       array (
@@ -282,6 +297,8 @@ return array (
       'column_order' => 'off',
       'hide_filters' => 'off',
       'hide_filter_post_date' => 'off',
+      'hide_filter_yoast_seo_scores' => 'off',
+      'hide_filter_yoast_readability_score' => 'off',
       'hide_submenu' => 'off',
       'hide_search' => 'off',
       'hide_bulk_actions' => 'off',
