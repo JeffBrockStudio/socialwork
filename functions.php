@@ -171,7 +171,7 @@ function custom_add_custom_taxonomies() {
 			'labels' => array(
 				'name'                       => __( 'Team Roles' ),
 				'singular_name'              => __( 'Team Role' ),
-				'menu_name'                  => __( 'Team Roles' ),
+				'menu_name'                  => __( 'All Faculty & Staff' ),
 				'all_items'                  => __( 'All Team Roles' ),
 				'parent_item'                => __( 'Parent Team Role' ),
 				'parent_item_colon'          => __( 'Parent Team Role' ),
