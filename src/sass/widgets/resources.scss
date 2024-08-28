@@ -295,8 +295,10 @@
 				}
 				.pronouns {
 					font-style: italic;
+					font-family: $headings-font-family;
 					font-weight: normal;
-					margin-top: -0.75rem;
+					margin-top: -0.25rem;
+					margin-bottom: 0.5rem;
 					text-transform: none;
 				}
         .additional-affiliations,

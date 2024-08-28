@@ -16,8 +16,8 @@
       
       <?php if ( get_field( 'team_pronouns', $resource_id ) OR  get_field( 'team_affinity_group', $resource_id )) { ?>
         <div class="pronouns">													
-          <?php echo get_field( 'team_pronouns', $resource_id ); ?><?php if ( get_field( 'team_pronouns', $resource_id ) AND get_field( 'team_affinity_group', $resource_id )) { echo ', ';
-          }?><?php echo get_field( 'team_affinity_group', $resource_id ); ?>
+          (<?php echo get_field( 'team_pronouns', $resource_id ); ?><?php if ( get_field( 'team_pronouns', $resource_id ) AND get_field( 'team_affinity_group', $resource_id )) { echo ', ';
+          }?><?php echo get_field( 'team_affinity_group', $resource_id ); ?>)
         </div>
       <?php } ?>
 
