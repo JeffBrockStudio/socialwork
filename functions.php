@@ -184,7 +184,7 @@ function custom_add_custom_taxonomies() {
 				'add_or_remove_items'        => __( 'Add or remove team roles' ),
 				'choose_from_most_used'      => __( 'Choose from the most used' ),
 				'popular_items'              => __( 'Popular Team Roles' ),
-				'search_items'               => __( 'Search Team Roles' ),
+				'search_items'               => __( 'Search All Faculty & Staff' ),
 				'not_found'                  => __( 'Not Found' ),
 				'no_terms'                   => __( 'No items' ),
 				'items_list'                 => __( 'Team Roles list' ),
