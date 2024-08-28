@@ -80,7 +80,7 @@ function custom_create_post_types() {
 				'edit_item'          => __( 'Edit Team Member' ),
 				'view_item'          => __( 'View Team Member' ),
 				'all_items'          => __( 'All Team Members' ),
-				'search_items'       => __( 'Search Team Members' ),
+				'search_items'       => __( 'Search All Faculty & Staff' ),
 				'parent_item_colon'  => __( 'Parent Team Members:' ),
 				'not_found'          => __( 'No team members found.' ),
 				'not_found_in_trash' => __( 'No team members found in Trash.' )

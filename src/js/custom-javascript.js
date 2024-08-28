@@ -184,7 +184,7 @@ jQuery(document).ready(function($) {
 
 		// Clear search text input
 		$('#team-search-query').val('');
-		$('#team-search-query').attr('placeholder', 'Search Team Members');
+		$('#team-search-query').attr('placeholder', 'Search All Faculty & Staff');
 		
 		// Reset all other filters, and force Pretty Dropdown to update
 		$('.filter select').not(this).val('').attr('selected','');
