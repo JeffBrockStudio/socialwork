@@ -29,6 +29,12 @@
     .button {
       margin-top: 0.7rem;
 
+      @include media-breakpoint-down(md) {
+        a {
+          margin-right: 1rem;
+        }
+      }
+
       .btn.white {
         &:focus {
           outline-color: $white;
@@ -102,7 +108,7 @@
       }
 
       .button {
-        display: flex;
+        //display: flex;
         margin-top: 2rem;
       }
 
@@ -113,8 +119,17 @@
 
     &.img-right {
       .card-body {
+        @include media-breakpoint-down(md) {
+          //padding-bottom: 0;
+        }
+
         .inner-card-body {
           margin-left: -1rem;
+
+          @include media-breakpoint-down(md) {
+            margin-left: 0;
+          }
+          
         }
       }
     }
@@ -150,6 +165,11 @@
       grid-template-columns: 1fr 2fr;
     }
 
+    @include media-breakpoint-down(lg) {
+      padding-left: 0;
+    }
+    
+
     @include media-breakpoint-down(sm) {
       padding-left: 0;
     }
@@ -158,8 +178,22 @@
       .card-body {
         left: 4rem;
 
+        @include media-breakpoint-down(xxl) {
+          left: 6rem;
+        }
+
+        @include media-breakpoint-down(sm) {
+          left: 0;
+          padding-bottom: 2rem;
+        }
+
         .inner-card-body {
           margin-left: -3.5rem;
+
+          @include media-breakpoint-down(sm) {
+            margin-left: 0 !important;
+          }
+          
         }
       }
     }
@@ -187,6 +221,14 @@
 
         h1 {
           font-size: 2.647rem;
+
+          @include media-breakpoint-down(lg) {
+            font-size: 2.5rem;
+          }
+
+          @include media-breakpoint-down(sm) {
+            font-size: 2.176rem;
+          }
         }
       }
     }
@@ -328,6 +370,7 @@
   }
 
   .btn+.btn {
-   // margin-top: ;
+    margin-bottom: 0;
+    margin-top: 0;
   }
 }
