@@ -332,3 +332,19 @@ img[style*="float: right"] {
 	}
 	
 }
+
+@media (max-width: 1250px) {
+	.elementor-71 .elementor-element.elementor-element-50e2886 {
+		padding: 30px 15px 30px 15px;
+	}
+
+	.elementor-widget-ucaddon_socialwork_icon_box_link .social-work-icon-box-link .icon+h3 {
+		padding-right: 0;
+	}
+}
+
+@media (max-width: 1024px) {
+	.elementor-71 .elementor-element.elementor-element-406dc8d > .elementor-container {
+			max-width: none;
+	}
+}
