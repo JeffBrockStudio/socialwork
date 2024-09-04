@@ -47,6 +47,12 @@
 	
 	.filter-wrapper {		
 		padding: 0 0 3rem;
+
+		@include media-breakpoint-down(lg) {
+			padding-left: 1rem;
+			padding-right: 1rem;
+		}
+
 		.filter {
 			@include media-breakpoint-down(sm) {
 				margin-bottom: 1rem;
@@ -125,6 +131,11 @@
 	
 	.list-wrapper {
 		padding: 0 0 3rem;
+
+		@include media-breakpoint-down(lg) {
+			padding-left: 1rem;
+			padding-right: 1rem;
+		}
 		
 		article {
 			padding: 1rem;
